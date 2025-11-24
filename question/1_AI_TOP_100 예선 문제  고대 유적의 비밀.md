@@ -1,0 +1,53 @@
+# AI_TOP_100 예선 문제 : 고대 유적의 비밀
+
+Source: https://brunch.co.kr/@andkakao/317
+
+### **문제 설명**
+
+석판 이미지의 문자를 판독해 텍스트를 얻고, 그 의미를 해석하여 정답 형식에 맞춰 제출하세요. 당신은 고대 유적의 비밀에 대한 소문을 듣고 모여든 수많은 모험가 중 한 명입니다. 유적의 입구에서 발견한 이상한 석판에는 알 수 없는 문자와 기호들이 빼곡하게 새겨져 있었고, 석판 옆에는 “멈추어야 비로소 보이리라”라는 수수께끼가 적혀있었습니다. 전설에 따르면 이 석판은 스스로를 되돌아보는 주문을 담고 있으며, 주문을 외치면 그 순간 석판의 비밀이 드러난다고 합니다. 석판이 품고 있는 비밀을 찾아내어 고대 유적의 비밀을 풀어보세요!
+
+### **샘플 문항과 답**
+
+Q. 다음과 같은 석판 이미지가 있습니다.
+
+![스크린샷 2025-11-20 오후 6.10.19.png](//img1.daumcdn.net/thumb/R1280x0.fpng/?fname=http://t1.daumcdn.net/brunch/service/user/41jj/image/dg-HhPyUHeTUWYCS5a-3Rju3k8w.png)
+
+이 코드를 main.c 이름의 파일로 저장하고 gcc -w main.c 를 실행해 컴파일하면 실행할 수 있는 파일이 생성됩니다. 생성된 파일을 실행했을 때 stdout 으로 출력되는 문자열은 무엇인가요?
+
+A. CHOONSIKISACAT
+
+### **유의사항**
+
+이미지 파일에는 유효한 코드가 들어있습니다. 코드에는 한 번의 stdin 입력과 한 번의 stdout 출력이 있음을 보장합니다.
+
+### **문제 자료**
+
+![ai_top_100_crypto (4).png](//img1.daumcdn.net/thumb/R1280x0.fpng/?fname=http://t1.daumcdn.net/brunch/service/user/41jj/image/HiGitgBqQZ9NHKYIaYG-oGs0kSI.png)
+
+![ai_top_100_crypto (3).png](//img1.daumcdn.net/thumb/R1280x0.fpng/?fname=http://t1.daumcdn.net/brunch/service/user/41jj/image/nKiVguRNLTIpVJ6KhqBb_lJLB_Q.png)
+
+---
+
+### Q1. 석판을 자세히 들여다보니 알 수 없는 프로그래밍 언어로 쓰인 코드가 있었습니다. 다음 중 석판의 코드를 해석하기에 가장 적절한 언어는 무엇인가요?
+
+> 1. JavaScript
+
+> 2. C
+
+> 3. Rust
+
+> 4. Python
+
+> 5. Java
+
+---
+
+### Q2. Q1에서 선택한 언어로 코드를 해석해 실행해보니 stdin 입력을 기다리는 것으로 보입니다. 당신은 일단 아무 문자열이나 입력해보기로 합니다. 코드를 실행해 1q2w3e4r 을 입력했을 때 stdout 출력은 무엇인가요?
+
+> 영어 대문자만 허용됩니다.
+
+---
+
+### Q3. 문득 석판 옆의 “멈추어야 비로소 보이리라”라는 수수께끼가 생각난 당신은 STOP 을 입력하기로 합니다. 코드를 실행해 STOP 을 입력했을 때 stdout 출력은 무엇인가요?
+
+> 영어 대문자, 숫자만 허용됩니다.
