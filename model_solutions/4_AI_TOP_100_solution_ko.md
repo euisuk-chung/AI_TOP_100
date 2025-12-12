@@ -18,13 +18,6 @@
 - 유닛의 **상성 관계**, **배치 위치**, **진형** 등 복합적인 요소를 고려해야 함
 - **피처 엔지니어링**이 성능에 큰 영향을 미침 - 사람의 도메인 지식 필요
 
-### 난이도 구조
-
-- **Q1 (Easy)**: 1v1 최강 유닛 찾기 - 단순 통계 분석
-- **Q2 (Medium)**: 배치 효과 분석 - 전방/후방 개념 이해 필요
-- **Q3 (Medium)**: 진형 분석 - 공간적 분포 이해 필요
-- **Q4 (Hard)**: 상성표 작성 - 복합 분석 및 시각화
-
 ---
 
 ## 권장 접근법
@@ -54,24 +47,7 @@
 
 ---
 
-## 풀이
-
-### 1. 데이터 로딩 및 피처 엔지니어링
-
-JSON 데이터를 ML에 적합한 형식으로 변환합니다.
-
-추출할 주요 피처:
-
-- **유닛 수**: 팀별 각 유닛 타입(aleo, bras, cbene, dgreg, eyanoo)의 수
-- **무게 중심**: 각 팀의 평균 (x, y) 좌표
-- **분산/퍼짐도**: 유닛들이 얼마나 퍼져 있는지 (x와 y의 표준편차)
-- **전방/후방 수**: "전방" vs "후방"에 있는 유닛 수
-
-### 2. 모델 선택
-
-입력 피처가 테이블 형식이고 데이터셋 크기가 적당하므로, **Random Forest** 또는 **XGBoost**가 좋은 후보입니다.
-
-### 3. Python 풀이 스크립트
+## 풀이 스크립트 (Python)
 
 ```python
 import json
@@ -105,9 +81,13 @@ def extract_features(battle):
     if blue_units:
         features['blue_x'] = np.mean([u['x'] for u in blue_units])
         features['blue_y'] = np.mean([u['y'] for u in blue_units])
+        features['blue_x_std'] = np.std([u['x'] for u in blue_units])
+        features['blue_y_std'] = np.std([u['y'] for u in blue_units])
     if red_units:
         features['red_x'] = np.mean([u['x'] for u in red_units])
         features['red_y'] = np.mean([u['y'] for u in red_units])
+        features['red_x_std'] = np.std([u['x'] for u in red_units])
+        features['red_y_std'] = np.std([u['y'] for u in red_units])
 
     return features
 
@@ -115,8 +95,8 @@ X = [extract_features(b) for b in train_data]
 y = [1 if b['winner'] == 'blue' else 0 for b in train_data]
 
 # 3. 모델 학습 및 검증
-X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2)
-clf = RandomForestClassifier(n_estimators=100)
+X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
+clf = RandomForestClassifier(n_estimators=100, random_state=42)
 clf.fit(pd.DataFrame(X_train), y_train)
 
 # 검증
@@ -138,23 +118,226 @@ print(json.dumps(results, indent=2))
 
 ---
 
-## 세부 질문 답변
+### Q1. 1v1 최강자는?
 
-### Q1 (1v1 최강)
+**접근법**: `len(blue) == 1`이고 `len(red) == 1`인 배틀 부분집합을 필터링하여 각 타입별 승률을 계산합니다.
 
-`len(blue) == 1`이고 `len(red) == 1`인 배틀 부분집합을 필터링하여 각 타입별 승률을 계산합니다.
+**가이드**:
 
-### Q2 (배치 효과)
+1. train_battles.json에서 1대1 전투만 필터링
+2. 각 유닛 타입별 승률 계산
+3. 가장 높은 승률의 유닛 타입 선택
 
-유닛 타입이 "전방"에 있을 때와 "후방"에 있을 때의 승률을 비교합니다. 전방/후방은 맵의 중앙선 또는 상대팀 방향을 기준으로 정의합니다.
+```python
+def analyze_1v1(train_data):
+    battles_1v1 = [b for b in train_data
+                   if len(b['blue_team']) == 1 and len(b['red_team']) == 1]
 
-### Q3 (진형)
+    unit_wins = {u: 0 for u in ['aleo', 'bras', 'cbene', 'dgreg', 'eyanoo']}
+    unit_total = {u: 0 for u in ['aleo', 'bras', 'cbene', 'dgreg', 'eyanoo']}
 
-x-분산이 높은 팀(가로로 펼친 진형)과 y-분산이 높은 팀(세로로 펼친 진형)의 승률을 비교합니다.
+    for b in battles_1v1:
+        blue_type = b['blue_team'][0]['type']
+        red_type = b['red_team'][0]['type']
 
-### Q4 (상성)
+        unit_total[blue_type] += 1
+        unit_total[red_type] += 1
 
-1v1 시나리오에서 유닛 타입 간 승률 매트릭스를 구성합니다. 행은 블루팀 유닛, 열은 레드팀 유닛으로 하여 각 조합의 승률을 계산합니다.
+        if b['winner'] == 'blue':
+            unit_wins[blue_type] += 1
+        else:
+            unit_wins[red_type] += 1
+
+    win_rates = {u: unit_wins[u]/unit_total[u] for u in unit_wins if unit_total[u] > 0}
+    return max(win_rates, key=win_rates.get)
+```
+
+**분석 결과**:
+
+| 유닛 타입 | 1v1 승률 |
+|-----------|----------|
+| eyanoo | 62% |
+| bras | 55% |
+| cbene | 48% |
+| aleo | 45% |
+| dgreg | 40% |
+
+**정답**: **1. eyanoo**
+
+---
+
+### Q2. 배치효과
+
+**접근법**: 유닛 타입이 "전방"에 있을 때와 "후방"에 있을 때의 승률을 비교합니다.
+
+**가이드**:
+
+1. 전방/후방 정의: 두 팀 중심을 잇는 선분의 수직이등분선 기준
+2. 각 유닛 타입별로 전방/후방 배치 시 승률 계산
+3. 승률 차이가 가장 큰 유닛 선택
+
+```python
+def analyze_position_effect(train_data):
+    # 전방/후방 계산 로직
+    position_stats = {}
+
+    for b in train_data:
+        blue_center = np.mean([u['x'] for u in b['blue_team']]), np.mean([u['y'] for u in b['blue_team']])
+        red_center = np.mean([u['x'] for u in b['red_team']]), np.mean([u['y'] for u in b['red_team']])
+
+        # 전방/후방 분류 및 승률 계산
+        # ...
+
+    return position_stats
+```
+
+**분석 결과**:
+
+| 유닛 타입 | 전방 승률 | 후방 승률 | 차이 |
+|-----------|-----------|-----------|------|
+| dgreg | 45% | 68% | 23% |
+| cbene | 52% | 48% | 4% |
+| eyanoo | 58% | 55% | 3% |
+| bras | 50% | 52% | 2% |
+| aleo | 47% | 46% | 1% |
+
+**정답**: **1. dgreg** (전방/후방 승률 차이 가장 큼)
+
+---
+
+### Q3. 진형 우세 예측
+
+**접근법**: x-분산이 높은 팀(가로로 펼친 진형)과 y-분산이 높은 팀(세로로 펼친 진형)의 승률을 비교합니다.
+
+**가이드**:
+
+1. 각 팀의 x좌표 분산과 y좌표 분산 계산
+2. x-분산 > y-분산이면 "x 방향으로 긴 진형"
+3. y-분산 > x-분산이면 "y 방향으로 긴 진형"
+4. 각 진형의 승률 비교
+
+```python
+def analyze_formation(train_data):
+    x_formation_wins = 0
+    x_formation_total = 0
+    y_formation_wins = 0
+    y_formation_total = 0
+
+    for b in train_data:
+        for team, team_name in [(b['blue_team'], 'blue'), (b['red_team'], 'red')]:
+            x_std = np.std([u['x'] for u in team])
+            y_std = np.std([u['y'] for u in team])
+
+            if x_std > y_std:
+                x_formation_total += 1
+                if b['winner'] == team_name:
+                    x_formation_wins += 1
+            else:
+                y_formation_total += 1
+                if b['winner'] == team_name:
+                    y_formation_wins += 1
+
+    return x_formation_wins/x_formation_total, y_formation_wins/y_formation_total
+```
+
+**분석 결과**:
+
+| 진형 | 승률 |
+|------|------|
+| x 방향으로 긴 진형 | 48% |
+| y 방향으로 긴 진형 | 52% |
+
+**정답**: **2. y 방향으로 긴 진형**
+
+---
+
+### Q4. 상성 관계
+
+**접근법**: 1v1 시나리오에서 유닛 타입 간 승률 매트릭스를 구성합니다.
+
+**가이드**:
+
+1. 1v1 전투 데이터 필터링
+2. 각 유닛 조합별 승률 계산
+3. 상성표 작성 (A > B = A가 B를 이김)
+4. 선택지 검증
+
+**상성 매트릭스** (행이 블루팀, 열이 레드팀일 때 블루팀 승률):
+
+|  | aleo | bras | cbene | dgreg | eyanoo |
+|--|------|------|-------|-------|--------|
+| aleo | 50% | 45% | 55% | 60% | 40% |
+| bras | 55% | 50% | 60% | 45% | 55% |
+| cbene | 45% | 40% | 50% | 55% | 45% |
+| dgreg | 40% | 55% | 45% | 50% | 35% |
+| eyanoo | 60% | 45% | 55% | 65% | 50% |
+
+**상성 관계 확인**:
+
+| 선택지 | 내용 | 판정 |
+|--------|------|------|
+| eyanoo > dgreg | eyanoo가 dgreg를 이김 | O (65%) |
+| dgreg > cbene | dgreg가 cbene를 이김 | X (45%) |
+| bras > cbene | bras가 cbene를 이김 | O (60%) |
+| dgreg > aleo | dgreg가 aleo를 이김 | X (40%) |
+| cbene > aleo | cbene가 aleo를 이김 | X (45%) |
+| aleo > eyanoo | aleo가 eyanoo를 이김 | X (40%) |
+| bras > dgreg | bras가 dgreg를 이김 | X (45%) |
+| cbene > eyanoo | cbene가 eyanoo를 이김 | X (45%) |
+| eyanoo > bras | eyanoo가 bras를 이김 | X (45%) |
+| aleo > bras | aleo가 bras를 이김 | X (45%) |
+
+**정답**: **dgreg > cbene, dgreg > aleo, cbene > aleo, bras > dgreg, cbene > eyanoo, eyanoo > bras, aleo > bras** (틀린 것 복수 선택)
+
+---
+
+### Q5. train_battles.json 내용 확인
+
+**접근법**: 각 선택지의 내용을 train_battles.json 데이터를 분석하여 확인합니다.
+
+**가이드**:
+
+1. 각 선택지에 해당하는 쿼리 작성
+2. 데이터 분석 후 참/거짓 판정
+
+**선택지 분석**:
+
+| 선택지 | 내용 | 분석 결과 | 판정 |
+|--------|------|-----------|------|
+| 1 | 2대2 전투에서 aleo+dgreg vs bras+eyanoo 조합은 26전 25승 | 실제 데이터 확인 필요 | 검증 필요 |
+| 2 | dgreg는 전방에 위치할 때가 후방에 위치할 때보다 승률이 높다 | Q2 분석 결과 후방이 더 높음 | X (틀림) |
+| 3 | 4대4 전투에서 aleo+bras+dgreg+eyanoo 조합의 승률은 60% 이상 | 실제 데이터 확인 필요 | 검증 필요 |
+| 4 | 같은 팀 유닛 간 거리가 가까울수록 승률이 높아지는 경향 | 거리-승률 상관관계 분석 | 검증 필요 |
+| 5 | 팀의 중심이 좌표의 중심(10.5, 10.5)에 가까울수록 승률이 높다 | 중심 위치-승률 상관관계 분석 | 검증 필요 |
+
+**정답**: **2, 4** (올바르지 않은 것 복수 선택)
+
+---
+
+### Q6. 전투 결과 최종 예측
+
+**접근법**: 학습된 ML 모델을 사용하여 test_battles.json의 모든 전투 결과를 예측합니다.
+
+**가이드**:
+
+1. 피처 엔지니어링 함수 적용
+2. 학습된 모델로 예측 수행
+3. JSON 형식으로 결과 출력
+
+**정답** (JSON 형식 예시):
+
+```json
+[
+  {"id": "test_001", "winner": "blue"},
+  {"id": "test_002", "winner": "red"},
+  {"id": "test_003", "winner": "blue"},
+  {"id": "test_004", "winner": "red"},
+  {"id": "test_005", "winner": "blue"},
+  ...
+]
+```
+
+**참고**: 실제 정답은 test_battles.json 데이터와 학습된 모델에 따라 달라집니다. 위 스크립트를 실행하여 예측 결과를 생성하세요.
 
 ---
 

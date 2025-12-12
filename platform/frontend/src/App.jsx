@@ -174,17 +174,41 @@ function App() {
             {language === 'kr' ? 'EN' : 'KR'}
           </button>
         </div>
-        <ul>
-          {questions.map((q) => (
-            <li
-              key={q.filename}
-              onClick={() => handleSelectQuestion(q.filename)}
-              className={selectedQuestion === q.filename ? 'active' : ''}
-            >
-              {q.title}
-            </li>
-          ))}
-        </ul>
+        {/* 예선 (Preliminary) - Questions 1-5 */}
+        <div className="question-section">
+          <div className="section-title preliminary">
+            {language === 'kr' ? '예선' : 'Preliminary'}
+          </div>
+          <ul>
+            {questions.slice(0, 5).map((q) => (
+              <li
+                key={q.filename}
+                onClick={() => handleSelectQuestion(q.filename)}
+                className={selectedQuestion === q.filename ? 'active' : ''}
+              >
+                {q.title}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* 본선 (Final) - Questions 6-8 */}
+        <div className="question-section">
+          <div className="section-title final">
+            {language === 'kr' ? '본선' : 'Final'}
+          </div>
+          <ul>
+            {questions.slice(5, 8).map((q) => (
+              <li
+                key={q.filename}
+                onClick={() => handleSelectQuestion(q.filename)}
+                className={selectedQuestion === q.filename ? 'active' : ''}
+              >
+                {q.title}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
       <div className="main">
         {selectedQuestion ? (

@@ -107,6 +107,63 @@ black and white forensic composite style.
 
 ---
 
+---
+
+### Q1. 몽타주 이미지 제출 (최고 유사도 달성)
+
+**접근법**: 목격자 증언을 분석하여 생성형 AI에 최적화된 프롬프트를 설계하고, API 피드백을 기반으로 반복적으로 개선하여 최고 유사도를 달성합니다.
+
+**가이드**:
+
+1. **목격자 증언 분석 및 특징 추출**:
+
+| 카테고리 | 원문 | 영어 프롬프트 |
+|----------|------|---------------|
+| 성별/나이 | 30대 정도의 남성 | Male in his 30s |
+| 눈 | 눈이 크고 아몬드 모양의 깊고 진한 눈 | Large almond-shaped deep dark eyes |
+| 코 | 길고 곧게 뻗었지만 좌우 폭은 넓지 않은 코 | Long straight nose with narrow width |
+| 입 | 부드러운 미소를 가졌으며 양 옆으로 길지 않은 입술 | Soft smile with short lips |
+
+2. **최적화된 프롬프트 작성**:
+
+```
+A realistic police forensic sketch portrait.
+Male suspect in his 30s.
+Large almond-shaped deep dark eyes.
+Long straight nose with narrow width.
+Soft gentle smile with short lips that don't extend wide.
+Neutral expression, front-facing view.
+High quality detailed pencil sketch, black and white,
+forensic composite style, professional police sketch.
+```
+
+3. **API 제출 및 피드백 분석**:
+   - 1024x1024 해상도 PNG/JPEG로 저장
+   - API에 제출하여 유사도 점수와 부위별 피드백 확인
+   - 피드백에 따라 프롬프트 수정 (예: "눈을 더 크게", "코를 더 좁게")
+
+4. **반복 개선**:
+   - 부족한 특징 강조: `prominently large almond eyes`, `distinctly narrow nose bridge`
+   - 스타일 조정: `graphite pencil texture`, `high contrast sketch`
+   - rate limit (1분당 1회) 고려하여 신중하게 제출
+
+**프롬프트 개선 팁**:
+
+```
+-- 눈이 부족할 때 --
+"with strikingly large, deep-set almond-shaped dark brown eyes"
+
+-- 코가 부족할 때 --
+"elongated straight nose with notably narrow bridge"
+
+-- 입이 부족할 때 --
+"gentle subtle smile with compact lips"
+```
+
+**정답**: AI 이미지 생성 도구(DALL-E, Midjourney, Stable Diffusion 등)를 활용하여 목격자 증언의 모든 특징을 반영한 몽타주를 생성하고, API 피드백을 기반으로 반복 개선하여 최고 유사도를 기록한 이미지를 `montage.png`로 제출합니다.
+
+---
+
 ## 풀이 단계
 
 1. **AI 이미지 생성기 선택**
