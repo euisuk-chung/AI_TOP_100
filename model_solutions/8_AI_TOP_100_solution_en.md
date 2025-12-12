@@ -1,73 +1,55 @@
-# Model Solution: Q8. AI Immigration Officer
+# Model Solution: Q8. Handover Documentation
 
 ## Analysis
-**Goal**: Rule-based classification of immigration applicants.
-**Input**: List of applicants (JSON).
-**Output**: Approval/Denial decision with reason code.
+**Goal**: Write handover documentation (Project Overview, Architecture, API, Troubleshooting).
+**Context**: Core module developer leaving in 1 week.
 
-## Criteria Logic
-**Approve**:
--   Passport Valid (not expired)
--   Visa Valid (type match, not expired)
--   No Criminal Record
--   Funds >= Threshold (e.g., $1000 or sufficient for stay)
--   Purpose Clear
+## Sample Answer
 
-**Deny Reasons**:
-1.  Expired Passport
-2.  Invalid/Expired Visa
-3.  Criminal Record
-4.  Insufficient Funds
-5.  Unclear Purpose
+### Q1. Project Overview
+**Project Name**: AI-Driven Customer Analytics Module
+**Description**: This module ingests customer interaction data from multiple channels (web, mobile, support) and applies NLP models to extract sentiment and intent. The processed data is fed into the CRM system to enable real-time personalized marketing and support. The goal is to improve customer retention by 15% through proactive engagement.
 
-## Solution Script (Python)
-
-```python
-import json
-from datetime import datetime
-
-def check_immigration(applicants):
-    results = []
-    current_date = datetime.now().date() # Or specific simulation date
-    
-    for app in applicants:
-        decision = "Approve"
-        reason = None
-        
-        # 1. Passport Check
-        passport_expiry = datetime.strptime(app['passport_expiry'], "%Y-%m-%d").date()
-        if passport_expiry < current_date:
-            decision = "Deny"
-            reason = 1
-            
-        # 2. Visa Check
-        elif not app['visa_valid'] or datetime.strptime(app['visa_expiry'], "%Y-%m-%d").date() < current_date:
-            decision = "Deny"
-            reason = 2
-            
-        # 3. Criminal Record
-        elif app['criminal_record']:
-            decision = "Deny"
-            reason = 3
-            
-        # 4. Funds Check
-        elif app['funds'] < 1000: # Assuming $1000 threshold
-            decision = "Deny"
-            reason = 4
-            
-        # 5. Purpose Check
-        elif app['purpose'] not in ["Tourism", "Business", "Study", "Work"]:
-            decision = "Deny"
-            reason = 5
-            
-        # Construct Result
-        res = {"id": app['id'], "answer": decision}
-        if decision == "Deny":
-            res["reason"] = reason
-        results.append(res)
-        
-    return json.dumps(results, indent=2)
-
-# Example Usage
-# print(check_immigration(json_data))
+### Q2. System Architecture
+```mermaid
+graph LR
+    A[Client Apps] --> B[API Gateway]
+    B --> C[Ingestion Service]
+    C --> D[Kafka Queue]
+    D --> E[Processing Worker (AI Models)]
+    E --> F[PostgreSQL (Results)]
+    E --> G[Redis (Cache)]
+    F --> H[CRM Dashboard]
 ```
+
+### Q3. API Documentation (Login)
+**Endpoint**: `POST /api/v1/auth/login`
+**Description**: Authenticates a user and returns a JWT token.
+
+**Request Body**:
+```json
+{
+  "email": "user@example.com",
+  "password": "secure_password_123"
+}
+```
+
+**Response (200 OK)**:
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsIn...",
+  "expires_in": 3600,
+  "user": {
+    "id": "user_123",
+    "role": "admin"
+  }
+}
+```
+
+### Q4. Troubleshooting
+**Issue**: `Processing Worker` high latency / timeout.
+**Cause**: Sudden spike in data volume causing Kafka consumer lag, or GPU memory exhaustion on the AI model server.
+**Solution**:
+1. Check Kafka consumer lag in Grafana.
+2. If lag is high, scale up the `Processing Worker` replicas (Kubernetes HPA).
+3. If GPU OOM, check the batch size configuration in `config.yaml` and reduce it (default: 32 -> 16).

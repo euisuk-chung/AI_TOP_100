@@ -1,42 +1,92 @@
-# Model Solution: Q4. Video Fact Check
+# Model Solution: Q4. The Power of Simulation Without Battle
 
 ## Analysis
-The problem requires extracting specific facts from the "The Age of AI" documentary series.
-Since I cannot watch the videos, I have compiled the likely answers based on search results and general knowledge of the series.
+This is a Machine Learning classification problem.
+**Goal**: Predict game victory (blue/red) based on unit placement coordinates.
+**Data**: `train_battles.json` (missing), `test_battles.json` (missing).
 
-## Solution Guide
+## Solution Approach
 
-### Q1. Drink of King Kong/Avatar Facial Simulation Creator
-**Likely Answer**: **4. Warm Herbal Tea** (or similar specific beverage mentioned in the interview).
-*Context*: Mark Sagar (Soul Machines) or similar expert often discusses their work.
+### 1. Data Loading & Feature Engineering
+We need to convert the JSON data into a format suitable for ML (e.g., Pandas DataFrame).
+Key features to extract:
+-   **Unit Counts**: Number of each unit type (aleo, bras, cbene, dgreg, eyanoo) per team.
+-   **Center of Mass**: Average (x, y) for each team.
+-   **Spread/Variance**: How spread out the units are (standard deviation of x and y).
+-   **Front/Rear Count**: Number of units in the "front" vs "rear" (defined by the perpendicular bisector).
 
-### Q2. Tim Shaw's First Sentence
-**Likely Answer**: **"I love you"** or a greeting to his parents.
-*Context*: In the episode "Healed through A.I.", Tim Shaw uses Google's Project Euphonia to speak again. The first sentence is usually emotional.
+### 2. Model Selection
+Since the input features are tabular and the dataset size is likely moderate, **Random Forest** or **XGBoost** would be strong candidates.
 
-### Q3. Austin Dillon Pit Stop Time
-**Answer**: **8.85** (seconds)
-*Context*: RCR team used AI to optimize pit stops. Search results confirm ~8.85 seconds record.
+### 3. Python Solution Script
 
-### Q4. Bobo Actor Past Profession
-**Likely Answer**: **1. Pro Wrestler** (if referring to a specific character/actor cameo) or **5. Dancer**.
-*Note*: "Bobo" might be a nickname or a character in a specific scene.
+```python
+import json
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
 
-### Q5. Locations in "Will a robot take my job?"
-**Likely Answer**:
--   **2. Long Beach Airport** (TuSimple trucks often tested near ports/airports in CA)
--   **5. TuSimple Headquarters, Arizona** (TuSimple is based in San Diego/Arizona)
-*Note*: Incheon Airport or East Seoul Tollgate are unlikely unless there was a specific segment on Korea.
+# 1. Load Data
+def load_data(filepath):
+    with open(filepath, 'r') as f:
+        data = json.load(f)
+    return data
 
-### Q6. Markers Count (Nose + Eyes + Eyebrows)
-**Method**: Count the white dots on the actor's face in the "Love, art and stories" episode (Soul Machines segment).
-**Estimate**: Usually **40-60** markers total. For Nose+Eyes+Eyebrows specifically:
--   Eyebrows: ~5 per brow = 10
--   Eyes: ~4 per lid = 16
--   Nose: ~4-6
--   **Total**: ~30-40 range.
+train_data = load_data('train_battles.json')
+test_data = load_data('test_battles.json')
 
-### Q7. Facts in "Healing through AI"
-**Likely True Statements**:
--   **4. The research covers speech recognition and synthesis.** (Project Euphonia does both).
--   **5. Ice Bucket Challenge helped.** (Tim Shaw is an ALS advocate, Ice Bucket Challenge raised funds for ALS research which connects to this).
+# 2. Feature Engineering
+def extract_features(battle):
+    # Example: Extract unit counts for 'blue' team
+    features = {}
+    blue_units = battle['blue_team']
+    red_units = battle['red_team']
+    
+    # Count units by type
+    for u_type in ['aleo', 'bras', 'cbene', 'dgreg', 'eyanoo']:
+        features[f'blue_{u_type}'] = sum(1 for u in blue_units if u['type'] == u_type)
+        features[f'red_{u_type}'] = sum(1 for u in red_units if u['type'] == u_type)
+        
+    # Calculate centers
+    blue_x = np.mean([u['x'] for u in blue_units])
+    blue_y = np.mean([u['y'] for u in blue_units])
+    red_x = np.mean([u['x'] for u in red_units])
+    red_y = np.mean([u['y'] for u in red_units])
+    
+    features['blue_x'] = blue_x
+    features['blue_y'] = blue_y
+    features['red_x'] = red_x
+    features['red_y'] = red_y
+    
+    # ... Add more features (Front/Rear, Distances) ...
+    
+    return features
+
+X = [extract_features(b) for b in train_data]
+y = [1 if b['winner'] == 'blue' else 0 for b in train_data] # 1 for Blue, 0 for Red
+
+# 3. Train Model
+clf = RandomForestClassifier(n_estimators=100)
+clf.fit(X, y)
+
+# 4. Predict
+X_test = [extract_features(b) for b in test_data]
+predictions = clf.predict(X_test)
+
+# 5. Format Output
+results = []
+for i, pred in enumerate(predictions):
+    winner = "blue" if pred == 1 else "red"
+    results.append({"id": test_data[i]['id'], "winner": winner})
+
+print(json.dumps(results, indent=2))
+```
+
+## Answers to Sub-questions (Hypothetical)
+
+-   **Q1 (1v1 Strongest)**: Analyze the subset of battles where `len(blue) == 1` and `len(red) == 1`. Calculate win rate for each type.
+-   **Q2 (Placement Effect)**: Compare win rates of a unit type when it is in "Front" vs "Rear".
+-   **Q3 (Formation)**: Compare win rates of high x-variance vs high y-variance teams.
+-   **Q4 (Compatibility)**: Construct a win-rate matrix between unit types in 1v1 scenarios.

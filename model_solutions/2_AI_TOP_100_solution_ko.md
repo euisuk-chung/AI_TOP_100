@@ -1,92 +1,77 @@
-# 모범 답안: Q2. 배틀 게임 시뮬레이션
+# 모범 답안: Q2. 고대 유적의 비밀
 
-## 분석
-이것은 머신러닝 분류 문제입니다.
-**목표**: 유닛 배치 좌표를 기반으로 게임 승리(블루/레드)를 예측합니다.
-**데이터**: `train_battles.json` (없음), `test_battles.json` (없음).
+## 출제 의도
 
-## 풀이 접근법
+### 문제 패턴
+**P2. 구현 및 자동화 (Action)** - 정의된 문제를 해결하기 위해 AI 솔루션을 실제 작동하는 코드나 워크플로로 구현
 
-### 1. 데이터 로딩 및 피처 엔지니어링
-JSON 데이터를 ML에 적합한 형식(예: Pandas DataFrame)으로 변환해야 합니다.
-추출할 주요 피처:
--   **유닛 수**: 팀별 각 유닛 타입(aleo, bras, cbene, dgreg, eyanoo)의 수.
--   **무게 중심**: 각 팀의 평균 (x, y) 좌표.
--   **분산/퍼짐도**: 유닛들이 얼마나 퍼져 있는지 (x와 y의 표준편차).
--   **전방/후방 수**: "전방" vs "후방"에 있는 유닛 수 (수직 이등분선으로 정의).
+### 핵심 측정 역량
+1. **이미지에서 코드 추출 능력**: AI의 OCR/비전 기능을 활용하여 이미지 속 난독화된 코드를 정확히 추출
+2. **코드 해석 및 실행 능력**: 난독화된 C 코드를 분석하고 실제로 실행하여 결과를 검증
+3. **Human-in-the-loop 검증**: AI가 추출한 코드의 정확성을 사람이 직접 컴파일/실행하여 검증
 
-### 2. 모델 선택
-입력 피처가 테이블 형식이고 데이터셋 크기가 적당할 것으로 예상되므로, **Random Forest** 또는 **XGBoost**가 좋은 후보입니다.
+### 왜 '딸깍'으로 풀리지 않는가?
+- 이미지 속 코드는 **난독화(Obfuscated)** 되어 있어 AI가 정확히 인식하기 어려움
+- 코드의 미세한 문자 오류(예: `0`과 `O`, `1`과 `l`)가 결과에 큰 영향을 미침
+- **반드시 코드를 실행해봐야** 정답을 확인할 수 있음 (AI의 추론만으로는 부정확)
 
-### 3. Python 풀이 스크립트
+### 난이도 구조
+- **Q1 (Easy)**: 프로그래밍 언어 식별 - 힌트가 문제에 명시됨 (`main.c`, `gcc`)
+- **Q2-Q3 (Hard)**: 실제 코드 실행 필요 - 이미지 OCR → 코드 정리 → 컴파일 → 실행 → 검증
 
-```python
-import json
-import pandas as pd
-import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score
+---
 
-# 1. 데이터 로드
-def load_data(filepath):
-    with open(filepath, 'r') as f:
-        data = json.load(f)
-    return data
+## 권장 접근법
 
-train_data = load_data('train_battles.json')
-test_data = load_data('test_battles.json')
+### 1단계: 사람의 분석
+- 문제에서 주어진 힌트 파악: `main.c`, `gcc -w` 등의 키워드
+- 이미지 속 코드의 대략적인 구조 파악 (변수명, 함수 구조)
 
-# 2. 피처 엔지니어링
-def extract_features(battle):
-    # 예시: 'blue' 팀의 유닛 수 추출
-    features = {}
-    blue_units = battle['blue_team']
-    red_units = battle['red_team']
-
-    # 타입별 유닛 수 계산
-    for u_type in ['aleo', 'bras', 'cbene', 'dgreg', 'eyanoo']:
-        features[f'blue_{u_type}'] = sum(1 for u in blue_units if u['type'] == u_type)
-        features[f'red_{u_type}'] = sum(1 for u in red_units if u['type'] == u_type)
-
-    # 중심 계산
-    blue_x = np.mean([u['x'] for u in blue_units])
-    blue_y = np.mean([u['y'] for u in blue_units])
-    red_x = np.mean([u['x'] for u in red_units])
-    red_y = np.mean([u['y'] for u in red_units])
-
-    features['blue_x'] = blue_x
-    features['blue_y'] = blue_y
-    features['red_x'] = red_x
-    features['red_y'] = red_y
-
-    # ... 추가 피처 (전방/후방, 거리) 추가 ...
-
-    return features
-
-X = [extract_features(b) for b in train_data]
-y = [1 if b['winner'] == 'blue' else 0 for b in train_data] # 블루 1, 레드 0
-
-# 3. 모델 학습
-clf = RandomForestClassifier(n_estimators=100)
-clf.fit(X, y)
-
-# 4. 예측
-X_test = [extract_features(b) for b in test_data]
-predictions = clf.predict(X_test)
-
-# 5. 출력 형식 맞추기
-results = []
-for i, pred in enumerate(predictions):
-    winner = "blue" if pred == 1 else "red"
-    results.append({"id": test_data[i]['id'], "winner": winner})
-
-print(json.dumps(results, indent=2))
+### 2단계: AI와의 협업
+```
+프롬프트 예시:
+"이 이미지에서 C 코드를 정확히 추출해줘.
+난독화된 코드이므로 특수문자, 숫자, 알파벳을 정확히 구분해서 추출해줘.
+특히 0과 O, 1과 l을 주의해서 구분해줘."
 ```
 
-## 세부 질문 답변 (가설)
+### 3단계: 사람의 검증
+1. AI가 추출한 코드를 `main.c` 파일로 저장
+2. `gcc -w main.c -o main` 으로 컴파일
+3. 컴파일 에러 발생 시 → AI와 함께 코드 수정
+4. `./main` 실행 후 입력값 테스트
+5. 결과 확인 및 정답 제출
 
--   **Q1 (1v1 최강)**: `len(blue) == 1`이고 `len(red) == 1`인 배틀 부분집합을 분석합니다. 각 타입별 승률을 계산합니다.
--   **Q2 (배치 효과)**: 유닛 타입이 "전방"에 있을 때와 "후방"에 있을 때의 승률을 비교합니다.
--   **Q3 (진형)**: x-분산이 높은 팀과 y-분산이 높은 팀의 승률을 비교합니다.
--   **Q4 (상성)**: 1v1 시나리오에서 유닛 타입 간 승률 매트릭스를 구성합니다.
+---
+
+## 풀이
+
+### Q1. 프로그래밍 언어
+**정답**: **2. C**
+
+**근거**:
+- 문제 설명에서 `main.c`와 `gcc`를 명시적으로 언급
+- 코드 문법이 C 언어의 특징을 보임 (`#include <stdio.h>`, `void`, `char*`, `printf`)
+
+### Q2. 입력 `1q2w3e4r`에 대한 출력
+**풀이 방법**:
+1. 이미지에서 코드를 추출하여 `main.c`로 저장
+2. 컴파일: `gcc -w main.c -o main`
+3. 실행: `./main`
+4. 입력: `1q2w3e4r`
+5. 출력 결과를 정답으로 제출
+
+**주의사항**:
+- AI가 추출한 코드에 오류가 있을 수 있으므로 **반드시 컴파일하여 검증**
+- 컴파일 에러 발생 시 AI에게 에러 메시지를 공유하고 수정 요청
+
+### Q3. 입력 `STOP`에 대한 출력
+**풀이 방법**: Q2와 동일한 프로세스로 입력값만 `STOP`으로 변경
+
+---
+
+## 핵심 교훈
+
+> "AI가 이미지에서 코드를 추출해줄 수 있지만, 그 결과가 정확한지는 **직접 실행해봐야만** 알 수 있다."
+
+이 문제는 AI의 비전 능력과 코드 분석 능력을 활용하되, **최종 검증은 사람이 직접 수행**해야 하는 Human-in-the-loop의 핵심을 보여줍니다.

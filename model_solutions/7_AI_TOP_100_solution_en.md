@@ -1,4 +1,4 @@
-# Model Solution: Q7. Draw a Montage
+# Model Solution: Q7. Draw the Montage
 
 ## Analysis
 **Goal**: Generate an image based on a text description.
