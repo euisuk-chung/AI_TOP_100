@@ -21,6 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 QUESTION_DIR_KR = os.path.join(BASE_DIR, "question")
 QUESTION_DIR_EN = os.path.join(BASE_DIR, "question_en")
 SOLVE_DIR = os.path.join(BASE_DIR, "solve")
+SOLUTION_DIR = os.path.join(BASE_DIR, "model_solutions")
 
 def get_question_dir(lang="kr"):
     return QUESTION_DIR_EN if lang == "en" else QUESTION_DIR_KR
@@ -126,6 +127,66 @@ def save_solution(filename: str, submission: SolutionSubmission):
         saved_files.append(solution_file)
         
     return {"message": "Solutions saved", "paths": saved_files}
+
+def parse_solution_by_questions(content):
+    """Parse solution markdown into per-question sections"""
+    lines = content.split('\n')
+    solutions = {}
+    current_q_id = None
+    current_content = []
+    intro_content = []
+
+    for line in lines:
+        # Match ### Q1. or ### Q2 etc.
+        match = re.match(r'^###\s*(Q\d+)', line)
+        if match:
+            # Save previous question content
+            if current_q_id:
+                solutions[current_q_id] = '\n'.join(current_content).strip()
+
+            current_q_id = match.group(1)
+            current_content = [line]
+        elif current_q_id:
+            # Check if we hit a new ## section (end of questions)
+            if line.startswith('## ') and not line.startswith('### '):
+                solutions[current_q_id] = '\n'.join(current_content).strip()
+                current_q_id = None
+                current_content = []
+            else:
+                current_content.append(line)
+        else:
+            intro_content.append(line)
+
+    # Save last question
+    if current_q_id:
+        solutions[current_q_id] = '\n'.join(current_content).strip()
+
+    return {
+        "intro": '\n'.join(intro_content).strip(),
+        "questions": solutions
+    }
+
+@app.get("/api/solutions/{filename}")
+def get_solution(filename: str, lang: str = "kr"):
+    """Get model solution for a question"""
+    # Extract the question number from filename (e.g., "1_AI_TOP_100.md" -> "1")
+    match = re.match(r'^(\d+)_', filename)
+    if not match:
+        raise HTTPException(status_code=404, detail="Solution not found")
+
+    question_num = match.group(1)
+    lang_suffix = "ko" if lang == "kr" else "en"
+    solution_filename = f"{question_num}_AI_TOP_100_solution_{lang_suffix}.md"
+    solution_path = os.path.join(SOLUTION_DIR, solution_filename)
+
+    if not os.path.exists(solution_path):
+        raise HTTPException(status_code=404, detail="Solution not found")
+
+    with open(solution_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    parsed = parse_solution_by_questions(content)
+    return {"content": content, "parsed": parsed}
 
 if __name__ == "__main__":
     import uvicorn

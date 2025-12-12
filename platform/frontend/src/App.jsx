@@ -15,6 +15,11 @@ function App() {
   const [subQuestions, setSubQuestions] = useState([])
   const [answers, setAnswers] = useState({}) // { "Q1": { code: "...", language: "python" } }
   const [status, setStatus] = useState('')
+  const [showSolution, setShowSolution] = useState(false)
+  const [solutionContent, setSolutionContent] = useState('')
+  const [solutionLoading, setSolutionLoading] = useState(false)
+  const [parsedSolutions, setParsedSolutions] = useState({}) // { "Q1": "...", "Q2": "..." }
+  const [visibleSolutions, setVisibleSolutions] = useState({}) // { "Q1": true, "Q2": false }
 
   useEffect(() => {
     fetchQuestions()
@@ -46,8 +51,51 @@ function App() {
       setAnswers(initialAnswers)
 
       setStatus('')
+      setShowSolution(false)
+      setSolutionContent('')
+      setParsedSolutions({})
+      setVisibleSolutions({})
+
+      // Fetch solutions for this question
+      try {
+        const solResponse = await axios.get(`/api/solutions/${filename}?lang=${language}`)
+        if (solResponse.data.parsed && solResponse.data.parsed.questions) {
+          setParsedSolutions(solResponse.data.parsed.questions)
+        }
+      } catch (err) {
+        console.log('No solution available for this question')
+      }
     } catch (error) {
       console.error('Error fetching question content:', error)
+    }
+  }
+
+  const toggleQuestionSolution = (qId) => {
+    setVisibleSolutions(prev => ({
+      ...prev,
+      [qId]: !prev[qId]
+    }))
+  }
+
+  const handleShowSolution = async () => {
+    if (!selectedQuestion) return
+
+    if (showSolution) {
+      setShowSolution(false)
+      return
+    }
+
+    try {
+      setSolutionLoading(true)
+      const response = await axios.get(`/api/solutions/${selectedQuestion}?lang=${language}`)
+      setSolutionContent(response.data.content)
+      setShowSolution(true)
+    } catch (error) {
+      console.error('Error fetching solution:', error)
+      setSolutionContent(language === 'kr' ? '해설을 찾을 수 없습니다.' : 'Solution not found.')
+      setShowSolution(true)
+    } finally {
+      setSolutionLoading(false)
     }
   }
 
@@ -147,10 +195,33 @@ function App() {
 
             {subQuestions.map(q => (
               <div key={q.id} className="question-block">
-                <h3>{q.title}</h3>
+                <div className="question-header">
+                  <h3>{q.title}</h3>
+                  {parsedSolutions[q.id] && (
+                    <button
+                      onClick={() => toggleQuestionSolution(q.id)}
+                      className="hint-btn"
+                    >
+                      {visibleSolutions[q.id]
+                        ? (language === 'kr' ? '해설 닫기' : 'Hide Hint')
+                        : (language === 'kr' ? '해설 보기' : 'Show Hint')
+                      }
+                    </button>
+                  )}
+                </div>
                 <div className="question-text">
                   <MarkdownRenderer content={q.content} />
                 </div>
+
+                {visibleSolutions[q.id] && parsedSolutions[q.id] && (
+                  <div className="question-solution">
+                    <div className="question-solution-header">
+                      {language === 'kr' ? '💡 해설' : '💡 Solution'}
+                    </div>
+                    <MarkdownRenderer content={parsedSolutions[q.id]} />
+                  </div>
+                )}
+
                 <div className="editor-section">
                   <div className="controls">
                     <select
@@ -176,9 +247,31 @@ function App() {
             ))}
 
             <div className="global-controls">
-              <button onClick={handleSave} className="save-btn">Save All Solutions</button>
+              <button onClick={handleSave} className="save-btn">
+                {language === 'kr' ? '모든 답안 저장' : 'Save All Solutions'}
+              </button>
+              <button onClick={handleShowSolution} className="solution-btn" disabled={solutionLoading}>
+                {solutionLoading
+                  ? (language === 'kr' ? '로딩...' : 'Loading...')
+                  : showSolution
+                    ? (language === 'kr' ? '해설 닫기' : 'Hide Solution')
+                    : (language === 'kr' ? '해설 보기' : 'Show Solution')
+                }
+              </button>
               {status && <span className="status">{status}</span>}
             </div>
+
+            {showSolution && (
+              <div className="solution-modal">
+                <div className="solution-header">
+                  <h3>{language === 'kr' ? '모범 답안' : 'Model Solution'}</h3>
+                  <button onClick={() => setShowSolution(false)} className="close-btn">×</button>
+                </div>
+                <div className="solution-content">
+                  <MarkdownRenderer content={solutionContent} />
+                </div>
+              </div>
+            )}
           </div>
         ) : (
           <div className="placeholder">
