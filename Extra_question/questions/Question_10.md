@@ -2,7 +2,16 @@
 Agents cannot use my own data to support their reasoning.
 
 # Answer
-RAG
+RAG (Retrieval-Augmented Generation)
 
 # Explanation
-Agents rely only on what’s inside the model and ignore the user’s actual documents. RAG fixes this by letting the agent retrieve your data and use it directly in its reasoning, so answers are grounded in your real information.
+**The Problem:**
+LLMs are trained on public internet data. They know who the President is, but they don't know your company's "Q3 Sales Report" or your personal "Meeting Notes". If you ask about them, the model will either say "I don't know" or hallucinate.
+
+**The Solution: RAG**
+RAG is like giving the model an "Open Book" exam.
+1. **Retrieve**: The system finds the specific documents relevant to your question from your private database.
+2. **Augment**: It pastes this text into the prompt ("Here is the Q3 report...").
+3. **Generate**: The model answers the question using that text.
+
+It bridges the gap between the model's general intelligence and your specific knowledge.

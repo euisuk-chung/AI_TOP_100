@@ -5,4 +5,14 @@ Agents blindly move forward without continuous feedback to adjust their actions.
 Agent Loop
 
 # Explanation
-Agents blindly move forward if they don't receive continuous feedback to adjust their actions. The Agent Loop fixes this by making the agent pause after each step, look at what happened, and adjust its next move.
+**The Problem:**
+Imagine driving a car with your eyes closed for 10 seconds. You might start straight, but you'll drift off the road because you aren't getting visual feedback to correct your steering. Similarly, an agent that just executes a sequence of steps without checking the result of each step ("open loop") will fail if any step goes slightly wrong.
+
+**The Solution: Agent Loop**
+The Agent Loop introduces a "check" phase after every action.
+1. **Observe**: Look at the current state.
+2. **Think**: Decide what to do next based on the observation.
+3. **Act**: Execute the action.
+4. **Repeat**: Go back to step 1.
+
+This cycle allows the agent to handle unexpected errors (e.g., "File not found" -> "I'll try a different filename") and adapt to dynamic environments.

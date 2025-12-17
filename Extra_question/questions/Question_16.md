@@ -5,4 +5,11 @@ Agents cannot build expertise that carries over.
 Semantic Memory
 
 # Explanation
-Agents often start from scratch because they lack persistent memory across interactions. Semantic memory, a form of long-term memory, addresses this by storing facts, concepts, and distilled lessons, so the agent can retrieve and reuse knowledge over time. This allows the agent to accumulate expertise instead of relearning the same information repeatedly.
+**The Problem:**
+If you teach an agent "Our company colors are Blue and White" today, and tomorrow you start a new session, a standard agent forgets everything. It's like hiring a new employee every single day.
+
+**The Solution: Semantic Memory**
+Semantic Memory stores knowledge in a database (often vector-based) that persists forever.
+- **Storage**: "Company colors: Blue, White" is saved.
+- **Retrieval**: When asked "What should the logo look like?", the agent searches its memory and finds the color info.
+- **Result**: The agent gets "smarter" over time as it accumulates more knowledge.

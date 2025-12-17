@@ -5,4 +5,11 @@ Agents never explore other branches of possibilities.
 Tree of Thought
 
 # Explanation
-Agents often stick to one line of thinking and miss better options. Tree of Thought fixes this by having the agent explore multiple branches and compare them, leading to more reliable and creative answers.
+**The Problem:**
+Standard agents are "Greedy"—they pick the first word that looks good. They don't stop to think, "Wait, if I say this, I'll paint myself into a corner later." They play Chess by only looking at the very next move.
+
+**The Solution: Tree of Thought**
+Tree of Thought allows the agent to simulate the future.
+- **Branching**: "If I do A, then X happens. If I do B, then Y happens."
+- **Evaluation**: "Y looks bad. X looks good. I'll choose A."
+- **Result**: Smarter, more strategic decisions that avoid dead ends.

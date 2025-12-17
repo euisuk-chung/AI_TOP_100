@@ -5,4 +5,11 @@ Agents bottleneck everything by doing all the work alone.
 Delegation
 
 # Explanation
-Agents slow down when they try to handle every step themselves. Delegation fixes this by letting the agent hand off tasks to other tools or sub- agents, so the work moves faster and doesn’t get stuck on one overloaded agent.
+**The Problem:**
+If you have one "Super Agent" trying to write code, design a logo, and write marketing copy all at once, it will get confused or run out of context space. It's like a CEO trying to do every job in the company.
+
+**The Solution: Delegation**
+Delegation splits the work.
+- **Manager**: "Coder, you build the app. Designer, you make the logo."
+- **Workers**: The Coder and Designer work in parallel, focused on their specific tasks.
+- **Result**: Faster execution and higher quality because each agent is specialized.

@@ -5,4 +5,11 @@ Agents grab too much irrelevant text into the prompt.
 Context Selection
 
 # Explanation
-Agents may pull in too much text because they lack a way to decide what information is relevant for the current step. Context selection addresses this by deliberately choosing which pieces of retrieved text, memory, or prior interaction enter the prompt. Instead of loading entire documents or full conversation histories, only the most relevant information is included, keeping the prompt focused, compact, and easier for the agent to reason over.
+**The Problem:**
+LLMs have a limited "Context Window" (like short-term memory). If you dump a whole 500-page book into the prompt to answer one specific question, the model gets overwhelmed, costs increase, and accuracy drops ("Lost in the Middle" phenomenon).
+
+**The Solution: Context Selection**
+This is the art of "packing light".
+- **Filter**: Use search or embeddings to find only the 3 most relevant pages out of 500.
+- **Inject**: Put only those 3 pages into the prompt.
+- **Result**: The model focuses on the right info without distraction.

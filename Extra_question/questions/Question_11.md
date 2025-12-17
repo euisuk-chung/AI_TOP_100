@@ -5,4 +5,11 @@ The model selects the right tool, but doesn’t produce a valid tool call.
 Function Calling
 
 # Explanation
-Agents may select the right tool, but the LLM may fail to emit the tool call in a machine-executable format. Function Calling fixes this by requiring the model to follow a strict schema, ensuring tool calls include the correct arguments.
+**The Problem:**
+An LLM might say, "I'll calculate the sum of 5 and 10." This is human-readable, but a computer program can't execute that sentence. It needs `add(5, 10)`. Without a strict format, the agent's intent is lost in translation.
+
+**The Solution: Function Calling**
+Function Calling forces the model to output data in a structured format (like JSON) that matches a specific schema.
+- **Schema**: You define `function add(a: int, b: int)`.
+- **Output**: The model generates `{"name": "add", "arguments": {"a": 5, "b": 10}}`.
+- **Execution**: The system parses this JSON and runs the code reliably.
