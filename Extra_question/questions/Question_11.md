@@ -13,3 +13,6 @@ Function Calling forces the model to output data in a structured format (like JS
 - **Schema**: You define `function add(a: int, b: int)`.
 - **Output**: The model generates `{"name": "add", "arguments": {"a": 5, "b": 10}}`.
 - **Execution**: The system parses this JSON and runs the code reliably.
+
+**Real Enterprise Example:**
+**HubSpot CRM Integration**: HubSpot uses function calling to let users interact with their CRM via chat. When a user says "Create a new contact for John Doe at john@example.com," the LLM doesn't just say "Okay"; it generates a structured function call `create_contact(name="John Doe", email="john@example.com")` which the backend system executes to actually update the database.

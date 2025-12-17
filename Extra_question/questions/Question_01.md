@@ -16,3 +16,6 @@ The Agent Loop introduces a "check" phase after every action.
 4. **Repeat**: Go back to step 1.
 
 This cycle allows the agent to handle unexpected errors (e.g., "File not found" -> "I'll try a different filename") and adapt to dynamic environments.
+
+**Real Enterprise Example:**
+**Amazon's Internal Coding Agents**: Amazon engineers use internal AI agents for tasks like code reviews and system upgrades. These agents don't just write code once; they run the code, observe the compiler errors or test failures, and then loop back to fix their own mistakes until the build passes, significantly reducing developer toil.

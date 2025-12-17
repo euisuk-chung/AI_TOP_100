@@ -14,3 +14,6 @@ ReAct forces the model to output a "Thought" before every "Action".
 - **Action**: `search_stock("AAPL")`
 
 This makes the agent's behavior transparent, interpretable, and less prone to logical leaps.
+
+**Real Enterprise Example:**
+**Cybersecurity Threat Hunting**: Security analysts use ReAct-based agents to investigate alerts. Instead of just running a script, the agent logs its reasoning: "Thought: The IP address is from a known malicious block. I should check if any internal devices communicated with it. Action: `query_firewall_logs(ip)`." This audit trail is crucial for compliance and for human analysts to understand the incident later.

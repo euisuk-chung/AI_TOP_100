@@ -15,3 +15,6 @@ RAG is like giving the model an "Open Book" exam.
 3. **Generate**: The model answers the question using that text.
 
 It bridges the gap between the model's general intelligence and your specific knowledge.
+
+**Real Enterprise Example:**
+**Morgan Stanley**: Morgan Stanley built an internal AI assistant powered by RAG that gives financial advisors instant access to the bank's massive library of research reports. Instead of manually searching through thousands of PDFs, an advisor can ask, "What is our outlook on the semiconductor industry?" and the system retrieves the relevant internal analysis to generate a summarized answer.

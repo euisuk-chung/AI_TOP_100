@@ -13,3 +13,6 @@ Semantic Memory stores knowledge in a database (often vector-based) that persist
 - **Storage**: "Company colors: Blue, White" is saved.
 - **Retrieval**: When asked "What should the logo look like?", the agent searches its memory and finds the color info.
 - **Result**: The agent gets "smarter" over time as it accumulates more knowledge.
+
+**Real Enterprise Example:**
+**Bell Canada**: Bell uses semantic memory to power its internal "Knowledge Assistant". They indexed thousands of pages of technical manuals, HR policies, and installation guides into a vector database. When a field technician asks, "How do I reset the optical network terminal for model X?", the agent retrieves the exact procedure from this long-term memory, even if that manual was uploaded 5 years ago.

@@ -14,3 +14,6 @@ Graph RAG uses a Knowledge Graph to structure data before retrieval.
 - **Relationships**: "Works for", "Located in", "Caused by" (Edges).
 
 When you ask a question, it traverses this graph. It can find answers that require "multi-hop" reasoning, like "Who is the manager of the person who wrote the delayed report?", even if that answer spans across three different documents.
+
+**Real Enterprise Example:**
+**LinkedIn Customer Support**: LinkedIn implemented a Graph RAG system that combines vector retrieval with a knowledge graph of historical issue tickets. When a customer reports a complex issue, the system doesn't just look for similar keywords; it traverses the graph to find related sub-issues, root causes, and successful resolution paths from the past, improving the accuracy of automated support responses.

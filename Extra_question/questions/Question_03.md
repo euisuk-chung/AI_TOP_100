@@ -15,3 +15,6 @@ Orchestration is the "traffic controller" or "conductor" of the system. It handl
 - **State Management**: Keeping track of what has been done and what is left to do.
 
 It ensures that the "symphony" of tools plays in harmony rather than just making noise.
+
+**Real Enterprise Example:**
+**Moveworks for IT Support**: Moveworks uses an orchestration engine to resolve employee IT tickets. When a user says "I need software access," the orchestrator coordinates multiple specialized agents: one to verify the user's identity, another to check license availability in the inventory system, and a third to provision the access via an API. The orchestrator ensures these steps happen in the correct order and handles any failures (e.g., "No license available").

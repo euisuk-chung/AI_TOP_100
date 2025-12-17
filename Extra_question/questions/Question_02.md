@@ -19,3 +19,6 @@ This allows the agent to:
 3. **Branch**: Explore multiple possibilities in parallel and then merge the successful ones.
 
 It's like a detective connecting photos on a wall with string—non-linear and relational.
+
+**Real Enterprise Example:**
+**Pharmaceutical Drug Discovery**: In complex drug discovery processes, researchers need to connect insights from molecular biology (Branch A), clinical trial history (Branch B), and chemical manufacturing constraints (Branch C). A Graph of Thought approach allows an AI agent to explore these distinct scientific domains in parallel and then "merge" the findings to propose a drug candidate that is biologically effective, safe, *and* manufacturable.

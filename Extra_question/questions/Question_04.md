@@ -15,3 +15,6 @@ MCP is a standard, like USB for AI.
 - **Portability**: If you switch from Claude to GPT-4, you don't need to rewrite your tool integrations.
 
 It turns a mess of custom connectors into a clean, plug-and-play ecosystem.
+
+**Real Enterprise Example:**
+**Block (formerly Square)**: Block integrated MCP with their internal engineering tools, including Snowflake, Jira, and Slack. Instead of building custom chatbots for each tool, they built a single internal agent ("Goose") that uses MCP to securely access all these systems. This allows developers to ask "What is the status of the Jira ticket related to the latest Snowflake alert?" and get an answer that pulls from both systems via a standardized protocol.

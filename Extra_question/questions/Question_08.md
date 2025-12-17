@@ -15,3 +15,6 @@ A Critic is a separate role or model that judges the output.
 - **Iterative Improvement**: The generator uses this feedback to write a better version.
 
 It separates the "doing" from the "judging," leading to higher quality results.
+
+**Real Enterprise Example:**
+**Automated Code Review Systems**: In software development, a "Coder Agent" might generate a function to solve a problem. A separate "Critic Agent" (acting as a Senior Engineer) reviews the code for security vulnerabilities, style guide violations, and efficiency. It rejects the code if it uses an insecure library, forcing the Coder Agent to rewrite it before a human ever sees it.

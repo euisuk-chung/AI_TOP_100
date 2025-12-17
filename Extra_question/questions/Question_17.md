@@ -13,3 +13,6 @@ Tool Use gives the agent "hands".
 - **Capability**: The agent has a function `turn_on_oven()`.
 - **Action**: Instead of outputting text, it outputs a command to trigger that function.
 - **Result**: The oven actually turns on.
+
+**Real Enterprise Example:**
+**Klarna Customer Service**: Klarna's AI agent doesn't just tell users "You can check your invoice in the app." It has access to tools that can actually pull up the invoice details, extend a payment due date, or initiate a refund process directly within the chat, resolving the user's problem end-to-end without human intervention.

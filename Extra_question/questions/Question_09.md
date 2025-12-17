@@ -14,3 +14,6 @@ This pattern forces a "Planning Phase" before any action.
 2. **Execute**: Follow the plan strictly.
 
 This reduces "rabbit holes" and ensures all parts of the user's request are addressed.
+
+**Real Enterprise Example:**
+**Legal Contract Review**: When a law firm uses AI to review a 100-page merger agreement, the agent doesn't just start reading page 1. It first creates a plan: "1. Identify all indemnity clauses. 2. Cross-reference with standard liability caps. 3. Flag deviations. 4. Summarize risks." This structured approach ensures no critical section is skipped due to token limits or distraction.
