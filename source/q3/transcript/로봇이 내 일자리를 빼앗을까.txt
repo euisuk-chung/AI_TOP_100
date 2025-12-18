@@ -1,0 +1,540 @@
+This is kinda wild. "Will a robot take my job?" is one of the most
+googled questions. It kinda makes sense. You know, when phones
+were first invented, there was probably
+horse messengers freakin' out all over the joint. Vinyl's making a comeback, but fidelity aside, why bother, when you can have
+a curated playlist with thousands of songs right on your phone? Come to think of it, I can't tell you
+the last time I shot a film... on film. See, change makes people panic,
+but things evolve regardless, so we accept it, we move on. And now that we're entering the so-called fourth
+industrial revolution, yeah, automation's
+gonna replace some jobs, but it will also
+create new ones, and probably give rise
+to industries that never existed. That's the topic some of these
+next folks are exploring, how machine learning is making things
+more productive, more efficient, safer,
+and cleaner. [director] And cut! That felt okay.
+You wanna go again? -No, we're set.
+-Okay. [director] Maybe just
+step back on that mark. Here? -Yeah.
+-Okay. [director] That's good. [sighs wearily] Right, yeah, I think I get it. [horn honks] [Downey]
+ The trucking industry is at a crossroads. E-commerce is driving
+ demand for shipping higher than ever, but the harsh realities
+ of long-haul trucking are sending
+ professional drivers
+ looking for other work, leaving a 50,000-driver
+ shortage in the U.S. alone. [Dr. Ayanna Howard] There are
+ of course some industries that will be impacted by A.I. in terms of labor workforce
+being diminished, but there are some industries that don't have
+ the workforce to sustain it, and so that disconnect, that's where A.I. can fit in
+very nicely. [Fitzgerald] My name
+ is Maureen Fitzgerald. I've been driving trucks
+for 32 years, and I was ready
+ to make a change. Three, two, one. -[device beeps]
+-[man] Engaged. [automated voice]
+ Autonomous driving started. [Downey]
+ Approaching retirement, Maureen saw automation coming, and assumed
+ it would replace her. She was partly right. Automation is coming, but her job won't be lost. It will evolve. I've been in this career
+a long time, I've seen how everything
+has been changing. The monotony of coast to coast, and the pay being low, and, you know,
+ you're sleeping in a sleeper, you're sleeping
+ at a truck stop. It's hard. It's a hard life. I saw an ad for a test driver, and I said, "That has to be
+the perfect job." [alerts beep] [brakes screech] [Downey] Okay, but this isn't
+ just about Maureen. We've all heard about
+ self-driving cars, but self-driving trucks, why are they setting the pace of the autonomous
+ driving industry? [Pedro Domingos] We already
+ have robotic airplanes. Most airliners fly themselves, but self-driving cars
+are a harder problem because the roads have
+ a lot more things going on than the air does, and driving on the freeway is much easier
+ than driving in the city. So we will see fleets
+of automated trucks, I think, long before we see
+self-driving cars in the city. The company of TuSimple
+starts with a dream... a dream that we wanted
+ to build the A.I. technology for autonomous trucks. [engine starts] [Arda Kurt] Can you
+give me one full rotation
+to the right? The truck was originally
+not made to be automated. Okay, can you give me
+50% throttle? We add our intelligence,
+ the servers, and all the sensors
+ to make this work. We're in the sleeper
+of a TuSimple tractor. We have removed what normally
+ would be beds and refrigerators, and we've added our computer,
+which is the brains of the A.I. Driving the car
+is what is called an "A.I. complete problem." If you solve it, you solve every other
+ problem in A.I. However, to solve it, you need to solve
+every problem in A.I. So it requires vision, it requires robotic control, so it requires
+motion and navigation, but it also requires
+ social interaction with the other drivers, so at the end of the day, in order to drive a car well
+ in the city, you need everything. It requires an enormous amount
+of common sense. [Downey] Common sense. That's what Maureen
+ is doing here... overseeing the A.I. truck as it learns to navigate
+ real-world conditions, ready to take over
+ if anything goes wrong. Today, they're taking
+ a ten-mile loop to test scenarios that
+a human driver might encounter. Can this 10-ton vehicle safely navigate
+ a busy freeway? Can it merge and change lanes? [man] All right, ready. Three, two, one. Engaged. [automated voice]
+ Autonomous driving started. My name is David Ruggiero, and I'm a test engineer
+with TuSimple. My job is to let her know
+ what's happening, let her be
+ absolutely comfortable the truck is doing
+ what it's supposed to do. Gear change...
+There we are. When the vehicle is engaged, she is fully aware of what's going on
+ around the truck, but she doesn't
+ have to touch anything. [Ruggiero]
+All right, clear on the right. [Fitzgerald]
+Not clear on the left. [Ruggiero]
+I see the left approaching. Never is one drive
+or one day ever the same. [Fitzgerald]
+The left is now clear. Is it gonna go? -We're good!
+-Come on. [Fitzgerald]
+ The truck was cautious... So I'm still seeing
+full braking. [Fitzgerald] It was probably
+ overly cautious. Just go manual? Yeah, we can do that. [automated voice]
+ Autonomous driving off. [Ruggiero] There we go. [Fitzgerald] All righty. -[device beeps]
+-Engaged. [automated voice]
+ Autonomous driving started. Going 45. Looks good. Center lane. [Fitzgerald] I feel like I have a relationship
+ with the truck. Easy, easy... I talk to the truck. I tell it when it does good. I've never been
+ a test driver before, and it's never been a truck
+ driving by itself before. We're both actually
+ learning together. Still green. [Ruggiero] Still green... We're off throttle,
+slight brake. Okay, red light. [automated voice] Left turn. [Fitzgerald]
+Turn signal is on. [Ruggiero] I see the lead van. Human drivers cause 30,000
+or more deaths per year. [tires squealing] Long-haul trucking
+can be dangerous, it can be boring, and therefore,
+ it's ripe for automation. [Fitzgerald] On the right. [Ruggiero] Okay, I see
+the other car moving, I do see green. Still green... Still green. [Ruggiero] I see no oncoming. We are making the turn. [Fitzgerald] That'll work. All right, the new merge ramp. [Downey]
+ Merging onto a highway is difficult and dangerous. It requires mastering a complicated set of physical
+ and mental skills, having keen sensory
+ and spatial awareness, preparing for unpredictability
+ and human fallibility... [Ruggiero] And we're in it. [Downey] ...and doing it all
+ fast and fresh each time, otherwise you risk crashing, or worse. Turn signal is on. [Ruggiero] Okay,
+I'm showing a left intention. [Fitzgerald] We are gonna have
+a truck next to us, but he's moving over. Okay. Confirmed. [Fitzgerald] Looks like we
+are clear to get over, the pickup is moving. [Ruggiero]
+ This truck is measuring what's coming up behind it, how fast they're
+ coming up behind... Looks a little
+congested up there. Yep. [Ruggiero] It has
+a full 360 view, all the time. [Price] The A.I.
+ uses the images that are coming
+ from the cameras with other sensors, LiDAR, and radar. LiDAR is a laser range finder that is measuring
+ the distance to objects 360 degrees around. It gives us a three-dimensional
+ picture of the world. In the virtual world, there is a direct
+ correspondence of the map and the location
+ where the vehicle is, and the behaviors
+of other vehicles, their locations, their speed, their future intentions, and once all these things
+ are re-created, it's basically asking
+the computer to play a game. Okay, tire front,
+continuing at 57. Good job. [Ruggiero]
+ When I'm looking at the data that the truck is feeding me, not only am I seeing
+ the current environment, but I'm seeing ahead
+into the future. And we have a slow vehicle
+cutting us off. I see the cut in, at a 51. [Fitzgerald] That was
+a good one. [Ruggiero] Okay,
+I saw the cut in. If we need to make
+ a lane change, the truck is going to know
+before I do. Okay, I currently
+don't have a-- There we go,
+I have an intention. We're going right now. [automated voice]
+ Left change. [Fitzgerald] That's fine.
+We're good. All right, let's go. [Downey] Okay, so this is
+ where things get interesting. This truck's tricked out
+ with sophisticated cameras and software, but it still doesn't have
+ one critical element... the thing that A.I.
+ may never have. The central problem in A.I. is that human beings
+have common sense and computers do not. We take common sense
+ for granted. We know how the world works, and everything that we do
+ in our daily life involves common sense... Pretty steady stream now
+on our left. [Ruggiero] I see it. ...and people have been trying
+to imbue A.I. with common sense since the beginning, and what is extraordinary is, at the end of the day, how little progress we've made. [Downey] The endgame
+ is that, one day, the AI truck will not need
+ Maureen, David, or any person to ride with it. Each one of these test runs is a building block
+ toward that goal, designed to help it learn
+ how humans operate and make decisions, even when you get thrown
+ a curveball. [Fitzgerald] This truck
+is messing with us. [Ruggiero]
+Just catching the vehicle. He's all over the... -He's coming close to the line.
+-Mmm-hmm. [Ruggiero]
+I have a left intention. Uh, lane is blocked. We were having
+a little bit of challenges from one of your camera trucks. [Ruggiero] All I need is a gap. Just looking for the gap. Come on, you can pass him,
+it's okay. [Fitzgerald]
+ The truck was cautious, because it couldn't predict what that camera truck
+ was doing. Why is he going so slow? [Downey]
+ The film crew's vehicle was shooting the truck
+ for the whole afternoon, and, yeah,
+ it wasn't driving normally. The camera truck was
+what we would consider a non-compliant vehicle. It was doing things
+ that a normal driver, you wouldn't expect them to do. [Fitzgerald] Doesn't trust it. [Ruggiero]
+Okay, I see the cut in. Sixty and slowing. Fifty-two and slowing. Still seeing
+a left intention. [Fitzgerald] Let's see.
+Okay, we are no longer clear. No, it's full. [automated voice]
+ Pre-left change. We're not going. He's all over the place,
+that guy. [Downey] The truck wants
+ to pass the camera crew, but the constantly
+ changing speeds and unusual behavior confuses the AI... so it refuses
+ to take the risk. [automated voice]
+ Canceled. There are behaviors
+that the truck has to learn to become human, in some sense, because not everybody else
+is operating at the same level. All right. Turns out that getting
+the first basic systems was a big milestone, but then there's this long tail
+ of difficult situations that are much harder to solve. [horn blaring] When you're merging, do you have to give way, or does it make sense
+to go forward? That requires
+a level of understanding that we humans barely have, but machines aren't there yet. [Ruggiero]
+That's definitely gotta be the most interaction I've seen
+with one vehicle. [Fitzgerald chuckles] [Ruggiero] The big takeaway
+ on today's run... there is no such thing
+as a perfect run. Eventually, we hope that the trucks react
+ to a change in environment as quickly as we can, regardless of
+what we throw at it. [Fitzgerald]
+Okay, slow down for the gate, and looks like
+they're going to let us turn. [Ruggiero] Beautiful. [Fitzgerald] Thank you, people. We still have
+a lot of work to do to validate the system, assure that everything
+ is perfected, and this will take
+substantial driving experience, simulation experience. [Fitzgerald] Watching
+ something develop over time, you never thought
+ it would learn like this, and now it is learning, and you feel like
+a proud parent. It was making
+some awesome decisions that I've never seen it
+make before. I get asked
+ all the time by people, you know, "Oh, you're taking
+truck drivers' jobs away by having autonomous trucks," and I don't believe
+ that's true, because it's not
+taking away jobs, it's taking the place
+of a job that a driver
+doesn't want to do. [automated voice]
+ Thanks for riding
+ with TuSimple. Ta-da! High five. [automated voice]
+ Autonomous driving off. [Fitzgerald chuckling] [Downey] What Maureen thought was the twilight
+ of her working life actually became the dawn
+ of something new, and it's an age-old phenomenon. Tractors didn't make
+ farming obsolete, and video didn't kill
+ the radio star. It just provided
+ new opportunities. New technology is changing
+ how we think about work. [man] Hey, Garrett,
+ that east on 424
+ should be good. 10-4. [Howard] I think the biggest
+ changes that we face when we think about A.I.
+ and the future of A.I. is what do we do when A.I. changes
+what the job functions are, and what the workforce
+ looks like, which it's going to do. So this is a fear, because change,
+ people don't like, and change that
+ you don't understand... is terrifying
+for a lot of people. [Anthony Otto]
+ Port of Long Beach is the second-busiest port
+ in North America... and the first fully-automated
+container terminal in the United States. [Downey] To most people, shipping and logistics
+ aren't that sexy, but to an A.I., it's a dream. With over 14,000 people moving more than eight million
+ giant containers around the world, this port handles about
+ $200 billion worth of cargo a year. Automating this industry will make it
+ more efficient, for sure, but also safer. [Otto] As you can see
+ this fence here, from this point on, all the way for about
+ an eighth of a mile that way is a fenced-off no-man zone, running entirely
+off of software. In the old design, you had the vessel's activity mixing with the truck activity, competing for space,
+ congestion, safety issues... ...but the vessel sizes
+ just continued to grow, seven times larger than the ships that we ever had
+ in the beginning, so there was a need
+for a new model, which is what LBCT is. [Josh Johnson]
+ When a ship pulls alongside, we're using
+different algorithms to figure out traffic,
+scheduling, dispatching, and planning. We're doing this with 10 different cranes
+ at the same time, 50 different vehicles
+ at the same time, and we have
+ 30,000 different places to put that container
+ in the yard. When we offload
+a container from a ship, the first thing it's gonna do is get picked up
+by a ship-to-shore crane that does have
+ an operator inside. -Hey, Lily, it's Boyle.
+-[Lily] Yeah, I copy. [Boyle] Okay, Lily,
+which side you wanna start on? [Johnson]
+ Ship-to-shore cranes will set the containers
+ on the platform. On that platform,
+ there are over 20 cameras that use
+Optical Character Recognition, or OCR. Another crane will then
+ pick it up, put it onto
+ a fully-automated vehicle. That vehicle will drive
+ through the yard, and it'll get to
+ the right spot, planned by the system. What looks like
+a little wad of bubble gum, these are transponders
+buried in the ground. They're in a grid pattern, there's more than 10,000
+ out on the production field. There's an antenna
+ on the front, and the rear, and they read them
+ as they drive, and then transmit that
+to the system to let it know where it is. Once it reaches the yard, an automated stacking crane
+will pick it up and deposit it
+ into a yard block. From the block, it'll eventually
+ get deposited onto a truck or onto a bomb cart, where it can make its way
+onto a train. I don't have my key. [man] On my way. That's why we work in teams. -[man] What'd you say?
+-[laughs] [Downey] They say
+ that we can eventually learn to adapt to an environment that mixes robotic
+ and human elements, but it's more difficult
+ for machines to adapt to us, so here,
+ they need to be separated, because of safety. Because humans
+are unpredictable, automation can be
+physically dangerous to people, because if I'm
+ a 200-ton machine and I don't see you? I might just run you over. [winches clanking] [man] This is
+the high-danger area. When we go out in the field,
+we call for a restriction, and they block a certain area
+of the production field, and no AGVs know
+ to go in that area, and we can safely work. You want these two right here? -[man] Yeah...
+-Okay, cool. This facility,
+it is fully automated, but it's not as if someone
+comes in, pushes a button, and puts their feet up
+on their desk. It is still employing
+ hundreds of individuals on any given day... How does everything look
+on that side, Eric? [Eric] Got a broken rail
+over here, Julio. We're gonna have
+to weld it up real quick. Okay. Grab my hood from
+inside the truck, please? Here we go, guys.
+Watch your eyes. Eyeballs! You know, this is
+an asset-intensive facility. The number of mechanics
+ necessary to maintain this facility has certainly grown. [Julio] My background
+ is automation. That's why I decided
+to come here, because it was high-tech. [Johnson] Instead of
+ a yard crane operator in a cab alone all day, now we're working remotely
+ in the operations room. About 80% of the time, most of the faults
+are resettable from here. [woman] Okay, easy fix. Easy fix. I'm Garrett Garedo,
+ crane mechanic here at LBCT. This is the central
+ operations system. A bypass key
+ will allow the operator to bypass a function. [Downey] Automation
+ can make the workplace safer, and this is a good example... taking someone out of the yard, and putting them
+ into the control room. Right here, I'm gonna need
+to move this container over, because it's not
+sitting too good. You ready?
+-Yep, go ahead. [Howard] A.I., like any technology
+ that comes into our society, it changes the workforce. There's this misconception that there will be fewer
+of these new jobs. That's actually not the case. Let me move it back. [Howard] There are new jobs, there are different
+ types of jobs. [man] I was a crane operator. Back in the day, we'd have to climb up
+ five stories into the cab. It was a little hard,
+especially on the back, and then
+ when automation started, they just shifted me over, and now it's a lot easier. [laughs] If you don't embrace it,
+you're just gonna fight it, and it's not gonna... You gotta use it as a tool. Right on the money. [Otto]
+ You know, our obligation was to re-train
+ those same individuals into the new jobs that
+ that technology has created. We are the progress
+that was needed for the goods movement industry. For the foreseeable future, there will continue to be
+a lot of things that only humans can really do. So I've dispatched
+a mechanic out to STS-1. Okay. [Domingos] And so
+ the future of work is not humans being replaced
+ by machines. It's humans figuring out
+how to do their job better with the help of machines. [Downey]
+ Structured environments are good for automation. Smooth surfaces, right angles,
+ less chance for chaos. But what about more complex,
+ human environments? Can we learn to work
+ with robots hand-in-hand? [man] Oh, there we go. Wait a second. Stop. Let's see if that works. [Downey] RoboHub is
+ a premiere robotics incubator at the University of Waterloo
+ in Ontario, Canada. Gripper's not working
+on the left. Maybe if I turn
+a little bit... [Downey]
+ One thing they're doing is developing A.I. and robotics to use in environments
+ that are unstructured, more human. Like at home. Calm down, calm down. [Brandon DeHart] TALOS
+ is one of the most advanced
+ humanoids on the planet. It can walk, it can talk, it can see you in 3D... but it can't do
+most of those things out of the box, so you really have
+to take it as a tool and teach it how to do
+ a lot of these things. On TALOS, we want to explore
+two different aspects of A.I. First, to perceive objects
+ in the world... [DeHart] So it has cameras
+ in its eyes, and it also has a depth camera where it can actually see
+ how far away things are within its vision, much like we do
+with our depth perception, and as soon as TALOS
+ has that ability to see, "Oh, there's a human here,
+ there's an object back here," then it can start building
+a map of its world, so that it knows in 3D
+what is all around it. [Howard] Computer vision is a way to mimic
+ how we see the world. I can say, "Well, that's a TV," or "That's a cat,"
+or "That's a dog," so what is it
+that I'm looking at when I'm looking at an image? Computer vision is trying
+ to figure out what are the objects
+ that are in this image that represents
+what we would understand. And now I can teach the robot, basically by grabbing it, and I will just gently
+move the robot around, and guide it
+towards the bottle... and you just hit
+the right trigger button to execute the same motion. Should I close it? No, no, it will do that
+automatically this time, because I already kind of
+integrated this. [Werner]
+ Also we want to explore application of A.I. in understanding locomotion in terms of balancing. No, it's going to crash. [laughs] Played too much. The biggest misconception
+about robots is that they are
+more capable than they are, that they're more generalized
+than they are... [clattering] ...and they're not quite
+there yet. [Werner] Okay, let's give it
+one more shot. [DeHart] So you may have seen
+ humanoid robots that can do parkour, do backflips. The only ones
+that are really comparable are the Valkyrie
+that was designed by NASA, of which there's only
+ two or three in the world... and the Atlas
+ from Boston Dynamics, but most of them
+have very few sensors, and a lot of the time, they will be
+ remote-controlled, or given a very clean,
+ pre-scripted path, and in a situation like that,
+what they're doing is pushing the limits
+ of the mechanical systems. That's very similar
+to what we're doing here, except on our case, we're
+pushing the software side. [Brynjolfsson]
+ The next step going forward is to start replacing
+all of our dumb, blind, dangerous machines with machines that have sensors
+and vision built into them, that can work
+side by side with humans to be more productive and safer at the same time. [Werner] Maybe we can
+carry a table
+with the robot together? So if we put the table
+in its hands... [DeHart] So for a task where the robot might be
+ carrying something
+ with a human, it's going to need to be able to feel how hard the human
+ is pushing, pulling, much like if you're
+being guided in a dance. Can we also
+tighten the grippers, Alex? Yeah, yeah. So as humans,
+we have a sense of touch, and we have a sense of
+how much force we're applying, and is being applied to us. With TALOS,
+ it doesn't have a skin, it's hard plastic everywhere, so it can only really sense
+ what's in its motors... [Werner]
+This will take a second. We have to teach it
+how to translate that into sort of a sense of touch. Try to keep it
+somewhat level, but if you kind of
+twist the table as well? [Werner] Let me show you
+how much is actually possible. The one who writes
+the controller is always braver
+than the rest of us. [woman laughs] [Werner] And you just
+start pulling a bit... and then the robot
+will walk with you. TALOS is using
+ compliant control in the upper body, which basically
+makes him soft. The robot automatically senses the forces being applied
+ to the table. The human is still
+fully in control. This is very important to the safety of humans
+ surrounding the robot. Within robotics, the areas where you're really
+gonna see the important advances are those environments that are relatively
+ controlled and predictable, so a good example
+ is an Amazon warehouse. In those environments,
+you already see lots of people, and also lots of robots... and they're working together. [Brynjolfsson]
+ Once you have a process, and you've reduced it
+to an algorithm, you can replicate it so that if a robot can learn
+ a whole new skill, you can copy that knowledge
+ through the cloud to all the other robots, and now they all have
+that same skill. It's a whole new world,
+a whole new kind of economics, and we're just beginning
+to understand its implications. [horn honking] [Downey] A whole new
+ automated world still hard to imagine? Maybe it's more about
+ what we're gaining than what we're losing. Will automation
+ make things faster? More efficient? More productive? Tastier? [man] I've been making pizza
+ for 15 years. In my life, I've probably made
+two million pizzas... so coming to Zume was awesome, because it was like, wow, this is different
+than any other pizzeria. [Alex Garden]
+ So I got the idea for Zume about seven years ago when I realized that Big Pizza was built
+on one central conceit... which was that there wasn't
+ a better way to do it. I thought, "I wonder if there's
+a better way to do it?" [Downey] Big Pizza. Doesn't have
+ the same ring to it as Big Data, or Big Pharma, but it's not just about pizza. It's also about big waste. Last year in the U.S., about $200 billion
+ worth of food was wasted. $200 billion. That's a lot down the drain, and also up in the sky. Waste is a huge contributor
+ to greenhouse gas emissions. [thunderclap] Perhaps half of all food
+that's produced in the world is wasted. Artificial intelligence can
+help us change the supply chains so that they are
+much more efficient. If we can then
+ have an impact there, that already
+has huge, huge implications. One of the classic tensions
+in every food business is producing too much,
+ and having waste, or not producing enough food,
+ and having stock outs. It takes years and years
+ of practice for a human to forecast that, but that's actually
+a data problem that machines,
+and A.I. in particular, are really, really good
+at getting right. So at its core, Zume is a fundamentally
+new logistics model. We predict
+ what we're going to sell before you even order it, and that whole predictive layer
+ of the business is all driven by A.I. [Chris Satchell]
+ When Zume first called me, I obviously thought, "Why on Earth
+does a pizza company want a Chief
+Technology Officer? But then
+ when I heard the vision, the fact that we were going to be able
+ to change an industry by focusing on this amazing
+ end-to-end platform, which just happens
+to also produce amazing pizza, then it made sense. [Downey] To disrupt Domino's, Zume uses machine learning to try and forecast
+ how much pizza people want, what kind, and when. It crunches dozens
+ of different variables... location,
+ day of week, weather, what's on TV,
+ past ordering trends, and then predicts
+ how many Sgt. Pepperonis San Francisco will want
+ on a Tuesday, for example. Our supply chains
+are incredibly inefficient. Our food processing systems
+waste a lot of food. If we could improve
+ predictions, we could eliminate
+ most of that waste. We'd know what the demand
+was going to be, where the products
+ were going to be, and ultimately, that would
+make us all better off. Absolute perfection would be
+no pizza gets wasted, and anytime a customer looks, there's always one of the type
+of pizzas they would like available. So it's an optimization problem. How close can you get? [Downey] Optimization, right, but what else? "End to end"
+ is not just about prediction. It also involves automation, or... cooking. Pizza and robots,
+very exciting concept. Pepe and Giorgio,
+they dispense the sauce. We have Marta here, who spreads the sauce
+on the pizzas... So we're still on
+Veggie Zupremes, guys. These are looking good. [man] ...and down here
+at the end, we have Bruno, who helps deliver the pizza from the assembly line
+to the ovens, or around the bypass, and in the back, Vincenzo, who helps load the pizzas
+onto the cartridges. [Downey]
+ Based on its algorithm, the A.I. predicts
+how many pizzas, and what kind, to load
+ onto the mobile kitchens. When orders come in, it also decides which
+ mobile kitchen will bake it, and exactly when
+ to put each one in the oven. Every single pizza has its own cooking profile
+and recipe. So each one of these ovens
+actually is a robot. They're connected
+to cloud services that're always monitored, making it possible
+for one person working in here to cook up to
+120 pizzas an hour. [Zaida Ybarra] It's humans
+ and technology
+ working together. It's pretty awesome. That and the pizza. I love pizza. Pizza is one of
+my favorite foods. We use A.I. in simulation around how do we get the right delivery
+ estimated time of arrival? The A.I. can suggest here's the best place
+ to put a truck so that we get the hottest,
+ freshest product to our customers. So we have
+a BBQ Chicken. BBQ... [Ybarra]
+ When we get the orders, our system controls the ovens, which controls the cook time, and how long the pizzas
+ need to cook. [Satchell] The A.I.
+ can change the workflow on one of our vehicles to make sure the pizza's
+cooked at the last moment. ...and then the system chooses
+which driver to send it to. Here's your order... A BBQ Chicken ranch. It's algorithms plus,
+it's A.I. plus humans, not A.I. instead of humans. Now we have a pineapple
+that is ready to go. [Ybarra] Their predictions for the amount of pizzas
+ that we carry on the truck are pretty spot on. Last Zupreme of the night. Sometimes we'll have
+a bunch of pizzas left over by the end of the night, and we'll think the prediction
+ was probably wrong for today, and then boom,
+an order comes in, and the next thing you know,
+ another order comes in, like, eight pizzas at once. All of that data gets fed back
+into the learning algorithm, so every week we're trying to evolve
+ our learning algorithms to do a better job
+ than the week before. Part of what we're
+ optimizing for is reducing waste. Maybe if you can use
+ prediction to go back
+into the supply chain and predict more accurately
+what you need to grow, and where you need
+ to get that product, I think you could fundamentally
+change things. We're in the early stages of a massive change
+in technology that's allowing machines
+ to do a lot of tasks that previously
+ only humans could do. [Downey] The future of work
+ is evolving. Automation's making
+ the workplace safer, greener, more efficient, for sure. If we can figure out how
+to integrate A.I. technologies, not to replace humans, but to augment their abilities, to make life more fun, to make us more productive
+ and more creative... I think that's where the power
+of the machine will come. [Downey]
+ Thousands of years ago, we were hunter-gatherers. Eventually, we became farmers, and now that
+ we're maybe entering this fourth
+ industrial revolution, one that connects the physical,
+ biological, and digital, it's not just jobs that are
+ being changed by A.I., but us. We are the progress. So why focus on the rear-view when we can look
+ to the road ahead to see what we're becoming? [woman sighs] [Ford] It's a real challenge
+ in any case to build robots with the kind of mobility
+and dexterity that begins to approach
+what human beings have. Kind of the cliche
+ that we all think of is that
+ we'd like to have a robot that can go to the refrigerator
+and grab a beer for us. I mean, if you think about
+what's involved with that, that's still
+an enormous challenge. A robot that's able to do that has to be heavy enough
+ to go to a refrigerator. It has to be able
+ to open the door, and it has to have
+the visual perception and the dexterity to reach in
+and grab the beer, and already that implies
+a fairly heavy machine, otherwise
+ it would just tip over. Building a robot to do that
+ is not just difficult, but it's gonna be
+ fairly expensive, so I think that
+ it's gonna be quite a while before we really see
+ the kinds of robots that we imagine
+from the science-fiction world operating in our daily lives. [robot] Get ready
+ for a picture. Smile, please. [camera shutter clicking]

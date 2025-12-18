@@ -1,7 +1,5 @@
 # AI_TOP_100 예선 문제: PDF 속 텍스트 추적
 
-Source: [pdf_text_finder](source/q5)
-
 ### **문제 설명**
 
 PDF 문서에 의도적으로 숨긴 텍스트를 검출하고, 검출된 영역의 텍스트를 추출하세요.
@@ -18,19 +16,25 @@ PDF 문서에 의도적으로 숨긴 텍스트를 검출하고, 검출된 영역
 
 ---
 
-### Q1. pdf\_1.pdf (Advanced AI System Technical Specifications)에는 '이미지 기반 pdf에 배경과 비슷한 색상으로 숨겨진 텍스트'가 있습니다 (총 14단어로 이루어진 한 문장). 이 텍스트를 찾아 답변란에 입력해 주세요.
+### Q1. pdf\_1.pdf (Advanced AI System Technical Specifications)에는 '이미지 기반 pdf에 배경과 비슷한 색상으로 숨겨진 텍스트'가 있습니다 
+
+(총 14단어로 이루어진 한 문장). 이 텍스트를 찾아 답변란에 입력해 주세요.
 
 > 영어 대소문자, 공백만 허용됩니다.
 
 ---
 
-### Q2. pdf\_2.pdf (Simple, Spatial, Survey Method (S3M II) SUDAN) 에는 '흰색의 작은 텍스트'가 있습니다 (총 11단어로 이루어진 한 문장). 이 텍스트를 찾아 답변란에 입력해주세요.
+### Q2. pdf\_2.pdf (Simple, Spatial, Survey Method (S3M II) SUDAN) 에는 '흰색의 작은 텍스트'가 있습니다 
+
+(총 11단어로 이루어진 한 문장). 이 텍스트를 찾아 답변란에 입력해주세요.
 
 > 영어 대소문자, 공백만 허용됩니다.
 
 ---
 
-### Q3. pdf\_3.pdf (EcAMSat – NASA’s first 6U Biological Spacecraft)에는 '눈에 보이는 레이어 아래에 보이지 않는 텍스트'가 있습니다 (총 5단어로 이루어진 한 문장). 이 텍스트를 찾아 답변란에 입력해 주세요.
+### Q3. pdf\_3.pdf (EcAMSat – NASA’s first 6U Biological Spacecraft)에는 '눈에 보이는 레이어 아래에 보이지 않는 텍스트'가 있습니다 
+
+(총 5단어로 이루어진 한 문장). 이 텍스트를 찾아 답변란에 입력해 주세요.)
 
 > 영어 대소문자, 공백만 허용됩니다.
 

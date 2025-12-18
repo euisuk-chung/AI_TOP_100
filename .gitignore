@@ -5,6 +5,9 @@ __pycache__/
 
 # C extensions
 *.so
+.claude
+.gemini
+.chatgpt
 
 # Distribution / packaging
 .Python
@@ -205,3 +208,13 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Windows reserved filenames
+nul
+NUL
+con
+CON
+aux
+AUX
+prn
+PRN

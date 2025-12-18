@@ -52,7 +52,7 @@ Source: [2_캘린더](source/q8/2_캘린더)
 ---
 
 ### Q4. 완성된 인수 인계 문서를 제출해주세요.
-Source: [template.md](source/q8/template.md)
+Source: [template.md](source/q8/template.md), [3_메모](source/q8/3_메모), [4_책상](source/q8/4_책상)
 
 반드시 template.md 의 목차 구성과 내용 및 구조(테이블 컬럼명, 리스트 항목)를 정확히 따라야 합니다.
 

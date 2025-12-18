@@ -1,0 +1,152 @@
+[
+  {
+    "id": "applicant_001",
+    "answer": "Deny",
+    "reason": 6
+  },
+  {
+    "id": "applicant_002",
+    "answer": "Deny",
+    "reason": 2
+  },
+  {
+    "id": "applicant_003",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_004",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_005",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_006",
+    "answer": "Deny",
+    "reason": 3
+  },
+  {
+    "id": "applicant_007",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_008",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_009",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_010",
+    "answer": "Deny",
+    "reason": 2
+  },
+  {
+    "id": "applicant_011",
+    "answer": "Deny",
+    "reason": 7
+  },
+  {
+    "id": "applicant_012",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_013",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_014",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_015",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_016",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_017",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_018",
+    "answer": "Deny",
+    "reason": 2
+  },
+  {
+    "id": "applicant_019",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_020",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_021",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_022",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_023",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_024",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_025",
+    "answer": "Deny",
+    "reason": 1
+  },
+  {
+    "id": "applicant_026",
+    "answer": "Deny",
+    "reason": 2
+  },
+  {
+    "id": "applicant_027",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_028",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_029",
+    "answer": "Deny",
+    "reason": 8
+  },
+  {
+    "id": "applicant_030",
+    "answer": "Deny",
+    "reason": 8
+  }
+]

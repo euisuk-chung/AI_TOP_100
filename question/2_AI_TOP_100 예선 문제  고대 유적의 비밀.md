@@ -1,7 +1,5 @@
 # AI_TOP_100 예선 문제 : 고대 유적의 비밀
 
-Source: [ai_top_100_crypto.png](source/q2/ai_top_100_crypto.png)
-
 ### **문제 설명**
 
 석판 이미지의 문자를 판독해 텍스트를 얻고, 그 의미를 해석하여 정답 형식에 맞춰 제출하세요. 당신은 고대 유적의 비밀에 대한 소문을 듣고 모여든 수많은 모험가 중 한 명입니다. 유적의 입구에서 발견한 이상한 석판에는 알 수 없는 문자와 기호들이 빼곡하게 새겨져 있었고, 석판 옆에는 “멈추어야 비로소 보이리라”라는 수수께끼가 적혀있었습니다. 전설에 따르면 이 석판은 스스로를 되돌아보는 주문을 담고 있으며, 주문을 외치면 그 순간 석판의 비밀이 드러난다고 합니다. 석판이 품고 있는 비밀을 찾아내어 고대 유적의 비밀을 풀어보세요!
@@ -17,9 +15,7 @@ Q. 다음과 같은 석판 이미지가 있습니다.
 A. CHOONSIKISACAT
 
 ```markdown
-## 샘플 분석
-
-이 코드는 **Polyglot 코드**네요! C와 Python 문법이 섞여있어서 두 언어 모두에서 실행 가능한 형태입니다.
+해당 이미지는 **Polyglot 코드**입니다. C와 Python 문법이 섞여있어서 두 언어 모두에서 실행 가능한 형태입니다.
 
 > (참고) **Polyglot** 코드는 여러 프로그래밍 언어에서 유효하게 실행될 수 있는 코드를 의미합니다. 즉, 하나의 소스 코드가 여러 언어의 문법 규칙을 모두 따르므로 각기 다른 언어의 컴파일러나 인터프리터에서 성공적으로 컴파일되거나 실행될 수 있습니다.
 
@@ -37,9 +33,7 @@ A. CHOONSIKISACAT
 
 ### **문제 자료**
 
-![ai_top_100_crypto (4).png](//img1.daumcdn.net/thumb/R1280x0.fpng/?fname=http://t1.daumcdn.net/brunch/service/user/41jj/image/HiGitgBqQZ9NHKYIaYG-oGs0kSI.png)
-
-![ai_top_100_crypto (3).png](//img1.daumcdn.net/thumb/R1280x0.fpng/?fname=http://t1.daumcdn.net/brunch/service/user/41jj/image/nKiVguRNLTIpVJ6KhqBb_lJLB_Q.png)
+Source: [ai_top_100_crypto.png](source/q2/ai_top_100_crypto.png)
 
 ---
 

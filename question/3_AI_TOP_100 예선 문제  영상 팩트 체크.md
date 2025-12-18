@@ -1,12 +1,21 @@
 # AI_TOP_100 예선 문제 : 영상 팩트 체크
 
-Source: [ai_top_100_ageofai.txt](source/q3/ai_top_100_ageofai.txt)
-
 ### **문제 설명**
 
 2019년에 공개된 다큐멘터리 [The Age of AI] 시리즈 영상을 분석하여 사실을 입증할 수 있는 단서를 찾으세요. “그 시대의 사람들이 무엇을 보고, 어떤 말을 하고, 어떤 환경에 있었는가”라는 미시적 데이터를 정확히 추출하고 단서를 찾는 것을 목표로 합니다. 영상 속 인물이 마신 음료 한 잔, 스쳐 지나간 지명, 찰나의 시간 기록까지 최신 AI 파트너와 함께 영상 곳곳에 흩어진 데이터 조각을 찾아내십시오.
 
 과거의 예측을 통해 2025년 오늘날의 AI 발전을 되짚어 보는 재미는 덤으로 가져가세요.
+
+
+```
+[The Age of AI] 시리즈 영상 5편
+
+- [적정선은 어디인가?](https://www.youtube.com/watch?v=UwsrzCVZAb8)
+- [AI를 통한 치유](https://www.youtube.com/watch?v=V5aZjsWM2wo)
+- [AI를 이용해 더 나은 인간 만들기](https://www.youtube.com/watch?v=lrv8ga02VNg)
+- [로봇이 내 일자리를 빼앗을까?](https://www.youtube.com/watch?v=f2aocKWrPG8)
+- [사랑, 예술 그리고 이야기를 이해하다.](https://www.youtube.com/watch?v=Kr1fmKVY3cA)
+```
 
 ### **참고 및 유의사항**
 

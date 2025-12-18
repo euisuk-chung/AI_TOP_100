@@ -4,7 +4,7 @@
 
 ### **문제 설명**
 
-카카오 구내식당 [춘식도락]의 실제 메뉴판 이미지를 분석하는 챌린지입니다. 
+카카오 구내식당 [춘식도락]의 실제 메뉴판 이미지를 분석하는 챌린지입니다.
 
 8장의 주간 메뉴 이미지에서 정보를 추출하고, 숨겨진 패턴을 발견해 문제를 해결하세요. 
 (source/춘식도락메뉴 분석 챌린지.zip)
@@ -72,7 +72,68 @@ Source: [2025-01-06.png](source/q1/menu_challenge/menu_images/2025-01-06.png)
 ---
 
 ### Q3. 지역 특색 메뉴
-Source: [menu_images](source/q1/menu_challenge/menu_images/2025-0[1-2]-*.png)
+
+<details>
+<summary>📷 Source: 1-2월 메뉴 이미지 (클릭하여 펼치기)</summary>
+
+<style>
+.slider-q3 { position: relative; width: 100%; max-width: 800px; overflow: hidden; }
+.slider-q3 input { display: none; }
+.slider-q3 .slides { display: flex; transition: transform 0.3s ease; }
+.slider-q3 .slide { min-width: 100%; }
+.slider-q3 .slide img { width: 100%; height: auto; }
+.slider-q3 .nav { text-align: center; padding: 10px 0; }
+.slider-q3 .nav label { display: inline-block; width: 12px; height: 12px; margin: 0 5px; background: #ccc; border-radius: 50%; cursor: pointer; }
+.slider-q3 #q3-s1:checked ~ .slides { transform: translateX(0%); }
+.slider-q3 #q3-s2:checked ~ .slides { transform: translateX(-100%); }
+.slider-q3 #q3-s3:checked ~ .slides { transform: translateX(-200%); }
+.slider-q3 #q3-s4:checked ~ .slides { transform: translateX(-300%); }
+.slider-q3 #q3-s5:checked ~ .slides { transform: translateX(-400%); }
+.slider-q3 #q3-s6:checked ~ .slides { transform: translateX(-500%); }
+.slider-q3 #q3-s7:checked ~ .slides { transform: translateX(-600%); }
+.slider-q3 #q3-s8:checked ~ .slides { transform: translateX(-700%); }
+.slider-q3 #q3-s1:checked ~ .nav label[for="q3-s1"],
+.slider-q3 #q3-s2:checked ~ .nav label[for="q3-s2"],
+.slider-q3 #q3-s3:checked ~ .nav label[for="q3-s3"],
+.slider-q3 #q3-s4:checked ~ .nav label[for="q3-s4"],
+.slider-q3 #q3-s5:checked ~ .nav label[for="q3-s5"],
+.slider-q3 #q3-s6:checked ~ .nav label[for="q3-s6"],
+.slider-q3 #q3-s7:checked ~ .nav label[for="q3-s7"],
+.slider-q3 #q3-s8:checked ~ .nav label[for="q3-s8"] { background: #333; }
+</style>
+
+<div class="slider-q3">
+  <input type="radio" name="q3-slider" id="q3-s1" checked>
+  <input type="radio" name="q3-slider" id="q3-s2">
+  <input type="radio" name="q3-slider" id="q3-s3">
+  <input type="radio" name="q3-slider" id="q3-s4">
+  <input type="radio" name="q3-slider" id="q3-s5">
+  <input type="radio" name="q3-slider" id="q3-s6">
+  <input type="radio" name="q3-slider" id="q3-s7">
+  <input type="radio" name="q3-slider" id="q3-s8">
+  <div class="slides">
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2024-12-30.png" alt="2024-12-30"><p align="center">2024-12-30 (12/30-01/03)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-01-06.png" alt="2025-01-06"><p align="center">2025-01-06 (01/06-01/10)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-01-13.png" alt="2025-01-13"><p align="center">2025-01-13 (01/13-01/17)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-01-20.png" alt="2025-01-20"><p align="center">2025-01-20 (01/20-01/24)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-02-03.png" alt="2025-02-03"><p align="center">2025-02-03 (02/03-02/07)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-02-10.png" alt="2025-02-10"><p align="center">2025-02-10 (02/10-02/14)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-02-17.png" alt="2025-02-17"><p align="center">2025-02-17 (02/17-02/21)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-02-24.png" alt="2025-02-24"><p align="center">2025-02-24 (02/24-02/28)</p></div>
+  </div>
+  <div class="nav">
+    <label for="q3-s1" title="2024-12-30">●</label>
+    <label for="q3-s2" title="2025-01-06">●</label>
+    <label for="q3-s3" title="2025-01-13">●</label>
+    <label for="q3-s4" title="2025-01-20">●</label>
+    <label for="q3-s5" title="2025-02-03">●</label>
+    <label for="q3-s6" title="2025-02-10">●</label>
+    <label for="q3-s7" title="2025-02-17">●</label>
+    <label for="q3-s8" title="2025-02-24">●</label>
+  </div>
+</div>
+
+</details>
 
 ### 1, 2월의 모든 범위(중식, 중식 TAKE OUT, 석식, 석식 TAKE OUT)의 메뉴명에 포함된 지역명(국가/도시/지명)을 추출하고, 2회 이상 등장한 지역을 모두 선택하세요. \*복수 선택
 
@@ -89,7 +150,68 @@ Source: [menu_images](source/q1/menu_challenge/menu_images/2025-0[1-2]-*.png)
 ---
 
 ### Q4. 메뉴별 칼로리 비교
-Source: [menu_images](source/q1/menu_challenge/menu_images/2025-0[1-2]-*.png)
+
+<details>
+<summary>📷 Source: 1-2월 메뉴 이미지 (클릭하여 펼치기)</summary>
+
+<style>
+.slider-q4 { position: relative; width: 100%; max-width: 800px; overflow: hidden; }
+.slider-q4 input { display: none; }
+.slider-q4 .slides { display: flex; transition: transform 0.3s ease; }
+.slider-q4 .slide { min-width: 100%; }
+.slider-q4 .slide img { width: 100%; height: auto; }
+.slider-q4 .nav { text-align: center; padding: 10px 0; }
+.slider-q4 .nav label { display: inline-block; width: 12px; height: 12px; margin: 0 5px; background: #ccc; border-radius: 50%; cursor: pointer; }
+.slider-q4 #q4-s1:checked ~ .slides { transform: translateX(0%); }
+.slider-q4 #q4-s2:checked ~ .slides { transform: translateX(-100%); }
+.slider-q4 #q4-s3:checked ~ .slides { transform: translateX(-200%); }
+.slider-q4 #q4-s4:checked ~ .slides { transform: translateX(-300%); }
+.slider-q4 #q4-s5:checked ~ .slides { transform: translateX(-400%); }
+.slider-q4 #q4-s6:checked ~ .slides { transform: translateX(-500%); }
+.slider-q4 #q4-s7:checked ~ .slides { transform: translateX(-600%); }
+.slider-q4 #q4-s8:checked ~ .slides { transform: translateX(-700%); }
+.slider-q4 #q4-s1:checked ~ .nav label[for="q4-s1"],
+.slider-q4 #q4-s2:checked ~ .nav label[for="q4-s2"],
+.slider-q4 #q4-s3:checked ~ .nav label[for="q4-s3"],
+.slider-q4 #q4-s4:checked ~ .nav label[for="q4-s4"],
+.slider-q4 #q4-s5:checked ~ .nav label[for="q4-s5"],
+.slider-q4 #q4-s6:checked ~ .nav label[for="q4-s6"],
+.slider-q4 #q4-s7:checked ~ .nav label[for="q4-s7"],
+.slider-q4 #q4-s8:checked ~ .nav label[for="q4-s8"] { background: #333; }
+</style>
+
+<div class="slider-q4">
+  <input type="radio" name="q4-slider" id="q4-s1" checked>
+  <input type="radio" name="q4-slider" id="q4-s2">
+  <input type="radio" name="q4-slider" id="q4-s3">
+  <input type="radio" name="q4-slider" id="q4-s4">
+  <input type="radio" name="q4-slider" id="q4-s5">
+  <input type="radio" name="q4-slider" id="q4-s6">
+  <input type="radio" name="q4-slider" id="q4-s7">
+  <input type="radio" name="q4-slider" id="q4-s8">
+  <div class="slides">
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2024-12-30.png" alt="2024-12-30"><p align="center">2024-12-30 (12/30-01/03)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-01-06.png" alt="2025-01-06"><p align="center">2025-01-06 (01/06-01/10)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-01-13.png" alt="2025-01-13"><p align="center">2025-01-13 (01/13-01/17)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-01-20.png" alt="2025-01-20"><p align="center">2025-01-20 (01/20-01/24)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-02-03.png" alt="2025-02-03"><p align="center">2025-02-03 (02/03-02/07)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-02-10.png" alt="2025-02-10"><p align="center">2025-02-10 (02/10-02/14)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-02-17.png" alt="2025-02-17"><p align="center">2025-02-17 (02/17-02/21)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-02-24.png" alt="2025-02-24"><p align="center">2025-02-24 (02/24-02/28)</p></div>
+  </div>
+  <div class="nav">
+    <label for="q4-s1" title="2024-12-30">●</label>
+    <label for="q4-s2" title="2025-01-06">●</label>
+    <label for="q4-s3" title="2025-01-13">●</label>
+    <label for="q4-s4" title="2025-01-20">●</label>
+    <label for="q4-s5" title="2025-02-03">●</label>
+    <label for="q4-s6" title="2025-02-10">●</label>
+    <label for="q4-s7" title="2025-02-17">●</label>
+    <label for="q4-s8" title="2025-02-24">●</label>
+  </div>
+</div>
+
+</details>
 
 ### 1, 2월에서 다음 메뉴들의 칼로리를 찾아 내림차순으로 정렬하세요.
 
@@ -106,7 +228,48 @@ Source: [menu_images](source/q1/menu_challenge/menu_images/2025-0[1-2]-*.png)
 ---
 
 ### Q5. 2월 한 달 식단 최적화 챌린지
-Source: [menu_images](source/q1/menu_challenge/menu_images/2025-02-*.png)
+
+<details>
+<summary>📷 Source: 2월 메뉴 이미지 (클릭하여 펼치기)</summary>
+
+<style>
+.slider-q5 { position: relative; width: 100%; max-width: 800px; overflow: hidden; }
+.slider-q5 input { display: none; }
+.slider-q5 .slides { display: flex; transition: transform 0.3s ease; }
+.slider-q5 .slide { min-width: 100%; }
+.slider-q5 .slide img { width: 100%; height: auto; }
+.slider-q5 .nav { text-align: center; padding: 10px 0; }
+.slider-q5 .nav label { display: inline-block; width: 12px; height: 12px; margin: 0 5px; background: #ccc; border-radius: 50%; cursor: pointer; }
+.slider-q5 #q5-s1:checked ~ .slides { transform: translateX(0%); }
+.slider-q5 #q5-s2:checked ~ .slides { transform: translateX(-100%); }
+.slider-q5 #q5-s3:checked ~ .slides { transform: translateX(-200%); }
+.slider-q5 #q5-s4:checked ~ .slides { transform: translateX(-300%); }
+.slider-q5 #q5-s1:checked ~ .nav label[for="q5-s1"],
+.slider-q5 #q5-s2:checked ~ .nav label[for="q5-s2"],
+.slider-q5 #q5-s3:checked ~ .nav label[for="q5-s3"],
+.slider-q5 #q5-s4:checked ~ .nav label[for="q5-s4"] { background: #333; }
+</style>
+
+<div class="slider-q5">
+  <input type="radio" name="q5-slider" id="q5-s1" checked>
+  <input type="radio" name="q5-slider" id="q5-s2">
+  <input type="radio" name="q5-slider" id="q5-s3">
+  <input type="radio" name="q5-slider" id="q5-s4">
+  <div class="slides">
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-02-03.png" alt="2025-02-03"><p align="center">2025-02-03 (02/03-02/07)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-02-10.png" alt="2025-02-10"><p align="center">2025-02-10 (02/10-02/14)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-02-17.png" alt="2025-02-17"><p align="center">2025-02-17 (02/17-02/21)</p></div>
+    <div class="slide"><img src="source/q1/menu_challenge/menu_images/2025-02-24.png" alt="2025-02-24"><p align="center">2025-02-24 (02/24-02/28)</p></div>
+  </div>
+  <div class="nav">
+    <label for="q5-s1" title="2025-02-03">●</label>
+    <label for="q5-s2" title="2025-02-10">●</label>
+    <label for="q5-s3" title="2025-02-17">●</label>
+    <label for="q5-s4" title="2025-02-24">●</label>
+  </div>
+</div>
+
+</details>
 
 ### 2월 한 달간 칼로리 기준으로 최적 조합을 찾아보세요. 한식A·한식B·양식·팝업A·팝업B·샐러드·비건·라이스&누들·버거&델리를 분석 대상으로 합니다. TAKE OUT 메뉴는 "TAKE OUT"이 아닌 세부 코너명(샐러드, 비건, 라이스&누들, 버거&델리)으로 기재하세요.
 
