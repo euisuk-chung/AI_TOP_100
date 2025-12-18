@@ -2,6 +2,8 @@
 
 이 프로젝트는 카카오임팩트와 브라이언임팩트가 주최한 'AI_TOP_100' 대회의 예선 및 본선 문제들을 수집하고, 이를 로컬 환경에서 직접 풀어볼 수 있도록 돕는 학습용 플랫폼입니다.
 
+> **문제 출처**: [카카오 브런치 - AI TOP 100](https://brunch.co.kr/@andkakao/)
+
 <p align="center">
   <img src="assets/sample_detail.png" width="100%" alt="Problem Detail">
 </p>
