@@ -494,3 +494,138 @@
     font-size: 0.85em;
   }
 }
+
+/* Source Links Styling */
+a[href^="source/"] {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #2196f3;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s;
+  border: 1px solid #1e88e5;
+}
+
+a[href^="source/"]:hover {
+  background-color: #1976d2;
+}
+
+a[href^="source/"]::before {
+  content: "📂 ";
+  margin-right: 5px;
+}
+
+/* Source Viewer Styling */
+.source-viewer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.source-viewer h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: #1976d2;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.source-image {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  display: block;
+  margin: 0 auto;
+}
+
+.source-text-container,
+.source-link-container {
+  padding: 10px;
+  background-color: #333;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.source-link,
+.source-link-btn {
+  color: #64b5f6;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.05em;
+}
+
+.source-link:hover,
+.source-link-btn:hover {
+  text-decoration: underline;
+  color: #90caf9;
+}
+
+/* Gallery Styling */
+.source-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.gallery-item {
+  width: 100%;
+  text-align: center;
+}
+
+.gallery-caption {
+  margin-top: 5px;
+  color: #888;
+  font-size: 0.9em;
+}
+/* Zoom Controls */
+.zoomable-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.zoom-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.zoom-controls button {
+  padding: 4px 10px;
+  background-color: #e0e0e0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.zoom-controls button:hover {
+  background-color: #d0d0d0;
+}
+
+.zoom-level {
+  font-size: 0.9em;
+  font-weight: bold;
+  min-width: 40px;
+  text-align: center;
+}
+
+.image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* Changed from auto to hidden to prevent scrollbars if not desired, or auto if panning needed */
+}

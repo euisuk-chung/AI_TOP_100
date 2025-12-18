@@ -1,0 +1,154 @@
+# 아틀란티스 입국 심사 규정
+
+## 필수 제출 서류 요구사항
+
+### 모든 입국자 공통 필수 서류
+1. **여권 (Passport)** - 모든 입국자 필수
+2. **비자 (Visa)** - 모든 외국인 필수 (무비자 협정국 제외)
+3. **입국 신고서 (Arrival Declaration Card)** - 모든 입국자 필수
+4. **항공권 (Boarding Pass)** - 모든 입국자 필수
+5. **건강 증명서 (Health Certificate)** - 모든 입국자 필수
+
+### 조건부 필수 서류
+6. **재정 증명서 (Financial Statement)** - 다음 경우 필수:
+   - TOURISM 목적으로 14일 이상 체류하는 경우
+   - BUSINESS 목적으로 30일 이상 체류하는 경우
+   - STUDY 목적의 모든 경우
+
+7. **세관 신고서 (Customs Declaration Form)** - 다음 경우 필수:
+   - 신고 대상 물품을 소지한 경우
+   - 현금 $10,000 이상 소지한 경우
+   - 식품, 동식물 제품 소지한 경우
+
+---
+
+## 입국 거부 사유 목록
+
+### 서류 미제출 오류 (Missing Document Errors)
+
+**1. 여권 미제출**
+- 필수 서류인 여권이 제출되지 않은 경우
+
+**2. 비자 미제출**
+- 비자가 필요한 국적임에도 비자가 제출되지 않은 경우
+- 예외: 무비자 협정국이면서 TOURISM/BUSINESS 목적인 경우 (STUDY 목적은 모든 국가 비자 필수)
+
+**3. 입국신고서 미제출**
+- 필수 서류인 입국신고서가 제출되지 않은 경우
+
+**4. 항공권 미제출**
+- 필수 서류인 항공권이 제출되지 않은 경우
+
+**5. 재정증명서 미제출**
+- 조건부 필수인 재정증명서가 필요한 상황에서 제출되지 않은 경우
+
+**6. 건강증명서 미제출**
+- 필수 서류인 건강증명서가 제출되지 않은 경우
+
+**7. 세관신고서 미제출**
+- 다음 조건 중 하나라도 해당할 때 세관신고서가 제출되지 않은 경우
+- 조건: 신고할 물품 가치가 $5,000 이상이거나, 현금 $10,000 이상 소지하거나, 식품/동식물 제품 소지
+
+---
+
+### 서류 일관성 오류 (Document Consistency Errors)
+
+**8. 이름 불일치**
+- 제출된 모든 서류의 이름이 일치해야 함
+
+**9. 여권번호 불일치**
+- 제출된 모든 서류의 여권번호가 일치해야 함
+
+---
+
+### 서류 유효성 오류 (Document Validity Errors)
+
+**10. 여권 만료**
+- 여권의 "Expiry Date"가 심사일 이전인 경우
+
+**11. 비자 만료**
+- 비자의 "Expiry Date"가 심사일 이전인 경우
+
+**12. 건강증명서 기간 초과**
+- 건강증명서의 "Issue Date"가 심사일로부터 14일을 초과한 경우
+
+**13. 항공권 날짜 불일치**
+- 항공권의 도착일이 심사일과 일치하지 않는 경우
+
+**14. 재정증명서 발급일 초과**
+- 재정증명서의 "Statement Date"가 심사일로부터 30일을 초과한 경우
+
+**15. 여권 사진 미부착**
+- 여권의 사진 란에 사진이 부착되어 있지 않은 경우
+
+---
+
+### 비자 관련 오류 (Visa-related Errors)
+
+**16. 무효한 입국 목적**
+- 입국신고서의 "Purpose of Visit"이 다음 중 하나가 아닌 경우:
+  - TOURISM
+  - BUSINESS
+  - STUDY
+
+**17. 부적절한 비자 타입**
+- 입국신고서의 "Purpose of Visit"과 비자의 "Visa Type"이 일치하지 않는 경우
+- 매칭 규칙:
+  - TOURISM ↔ TOURIST
+  - BUSINESS ↔ BUSINESS
+  - STUDY ↔ STUDENT
+
+**18. 체류기간 초과**
+- 입국신고서의 "Duration of Stay (days)"가 허용 기간을 초과하는 경우
+- 비자가 있는 경우: 비자의 "Duration of Stay" 확인
+- 무비자 협정국인 경우: 해당 국가의 무비자 허용 기간 확인
+  
+**19. 입국 횟수 제한 위반**
+- 비자의 "Entries Allowed"가 'SINGLE'인데 입국신고서의 "Previous Visits"이 'Yes'인 경우
+
+**20. 비자 발급지 불일치**
+- 여권의 "Nationality"에 해당하는 영사관에서 발급되지 않은 비자인 경우
+- 비자의 "Issuing Consulate" 필드 확인
+- 영사관 매칭:
+  - Republic of Valeria → Atlantis Consulate Valeria
+  - Kingdom of Neverland → Atlantis Consulate Neverland
+  - Federation of Serenia → Atlantis Consulate Serenia
+  - Empire of Dragonia → Atlantis Consulate Dragonia
+  - Republic of Crystalline → Atlantis Consulate Crystalline
+  - United States of Eldorado → Atlantis Consulate Eldorado
+  - Mystical Islands → Atlantis Consulate Mystical
+  - Kingdom of Avalon → Atlantis Consulate Avalon
+
+---
+
+### 건강 및 재정 관련 오류 (Health & Financial Errors)
+
+**21. 발열 증상 보유**
+- 건강증명서의 "HEALTH STATUS" 섹션에서 "Fever" 항목이 "Yes"인 경우
+
+**22. 기타 증상 보유**
+- 건강증명서의 "HEALTH STATUS" 섹션에서 "COVID-19 Symptoms" 항목이 "Yes"인 경우
+
+**23. 재정능력 부족**
+- 재정증명서를 제출한 경우, "FINANCIAL STATUS" 섹션의 "Available Balance"가 최소 요구 금액 미만인 경우
+- 최소 요구 금액 = 체류일수 × $100
+
+**24. 백신 접종 미완료**
+- 건강증명서의 "VACCINATION RECORD" 섹션 확인
+- 요구사항: 2회 이상 접종 필수
+
+**25. 금지품목 소지**
+- 세관신고서의 "DECLARATION QUESTIONS" 섹션 확인
+- 다음 질문 중 하나라도 "YES"인 경우:
+  - "Carrying prohibited items?"
+  - "Carrying restricted items?"
+
+---
+
+## 판정 규칙
+
+- **승인(Approve)**: 모든 검증 규칙을 통과한 경우
+- **거부(Deny)**: 위 25개 규칙 중 하나라도 위반한 경우
+- **거부 사유 표기**: `{"id": "applicant_002", "answer": "Deny", "reason": 3 }` 형식으로 해당 규칙 번호 명시
+
+**주의사항**: 여러 규칙을 위반한 경우, 가장 낮은 번호의 규칙을 reason으로 사용

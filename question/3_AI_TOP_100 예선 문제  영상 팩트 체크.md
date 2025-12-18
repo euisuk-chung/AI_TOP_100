@@ -1,6 +1,6 @@
 # AI_TOP_100 예선 문제 : 영상 팩트 체크
 
-Source: https://brunch.co.kr/@andkakao/324
+Source: [ai_top_100_ageofai.txt](source/q3/ai_top_100_ageofai.txt)
 
 ### **문제 설명**
 

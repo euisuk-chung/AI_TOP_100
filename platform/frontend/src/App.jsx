@@ -1,18 +1,48 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import remarkBreaks from 'remark-breaks'
+import rehypeRaw from 'rehype-raw'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import './App.css'
 
+const ZoomableImage = ({ src, alt }) => {
+  const [scale, setScale] = useState(1)
+
+  const handleZoomIn = () => setScale(prev => Math.min(prev + 0.2, 3))
+  const handleZoomOut = () => setScale(prev => Math.max(prev - 0.2, 0.5))
+  const handleReset = () => setScale(1)
+
+  return (
+    <div className="zoomable-image-container">
+      <div className="zoom-controls">
+        <button onClick={handleZoomOut} title="Zoom Out">-</button>
+        <span className="zoom-level">{Math.round(scale * 100)}%</span>
+        <button onClick={handleZoomIn} title="Zoom In">+</button>
+        <button onClick={handleReset} title="Reset">Reset</button>
+      </div>
+      <div className="image-wrapper" style={{ overflow: 'auto' }}>
+        <img
+          src={src}
+          alt={alt}
+          className="source-image"
+          style={{ transform: `scale(${scale})`, transformOrigin: 'top center', transition: 'transform 0.2s' }}
+        />
+      </div>
+    </div>
+  )
+}
+
 function App() {
   const [questions, setQuestions] = useState([])
   const [selectedQuestion, setSelectedQuestion] = useState(null)
-  const [language, setLanguage] = useState('kr') // 'kr' or 'en'
 
   // New state structure
   const [intro, setIntro] = useState('')
   const [subQuestions, setSubQuestions] = useState([])
+  const [sourceInfo, setSourceInfo] = useState(null)
   const [answers, setAnswers] = useState({}) // { "Q1": { code: "...", language: "python" } }
   const [status, setStatus] = useState('')
   const [showSolution, setShowSolution] = useState(false)
@@ -23,13 +53,12 @@ function App() {
 
   useEffect(() => {
     fetchQuestions()
-  }, [language]) // Re-fetch when language changes
+  }, [])
 
   const fetchQuestions = async () => {
     try {
-      const response = await axios.get(`/api/questions?lang=${language}`)
+      const response = await axios.get(`/api/questions`)
       setQuestions(response.data)
-      setSelectedQuestion(null) // Reset selection when changing language
     } catch (error) {
       console.error('Error fetching questions:', error)
     }
@@ -38,10 +67,11 @@ function App() {
   const handleSelectQuestion = async (filename) => {
     try {
       setSelectedQuestion(filename)
-      const response = await axios.get(`/api/questions/${filename}?lang=${language}`)
+      const response = await axios.get(`/api/questions/${filename}`)
 
       setIntro(response.data.intro)
       setSubQuestions(response.data.questions)
+      setSourceInfo(response.data.source)
 
       // Initialize answers if needed, or reset
       const initialAnswers = {}
@@ -58,7 +88,7 @@ function App() {
 
       // Fetch solutions for this question
       try {
-        const solResponse = await axios.get(`/api/solutions/${filename}?lang=${language}`)
+        const solResponse = await axios.get(`/api/solutions/${filename}`)
         if (solResponse.data.parsed && solResponse.data.parsed.questions) {
           setParsedSolutions(solResponse.data.parsed.questions)
         }
@@ -87,20 +117,16 @@ function App() {
 
     try {
       setSolutionLoading(true)
-      const response = await axios.get(`/api/solutions/${selectedQuestion}?lang=${language}`)
+      const response = await axios.get(`/api/solutions/${selectedQuestion}`)
       setSolutionContent(response.data.content)
       setShowSolution(true)
     } catch (error) {
       console.error('Error fetching solution:', error)
-      setSolutionContent(language === 'kr' ? '해설을 찾을 수 없습니다.' : 'Solution not found.')
+      setSolutionContent('해설을 찾을 수 없습니다.')
       setShowSolution(true)
     } finally {
       setSolutionLoading(false)
     }
-  }
-
-  const toggleLanguage = () => {
-    setLanguage(prev => prev === 'kr' ? 'en' : 'kr')
   }
 
   const handleCodeChange = (qId, newCode) => {
@@ -141,6 +167,8 @@ function App() {
 
   const MarkdownRenderer = ({ content }) => (
     <ReactMarkdown
+      remarkPlugins={[remarkGfm, remarkBreaks]}
+      rehypePlugins={[rehypeRaw]}
       components={{
         code({ node, inline, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || '')
@@ -158,6 +186,9 @@ function App() {
               {children}
             </code>
           )
+        },
+        img({ node, ...props }) {
+          return <ZoomableImage src={props.src} alt={props.alt} />
         }
       }}
     >
@@ -170,14 +201,11 @@ function App() {
       <div className="sidebar">
         <div className="sidebar-header">
           <h2>Questions</h2>
-          <button onClick={toggleLanguage} className="lang-toggle">
-            {language === 'kr' ? 'EN' : 'KR'}
-          </button>
         </div>
         {/* 예선 (Preliminary) - Questions 1-5 */}
         <div className="question-section">
           <div className="section-title preliminary">
-            {language === 'kr' ? '예선' : 'Preliminary'}
+            예선
           </div>
           <ul>
             {questions.slice(0, 5).map((q) => (
@@ -195,7 +223,7 @@ function App() {
         {/* 본선 (Final) - Questions 6-8 */}
         <div className="question-section">
           <div className="section-title final">
-            {language === 'kr' ? '본선' : 'Final'}
+            본선
           </div>
           <ul>
             {questions.slice(5, 8).map((q) => (
@@ -215,6 +243,45 @@ function App() {
           <div className="content-wrapper">
             <div className="intro-section">
               <MarkdownRenderer content={intro} />
+
+              {/* Source Viewer */}
+              {sourceInfo && (sourceInfo.type !== 'gallery' || (sourceInfo.images && sourceInfo.images.length > 0)) && (
+                <div className="source-viewer">
+                  <h3>Source Material</h3>
+                  {(() => {
+                    if (sourceInfo.type === 'gallery' && sourceInfo.images) {
+                      return (
+                        <div className="source-gallery">
+                          {sourceInfo.images.map((img, idx) => (
+                            <div key={idx} className="gallery-item">
+                              <ZoomableImage src={`/${img}`} alt={`${sourceInfo.label} ${idx + 1}`} />
+                              <div className="gallery-caption">{img.split('/').pop()}</div>
+                            </div>
+                          ))}
+                        </div>
+                      );
+                    } else if (sourceInfo.type === 'image' || sourceInfo.path.match(/\.(png|jpg|jpeg|gif)$/i)) {
+                      return <ZoomableImage src={`/${sourceInfo.path}`} alt={sourceInfo.label} />;
+                    } else if (sourceInfo.type === 'file' || sourceInfo.path.match(/\.(txt|md)$/i)) {
+                      return (
+                        <div className="source-text-container">
+                          <a href={`/${sourceInfo.path}`} target="_blank" rel="noopener noreferrer" className="source-link">
+                            Open {sourceInfo.label} in new tab
+                          </a>
+                        </div>
+                      );
+                    } else {
+                      return (
+                        <div className="source-link-container">
+                          <a href={`/${sourceInfo.path}`} target="_blank" rel="noopener noreferrer" className="source-link-btn">
+                            📂 Open {sourceInfo.label} Folder
+                          </a>
+                        </div>
+                      );
+                    }
+                  })()}
+                </div>
+              )}
             </div>
 
             {subQuestions.map(q => (
@@ -226,10 +293,7 @@ function App() {
                       onClick={() => toggleQuestionSolution(q.id)}
                       className="hint-btn"
                     >
-                      {visibleSolutions[q.id]
-                        ? (language === 'kr' ? '해설 닫기' : 'Hide Hint')
-                        : (language === 'kr' ? '해설 보기' : 'Show Hint')
-                      }
+                      {visibleSolutions[q.id] ? '해설 닫기' : '해설 보기'}
                     </button>
                   )}
                 </div>
@@ -237,10 +301,55 @@ function App() {
                   <MarkdownRenderer content={q.content} />
                 </div>
 
+                {/* Per-Question Source Viewer */}
+                {q.source && (
+                  <div className="source-viewer">
+                    <h3>Source Material</h3>
+                    {(() => {
+                      if (q.source.type === 'gallery' && q.source.images) {
+                        return (
+                          <div className="source-gallery">
+                            {q.source.images.map((img, idx) => (
+                              <div key={idx} className="gallery-item">
+                                <ZoomableImage src={`/${img}`} alt={`${q.source.label} ${idx + 1}`} />
+                                <div className="gallery-caption">{img.split('/').pop()}</div>
+                              </div>
+                            ))}
+                          </div>
+                        );
+                      } else if (
+                        q.source.type === 'image' ||
+                        ['.png', '.jpg', '.jpeg', '.gif'].some(ext => q.source.path.toLowerCase().endsWith(ext))
+                      ) {
+                        return <ZoomableImage src={`/${q.source.path}`} alt={q.source.label} />;
+                      } else if (
+                        q.source.type === 'file' ||
+                        ['.txt', '.md'].some(ext => q.source.path.toLowerCase().endsWith(ext))
+                      ) {
+                        return (
+                          <div className="source-text-container">
+                            <a href={`/${q.source.path}`} target="_blank" rel="noopener noreferrer" className="source-link">
+                              Open {q.source.label} in new tab
+                            </a>
+                          </div>
+                        );
+                      } else {
+                        return (
+                          <div className="source-link-container">
+                            <a href={`/${q.source.path}`} target="_blank" rel="noopener noreferrer" className="source-link-btn">
+                              📂 Open {q.source.label} Folder
+                            </a>
+                          </div>
+                        );
+                      }
+                    })()}
+                  </div>
+                )}
+
                 {visibleSolutions[q.id] && parsedSolutions[q.id] && (
                   <div className="question-solution">
                     <div className="question-solution-header">
-                      {language === 'kr' ? '💡 해설' : '💡 Solution'}
+                      💡 해설
                     </div>
                     <MarkdownRenderer content={parsedSolutions[q.id]} />
                   </div>
@@ -272,14 +381,14 @@ function App() {
 
             <div className="global-controls">
               <button onClick={handleSave} className="save-btn">
-                {language === 'kr' ? '모든 답안 저장' : 'Save All Solutions'}
+                모든 답안 저장
               </button>
               <button onClick={handleShowSolution} className="solution-btn" disabled={solutionLoading}>
                 {solutionLoading
-                  ? (language === 'kr' ? '로딩...' : 'Loading...')
+                  ? '로딩...'
                   : showSolution
-                    ? (language === 'kr' ? '해설 닫기' : 'Hide Solution')
-                    : (language === 'kr' ? '해설 보기' : 'Show Solution')
+                    ? '해설 닫기'
+                    : '해설 보기'
                 }
               </button>
               {status && <span className="status">{status}</span>}
@@ -288,7 +397,7 @@ function App() {
             {showSolution && (
               <div className="solution-modal">
                 <div className="solution-header">
-                  <h3>{language === 'kr' ? '모범 답안' : 'Model Solution'}</h3>
+                  <h3>모범 답안</h3>
                   <button onClick={() => setShowSolution(false)} className="close-btn">×</button>
                 </div>
                 <div className="solution-content">

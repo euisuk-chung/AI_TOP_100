@@ -1,6 +1,6 @@
 # AI_TOP_100 예선 문제 : 고대 유적의 비밀
 
-Source: https://brunch.co.kr/@andkakao/317
+Source: [ai_top_100_crypto.png](source/q2/ai_top_100_crypto.png)
 
 ### **문제 설명**
 

@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List
@@ -19,12 +20,12 @@ app.add_middleware(
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 QUESTION_DIR_KR = os.path.join(BASE_DIR, "question")
-QUESTION_DIR_EN = os.path.join(BASE_DIR, "question_en")
+QUESTION_DIR_KR = os.path.join(BASE_DIR, "question")
 SOLVE_DIR = os.path.join(BASE_DIR, "solve")
 SOLUTION_DIR = os.path.join(BASE_DIR, "model_solutions")
+SOURCE_DIR = os.path.join(BASE_DIR, "source")
 
-def get_question_dir(lang="kr"):
-    return QUESTION_DIR_EN if lang == "en" else QUESTION_DIR_KR
+app.mount("/source", StaticFiles(directory=SOURCE_DIR), name="source")
 
 class Answer(BaseModel):
     id: str
@@ -39,10 +40,10 @@ def parse_markdown(content):
     intro_lines = []
     questions = []
     current_question = None
+    file_source_info = None
     
     for line in lines:
         # Check for Question Header (e.g., "### Q1.", "### Q2")
-        # The format in the files seems to be "### Q1. ..." or "### Q1 ..."
         match = re.match(r'^###\s*(Q\d+)', line)
         if match:
             if current_question:
@@ -52,9 +53,37 @@ def parse_markdown(content):
             current_question = {
                 "id": q_id,
                 "title": line.strip(),
-                "content": ""
+                "content": "",
+                "source": None
             }
-        elif current_question:
+            continue
+
+        # Check for Source line
+        source_match = re.match(r'^Source:\s*(.+)', line)
+        if source_match:
+            source_text = source_match.group(1).strip()
+            # Try to parse markdown link [label](path)
+            link_match = re.match(r'\[(.*?)\]\((.*?)\)', source_text)
+            source_data = None
+            if link_match:
+                source_data = {
+                    "label": link_match.group(1),
+                    "path": link_match.group(2)
+                }
+            else:
+                source_data = {
+                    "label": "Source",
+                    "path": source_text
+                }
+            
+            if current_question:
+                current_question["source"] = source_data
+            else:
+                file_source_info = source_data
+            # Don't add Source line to content/intro
+            continue
+
+        if current_question:
             current_question["content"] += line + "\n"
         else:
             intro_lines.append(line)
@@ -64,12 +93,53 @@ def parse_markdown(content):
         
     return {
         "intro": "\n".join(intro_lines),
-        "questions": questions
+        "questions": questions,
+        "source": file_source_info
     }
 
+def expand_source_path(source_data):
+    if not source_data:
+        return None
+    
+    path = source_data["path"]
+    # Remove leading slash if present
+    if path.startswith("/"):
+        path = path[1:]
+        
+    # Check if it starts with "source/"
+    if path.startswith("source/"):
+        abs_path = os.path.join(BASE_DIR, path)
+        
+        if os.path.isdir(abs_path):
+            # It's a directory. List images.
+            images = []
+            exts = ['.png', '.jpg', '.jpeg', '.gif']
+            # List all files in directory
+            try:
+                files = os.listdir(abs_path)
+                for f in files:
+                    if any(f.lower().endswith(ext) for ext in exts):
+                        images.append(os.path.join(path, f))
+                
+                source_data["type"] = "gallery"
+                source_data["images"] = sorted(images)
+            except Exception as e:
+                print(f"Error listing directory {abs_path}: {e}")
+                source_data["type"] = "file"
+        else:
+            # Check if it is an image file
+            if any(path.lower().endswith(ext) for ext in ['.png', '.jpg', '.jpeg', '.gif']):
+                source_data["type"] = "image"
+            else:
+                source_data["type"] = "file"
+    else:
+        source_data["type"] = "link"
+        
+    return source_data
+
 @app.get("/api/questions")
-def list_questions(lang: str = "kr"):
-    question_dir = get_question_dir(lang)
+def list_questions():
+    question_dir = QUESTION_DIR_KR
     files = glob.glob(os.path.join(question_dir, "*.md"))
     questions = []
     for f in files:
@@ -83,8 +153,8 @@ def list_questions(lang: str = "kr"):
     return questions
 
 @app.get("/api/questions/{filename}")
-def get_question(filename: str, lang: str = "kr"):
-    question_dir = get_question_dir(lang)
+def get_question(filename: str):
+    question_dir = QUESTION_DIR_KR
     filepath = os.path.join(question_dir, filename)
     if not os.path.exists(filepath):
         raise HTTPException(status_code=404, detail="Question not found")
@@ -93,6 +163,15 @@ def get_question(filename: str, lang: str = "kr"):
         content = f.read()
     
     parsed = parse_markdown(content)
+    
+    # Expand source paths
+    if parsed.get("source"):
+        parsed["source"] = expand_source_path(parsed["source"])
+        
+    for q in parsed.get("questions", []):
+        if q.get("source"):
+            q["source"] = expand_source_path(q["source"])
+            
     return parsed
 
 @app.post("/api/solve/{filename}")
@@ -167,7 +246,7 @@ def parse_solution_by_questions(content):
     }
 
 @app.get("/api/solutions/{filename}")
-def get_solution(filename: str, lang: str = "kr"):
+def get_solution(filename: str):
     """Get model solution for a question"""
     # Extract the question number from filename (e.g., "1_AI_TOP_100.md" -> "1")
     match = re.match(r'^(\d+)_', filename)
@@ -175,8 +254,7 @@ def get_solution(filename: str, lang: str = "kr"):
         raise HTTPException(status_code=404, detail="Solution not found")
 
     question_num = match.group(1)
-    lang_suffix = "ko" if lang == "kr" else "en"
-    solution_filename = f"{question_num}_AI_TOP_100_solution_{lang_suffix}.md"
+    solution_filename = f"{question_num}_AI_TOP_100_solution_ko.md"
     solution_path = os.path.join(SOLUTION_DIR, solution_filename)
 
     if not os.path.exists(solution_path):

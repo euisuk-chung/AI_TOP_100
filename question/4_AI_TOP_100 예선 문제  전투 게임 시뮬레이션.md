@@ -1,6 +1,6 @@
 # AI_TOP_100 예선 문제 : 전투 게임 시뮬레이션
 
-Source: https://brunch.co.kr/@andkakao/321
+Source: [modeling](source/q4)
 
 ### **문제 설명**
 

@@ -1,6 +1,6 @@
 # AI_TOP_100 예선 문제: PDF 속 텍스트 추적
 
-Source: https://brunch.co.kr/@andkakao/322
+Source: [pdf_text_finder](source/q5)
 
 ### **문제 설명**
 
