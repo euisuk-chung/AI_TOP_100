@@ -3,8 +3,11 @@
 이 프로젝트는 카카오임팩트와 브라이언임팩트가 주최한 'AI_TOP_100' 대회의 예선 및 본선 문제들을 수집하고, 이를 로컬 환경에서 직접 풀어볼 수 있도록 돕는 학습용 플랫폼입니다.
 
 
-![Platform Overview](assets/sample_overview.png)
-![Problem Detail](assets/sample_detail.png)
+
+<p align="center">
+  <img src="assets/sample_overview.png" width="48%" alt="Platform Overview">
+  <img src="assets/sample_detail.png" width="48%" alt="Problem Detail">
+</p>
 
 ## 프로젝트 취지
 
@@ -64,8 +67,3 @@
 -   **문제 풀이**: 각 문제(Q1, Q2 등)별로 나누어 코드를 작성할 수 있습니다.
 -   **다국어 지원**: Python, JavaScript, C, C++, Markdown 등 다양한 언어로 답변을 작성할 수 있습니다.
 -   **솔루션 저장**: 작성한 코드는 로컬의 `solve` 디렉토리에 자동으로 저장됩니다.
-
-## 언어 (Language)
-
--   [한국어 (Korean)](README.md)
--   [English](README_EN.md)
