@@ -1,7 +1,5 @@
 # AI_TOP_100 본선 문제 : 인수인계
 
-Source: https://brunch.co.kr/@andkakao/325
-
 ### **문제 설명**
 
 당신은 무책임한 전임자를 대신해서 들어온 막내 직원 홍지은입니다. 제대로 된 인수인계 절차는 커녕, 전임자는 흔적도 없이 사라졌습니다. 당신의 막막한 첫 업무는 어지럽게 남겨진 그의 자리와, 미처 로그아웃되지 않은 워크스페이스에서 시작됩니다.
@@ -12,11 +10,12 @@ Source: https://brunch.co.kr/@andkakao/325
 
 ### **문제 자료 예시**
 
-![스크린샷 2025-11-22 오후 2.56.57.png](//img1.daumcdn.net/thumb/R1280x0.fpng/?fname=http://t1.daumcdn.net/brunch/service/user/41jj/image/qdoOCF1o3IvPWuJTu9QuHgP_5w8.png) 해당 데이터는 추후 공개될 문제 풀이 웹사이트에서 확인 가능합니다.
+![스크린샷 2025-11-22 오후 2.56.57.png](//img1.daumcdn.net/thumb/R1280x0.fpng/?fname=http://t1.daumcdn.net/brunch/service/user/41jj/image/qdoOCF1o3IvPWuJTu9QuHgP_5w8.png) 
 
 ---
 
 ### Q1. AutoFlow 교육은 어디서 이루어지나요?
+Source: [1_메일](source/q8/1_메일)
 
 > 1. 1층 대강당
 
@@ -31,12 +30,14 @@ Source: https://brunch.co.kr/@andkakao/325
 ---
 
 ### Q2. 대학 리크루팅 컨택이 완료된 대학 수는 몇개인가요?
+Source: [1_메일](source/q8/1_메일)
 
 > 숫자로 입력하세요.
 
 ---
 
 ### Q3. 다음 중 시작일이 2025년 8월 1일이 아닌 사항을 모두 고르세요. \*복수 선택
+Source: [2_캘린더](source/q8/2_캘린더)
 
 > 1. 출장 식비 1일 5만원으로 상향
 
@@ -51,6 +52,7 @@ Source: https://brunch.co.kr/@andkakao/325
 ---
 
 ### Q4. 완성된 인수 인계 문서를 제출해주세요.
+Source: [template.md](source/q8/template.md)
 
 반드시 template.md 의 목차 구성과 내용 및 구조(테이블 컬럼명, 리스트 항목)를 정확히 따라야 합니다.
 

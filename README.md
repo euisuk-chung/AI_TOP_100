@@ -2,7 +2,16 @@
 
 이 프로젝트는 카카오임팩트와 브라이언임팩트가 주최한 'AI_TOP_100' 대회의 예선 및 본선 문제들을 수집하고, 이를 로컬 환경에서 직접 풀어볼 수 있도록 돕는 학습용 플랫폼입니다.
 
-![Platform Snapshot](imgs/sample_snapshot.png)
+
+![Platform Overview](assets/sample_overview.png)
+![Problem Detail](assets/sample_detail.png)
+
+## 프로젝트 취지
+
+이 프로젝트는 다음과 같은 목적을 가지고 만들어졌습니다.
+
+1.  **쉬운 문제 풀이를 위한 웹 제공**: 복잡한 설정 없이 웹 브라우저에서 바로 문제를 확인하고 풀 수 있는 환경을 제공합니다.
+2.  **개인 SOLVE 아카이빙 및 공유**: 사용자가 작성한 답안을 체계적으로 저장하고 관리할 수 있도록 지원합니다.
 
 ## 프로젝트 구성
 

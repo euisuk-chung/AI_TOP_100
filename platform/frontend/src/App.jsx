@@ -35,6 +35,29 @@ const ZoomableImage = ({ src, alt }) => {
   )
 }
 
+// Helper component to fetch and display text content
+const TextSourceViewer = ({ path }) => {
+  const [content, setContent] = useState('Loading...')
+
+  useEffect(() => {
+    axios.get(`/${path}`)
+      .then(res => {
+        if (typeof res.data === 'string') {
+          setContent(res.data)
+        } else {
+          setContent(JSON.stringify(res.data, null, 2))
+        }
+      })
+      .catch(err => setContent('Error loading file content.'))
+  }, [path])
+
+  return (
+    <div className="text-source-container">
+      <pre className="text-source-content">{content}</pre>
+    </div>
+  )
+}
+
 function App() {
   const [questions, setQuestions] = useState([])
   const [selectedQuestion, setSelectedQuestion] = useState(null)
@@ -44,13 +67,8 @@ function App() {
   const [intro, setIntro] = useState('')
   const [subQuestions, setSubQuestions] = useState([])
   const [sourceInfo, setSourceInfo] = useState(null)
-  const [answers, setAnswers] = useState({}) // { "Q1": { code: "...", language: "python" } }
+  const [answers, setAnswers] = useState({}) // { "Q1": { code: "...", language: "markdown" } }
   const [status, setStatus] = useState('')
-  const [showSolution, setShowSolution] = useState(false)
-  const [solutionContent, setSolutionContent] = useState('')
-  const [solutionLoading, setSolutionLoading] = useState(false)
-  const [parsedSolutions, setParsedSolutions] = useState({}) // { "Q1": "...", "Q2": "..." }
-  const [visibleSolutions, setVisibleSolutions] = useState({}) // { "Q1": true, "Q2": false }
 
   useEffect(() => {
     fetchQuestions()
@@ -79,72 +97,42 @@ function App() {
       response.data.questions.forEach(q => {
         initialAnswers[q.id] = { code: '', language: 'markdown' }
       })
+
+      // Fetch user saved answers
+      try {
+        const userSolResponse = await axios.get(`/api/solve/${filename}`)
+        const userAnswers = userSolResponse.data.answers || []
+
+        userAnswers.forEach(ans => {
+          if (initialAnswers[ans.id]) {
+            initialAnswers[ans.id] = {
+              code: ans.code,
+              language: 'markdown' // Force markdown
+            }
+          }
+        })
+      } catch (err) {
+        console.log('No user solutions found')
+      }
+
       setAnswers(initialAnswers)
 
       setStatus('')
-      setShowSolution(false)
-      setSolutionContent('')
-      setParsedSolutions({})
-      setVisibleSolutions({})
-
-      // Fetch solutions for this question
-      try {
-        const solResponse = await axios.get(`/api/solutions/${filename}`)
-        if (solResponse.data.parsed && solResponse.data.parsed.questions) {
-          setParsedSolutions(solResponse.data.parsed.questions)
-        }
-      } catch (err) {
-        console.log('No solution available for this question')
-      }
     } catch (error) {
       console.error('Error fetching question content:', error)
     }
   }
 
-  const toggleQuestionSolution = (qId) => {
-    setVisibleSolutions(prev => ({
-      ...prev,
-      [qId]: !prev[qId]
-    }))
-  }
+  /* Removed toggleQuestionSolution, handleShowSolution, handleLanguageChange */
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen)
-  }
-
-  const handleShowSolution = async () => {
-    if (!selectedQuestion) return
-
-    if (showSolution) {
-      setShowSolution(false)
-      return
-    }
-
-    try {
-      setSolutionLoading(true)
-      const response = await axios.get(`/api/solutions/${selectedQuestion}`)
-      setSolutionContent(response.data.content)
-      setShowSolution(true)
-    } catch (error) {
-      console.error('Error fetching solution:', error)
-      setSolutionContent('해설을 찾을 수 없습니다.')
-      setShowSolution(true)
-    } finally {
-      setSolutionLoading(false)
-    }
   }
 
   const handleCodeChange = (qId, newCode) => {
     setAnswers(prev => ({
       ...prev,
       [qId]: { ...prev[qId], code: newCode }
-    }))
-  }
-
-  const handleLanguageChange = (qId, newLang) => {
-    setAnswers(prev => ({
-      ...prev,
-      [qId]: { ...prev[qId], language: newLang }
     }))
   }
 
@@ -228,13 +216,13 @@ function App() {
           </ul>
         </div>
 
-        {/* 본선 (Final) - Questions 6-8 */}
+        {/* 본선 (Final) - Questions 6-9 */}
         <div className="question-section">
           <div className="section-title final">
             본선
           </div>
           <ul>
-            {questions.slice(5, 8).map((q) => (
+            {questions.slice(5).map((q) => (
               <li
                 key={q.filename}
                 onClick={() => handleSelectQuestion(q.filename)}
@@ -301,14 +289,6 @@ function App() {
               <div key={q.id} className="question-block">
                 <div className="question-header">
                   <h3>{q.title}</h3>
-                  {parsedSolutions[q.id] && (
-                    <button
-                      onClick={() => toggleQuestionSolution(q.id)}
-                      className="hint-btn"
-                    >
-                      {visibleSolutions[q.id] ? '해설 닫기' : '해설 보기'}
-                    </button>
-                  )}
                 </div>
                 <div className="question-text">
                   <MarkdownRenderer content={q.content} />
@@ -335,22 +315,34 @@ function App() {
                         ['.png', '.jpg', '.jpeg', '.gif'].some(ext => q.source.path.toLowerCase().endsWith(ext))
                       ) {
                         return <ZoomableImage src={`/${q.source.path}`} alt={q.source.label} />;
+                      } else if (q.source.type === 'directory' && q.source.files) {
+                        // Interactive File List
+                        return (
+                          <div className="source-directory-list">
+                            <div className="directory-label">Folder: {q.source.label}</div>
+                            <ul>
+                              {q.source.files.map((file, idx) => (
+                                <li key={idx}>
+                                  <a href={`/${file}`} target="_blank" rel="noopener noreferrer">
+                                    📄 {file.split('/').pop()}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        );
                       } else if (
                         q.source.type === 'file' ||
                         ['.txt', '.md'].some(ext => q.source.path.toLowerCase().endsWith(ext))
                       ) {
-                        return (
-                          <div className="source-text-container">
-                            <a href={`/${q.source.path}`} target="_blank" rel="noopener noreferrer" className="source-link">
-                              Open {q.source.label} in new tab
-                            </a>
-                          </div>
-                        );
+                        // Inline Text Fetcher
+                        return <TextSourceViewer path={q.source.path} />;
                       } else {
                         return (
                           <div className="source-link-container">
+                            {/* Fallback */}
                             <a href={`/${q.source.path}`} target="_blank" rel="noopener noreferrer" className="source-link-btn">
-                              📂 Open {q.source.label} Folder
+                              📂 Open {q.source.label}
                             </a>
                           </div>
                         );
@@ -359,35 +351,22 @@ function App() {
                   </div>
                 )}
 
-                {visibleSolutions[q.id] && parsedSolutions[q.id] && (
-                  <div className="question-solution">
-                    <div className="question-solution-header">
-                      💡 해설
-                    </div>
-                    <MarkdownRenderer content={parsedSolutions[q.id]} />
-                  </div>
-                )}
-
                 <div className="editor-section">
                   <div className="controls">
-                    <select
-                      value={answers[q.id]?.language || 'python'}
-                      onChange={(e) => handleLanguageChange(q.id, e.target.value)}
-                    >
-                      <option value="python">Python</option>
-                      <option value="javascript">JavaScript</option>
-                      <option value="c">C</option>
-                      <option value="cpp">C++</option>
-                      <option value="markdown">Markdown</option>
-                    </select>
-                    <span>{q.id} Solution</span>
+                    <span>{q.id} Solution (Markdown)</span>
                   </div>
-                  <textarea
-                    value={answers[q.id]?.code || ''}
-                    onChange={(e) => handleCodeChange(q.id, e.target.value)}
-                    placeholder={`Write your solution for ${q.id} here...`}
-                    className="code-editor"
-                  />
+                  <div className="editor-container split-view">
+                    <textarea
+                      value={answers[q.id]?.code || ''}
+                      onChange={(e) => handleCodeChange(q.id, e.target.value)}
+                      placeholder={`Write your solution for ${q.id} here...`}
+                      className="code-editor"
+                    />
+                    <div className="markdown-preview">
+                      <div className="preview-label">Preview</div>
+                      <MarkdownRenderer content={answers[q.id]?.code || ''} />
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -396,28 +375,8 @@ function App() {
               <button onClick={handleSave} className="save-btn">
                 모든 답안 저장
               </button>
-              <button onClick={handleShowSolution} className="solution-btn" disabled={solutionLoading}>
-                {solutionLoading
-                  ? '로딩...'
-                  : showSolution
-                    ? '해설 닫기'
-                    : '해설 보기'
-                }
-              </button>
               {status && <span className="status">{status}</span>}
             </div>
-
-            {showSolution && (
-              <div className="solution-modal">
-                <div className="solution-header">
-                  <h3>모범 답안</h3>
-                  <button onClick={() => setShowSolution(false)} className="close-btn">×</button>
-                </div>
-                <div className="solution-content">
-                  <MarkdownRenderer content={solutionContent} />
-                </div>
-              </div>
-            )}
           </div>
         ) : (
           <div className="placeholder">

@@ -109,20 +109,55 @@ def expand_source_path(source_data):
     # Check if it starts with "source/"
     if path.startswith("source/"):
         abs_path = os.path.join(BASE_DIR, path)
-        
-        if os.path.isdir(abs_path):
-            # It's a directory. List images.
+
+        # Check for glob pattern matching (if contains wildcards and not a direct directory/file exists)
+        if any(char in path for char in ['*', '?', '[']) and not os.path.exists(abs_path):
+             # Use glob to find matching files
+            search_path = abs_path
+            matches = glob.glob(search_path)
+            
             images = []
+            exts = ['.png', '.jpg', '.jpeg', '.gif']
+            
+            for m in matches:
+                # Get relative path for frontend
+                 # os.path.relpath might be safer
+                rel_path = os.path.relpath(m, BASE_DIR).replace("\\", "/")
+                
+                if any(m.lower().endswith(ext) for ext in exts):
+                    images.append(rel_path)
+            
+            if images:
+                source_data["type"] = "gallery"
+                source_data["images"] = sorted(images)
+            else:
+                 # If no matches or no images, fall back to link or text
+                 pass
+
+        elif os.path.isdir(abs_path):
+            # It's a directory. List images and files.
+            images = []
+            files_list = []
             exts = ['.png', '.jpg', '.jpeg', '.gif']
             # List all files in directory
             try:
-                files = os.listdir(abs_path)
-                for f in files:
+                dir_contents = os.listdir(abs_path)
+                for f in dir_contents:
                     if any(f.lower().endswith(ext) for ext in exts):
-                        images.append(os.path.join(path, f))
+                        images.append(os.path.join(path, f).replace("\\", "/"))
+                    else:
+                        # Is a non-image file
+                        files_list.append(os.path.join(path, f).replace("\\", "/"))
                 
-                source_data["type"] = "gallery"
-                source_data["images"] = sorted(images)
+                if images:
+                    source_data["type"] = "gallery"
+                    source_data["images"] = sorted(images)
+                elif files_list:
+                    source_data["type"] = "directory"
+                    source_data["files"] = sorted(files_list)
+                else:
+                    source_data["type"] = "directory"
+                    source_data["files"] = []
             except Exception as e:
                 print(f"Error listing directory {abs_path}: {e}")
                 source_data["type"] = "file"
@@ -206,6 +241,53 @@ def save_solution(filename: str, submission: SolutionSubmission):
         saved_files.append(solution_file)
         
     return {"message": "Solutions saved", "paths": saved_files}
+
+@app.get("/api/solve/{filename}")
+def get_user_solution(filename: str):
+    # Determine solution directory
+    question_name = filename.replace(".md", "")
+    solution_dir = os.path.join(SOLVE_DIR, question_name)
+    
+    if not os.path.exists(solution_dir):
+        return {"answers": []}
+    
+    answers = []
+    # List all files
+    try:
+        files = os.listdir(solution_dir)
+        for f in files:
+            # Parse id and extension
+            name, ext = os.path.splitext(f)
+            # ext has dot, e.g. .py
+            
+            # Determine language from extension
+            language = "python" # default
+            if ext == ".py":
+                language = "python"
+            elif ext == ".js":
+                language = "javascript"
+            elif ext == ".c":
+                language = "c"
+            elif ext == ".cpp":
+                language = "cpp"
+            elif ext == ".md":
+                language = "markdown"
+            elif ext == ".txt":
+                language = "python" # Fallback or plain text?
+            
+            with open(os.path.join(solution_dir, f), "r", encoding="utf-8") as file:
+                code = file.read()
+                
+            answers.append({
+                "id": name,
+                "code": code,
+                "language": language
+            })
+    except Exception as e:
+        print(f"Error reading solutions: {e}")
+        return {"answers": []}
+        
+    return {"answers": answers}
 
 def parse_solution_by_questions(content):
     """Parse solution markdown into per-question sections"""

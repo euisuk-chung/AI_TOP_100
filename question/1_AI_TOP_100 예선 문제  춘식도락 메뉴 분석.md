@@ -12,12 +12,17 @@
 <br>
 
 **[춘식도락 메뉴판 구성]**
-- **중식**, 중식(TAKE OUT), 석식, 석식(TAKE OUT)이 제공됩니다.
-- 금요일은 석식, 석식(TAKE OUT)이 제공되지 않습니다.
-- 중식 코너 구성: 한식A, 한식B, 팝업A, 팝업B, 양식, 샐러드바
-- 중식(TAKE OUT) 코너 구성: 샐러드, 비건, 버거&델리, 라이스&누들
-- 석식 코너 구성: 한식B, 샐러드바
-- 석식(TAKE OUT) 코너 구성: 샐러드, 버거&델리
+- **중식**, **중식(TAKE OUT)**, **석식**, **석식**(TAKE OUT)이 제공됩니다.
+
+- `금요일`은 **석식**, **석식**(TAKE OUT)이 제공되지 않습니다.
+- `중식 코너` 구성: 
+  - 한식A, 한식B, 팝업A, 팝업B, 양식, 샐러드바
+- `중식(TAKE OUT) 코너` 구성: 
+  - 샐러드, 비건, 버거&델리, 라이스&누들
+- `석식 코너` 구성: 
+  - 한식B, 샐러드바
+- `석식(TAKE OUT) 코너` 구성: 
+  - 샐러드, 버거&델리
 - 각 코너별 메뉴와 반찬 구성
 
 ![스크린샷 2025-11-21 오후 2.23.53.png](//img1.daumcdn.net/thumb/R1280x0.fpng/?fname=http://t1.daumcdn.net/brunch/service/user/41jj/image/KEBmzUtU483N52YQ89m6MKceD_E.png)
@@ -67,7 +72,7 @@ Source: [2025-01-06.png](source/q1/menu_challenge/menu_images/2025-01-06.png)
 ---
 
 ### Q3. 지역 특색 메뉴
-Source: [menu_images](source/q1/menu_challenge/menu_images)
+Source: [menu_images](source/q1/menu_challenge/menu_images/2025-0[1-2]-*.png)
 
 ### 1, 2월의 모든 범위(중식, 중식 TAKE OUT, 석식, 석식 TAKE OUT)의 메뉴명에 포함된 지역명(국가/도시/지명)을 추출하고, 2회 이상 등장한 지역을 모두 선택하세요. \*복수 선택
 
@@ -84,7 +89,7 @@ Source: [menu_images](source/q1/menu_challenge/menu_images)
 ---
 
 ### Q4. 메뉴별 칼로리 비교
-Source: [menu_images](source/q1/menu_challenge/menu_images)
+Source: [menu_images](source/q1/menu_challenge/menu_images/2025-0[1-2]-*.png)
 
 ### 1, 2월에서 다음 메뉴들의 칼로리를 찾아 내림차순으로 정렬하세요.
 
@@ -101,7 +106,7 @@ Source: [menu_images](source/q1/menu_challenge/menu_images)
 ---
 
 ### Q5. 2월 한 달 식단 최적화 챌린지
-Source: [menu_images](source/q1/menu_challenge/menu_images)
+Source: [menu_images](source/q1/menu_challenge/menu_images/2025-02-*.png)
 
 ### 2월 한 달간 칼로리 기준으로 최적 조합을 찾아보세요. 한식A·한식B·양식·팝업A·팝업B·샐러드·비건·라이스&누들·버거&델리를 분석 대상으로 합니다. TAKE OUT 메뉴는 "TAKE OUT"이 아닌 세부 코너명(샐러드, 비건, 라이스&누들, 버거&델리)으로 기재하세요.
 

@@ -323,18 +323,48 @@
   flex-wrap: wrap;
 }
 
-.controls select {
-  padding: 5px 8px;
-  background-color: #333;
-  color: white;
-  border: 1px solid #555;
-  border-radius: 4px;
-  font-size: 0.9em;
+.editor-container {
+  width: 100%;
 }
 
-.controls span {
-  font-size: 0.85em;
-  color: #888;
+.editor-container.split-view {
+  display: flex;
+  gap: 10px;
+  height: 400px;
+  /* Fixed height for split view */
+}
+
+.editor-container.split-view .code-editor {
+  flex: 1;
+  height: 100%;
+  resize: none;
+}
+
+.markdown-preview {
+  flex: 1;
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 10px;
+  overflow-y: auto;
+  position: relative;
+  font-size: 0.9em;
+  /* Reduced font size */
+}
+
+.preview-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #30363d;
+  color: #c9d1d9;
+  font-size: 0.7em;
+  padding: 2px 6px;
+  border-bottom-left-radius: 4px;
+}
+
+.markdown-preview img {
+  max-width: 100%;
 }
 
 .code-editor {
@@ -342,7 +372,9 @@
   min-height: 150px;
   background-color: #1a1a1a;
   color: #f8f8f2;
-  border: none;
+  border: 1px solid #333;
+  /* Added border to editor for consistency */
+  border-radius: 4px;
   font-family: 'Fira Code', 'Consolas', monospace;
   font-size: 13px;
   resize: vertical;
