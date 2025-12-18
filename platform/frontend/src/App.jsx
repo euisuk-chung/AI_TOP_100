@@ -38,6 +38,7 @@ const ZoomableImage = ({ src, alt }) => {
 function App() {
   const [questions, setQuestions] = useState([])
   const [selectedQuestion, setSelectedQuestion] = useState(null)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true)
 
   // New state structure
   const [intro, setIntro] = useState('')
@@ -105,6 +106,10 @@ function App() {
       ...prev,
       [qId]: !prev[qId]
     }))
+  }
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen)
   }
 
   const handleShowSolution = async () => {
@@ -198,9 +203,12 @@ function App() {
 
   return (
     <div className="container">
-      <div className="sidebar">
+      <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
         <div className="sidebar-header">
           <h2>Questions</h2>
+          <button className="toggle-sidebar-btn" onClick={toggleSidebar} title="Close Sidebar">
+            &lt;
+          </button>
         </div>
         {/* 예선 (Preliminary) - Questions 1-5 */}
         <div className="question-section">
@@ -239,6 +247,11 @@ function App() {
         </div>
       </div>
       <div className="main">
+        {!isSidebarOpen && (
+          <button className="open-sidebar-btn" onClick={toggleSidebar} title="Open Sidebar">
+            &gt;
+          </button>
+        )}
         {selectedQuestion ? (
           <div className="content-wrapper">
             <div className="intro-section">

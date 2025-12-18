@@ -27,6 +27,16 @@
   overflow-y: auto;
   border-right: 1px solid #333;
   flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.sidebar.closed {
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;
 }
 
 .sidebar-header {
@@ -56,6 +66,49 @@
 
 .lang-toggle:hover {
   background-color: #535bf2;
+}
+
+/* Toggle Buttons */
+.toggle-sidebar-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.2s, background-color 0.2s;
+  font-weight: bold;
+}
+
+.toggle-sidebar-btn:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+.open-sidebar-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  background-color: #1a1a1a;
+  color: #888;
+  border: 1px solid #333;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.open-sidebar-btn:hover {
+  color: #fff;
+  background-color: #333;
+  border-color: #555;
 }
 
 /* Question Section Groups */
@@ -112,6 +165,7 @@
 
 /* Main Content Area */
 .main {
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -588,6 +642,7 @@ a[href^="source/"]::before {
   color: #888;
   font-size: 0.9em;
 }
+
 /* Zoom Controls */
 .zoomable-image-container {
   display: flex;
@@ -627,5 +682,6 @@ a[href^="source/"]::before {
   width: 100%;
   display: flex;
   justify-content: center;
-  overflow: hidden; /* Changed from auto to hidden to prevent scrollbars if not desired, or auto if panning needed */
+  overflow: hidden;
+  /* Changed from auto to hidden to prevent scrollbars if not desired, or auto if panning needed */
 }
