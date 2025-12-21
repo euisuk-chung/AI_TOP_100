@@ -37,7 +37,7 @@
   },
   {
     "id": "test_010",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_011",
@@ -45,7 +45,7 @@
   },
   {
     "id": "test_012",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_013",
@@ -101,7 +101,7 @@
   },
   {
     "id": "test_026",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_027",
@@ -109,7 +109,7 @@
   },
   {
     "id": "test_028",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_029",
@@ -185,11 +185,11 @@
   },
   {
     "id": "test_047",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_048",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_049",
@@ -213,7 +213,7 @@
   },
   {
     "id": "test_054",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_055",
@@ -233,7 +233,7 @@
   },
   {
     "id": "test_059",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_060",
@@ -241,7 +241,7 @@
   },
   {
     "id": "test_061",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_062",
@@ -253,7 +253,7 @@
   },
   {
     "id": "test_064",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_065",
@@ -281,7 +281,7 @@
   },
   {
     "id": "test_071",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_072",
@@ -297,7 +297,7 @@
   },
   {
     "id": "test_075",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_076",
@@ -313,11 +313,11 @@
   },
   {
     "id": "test_079",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_080",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_081",
@@ -325,7 +325,7 @@
   },
   {
     "id": "test_082",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_083",
@@ -385,7 +385,7 @@
   },
   {
     "id": "test_097",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_098",
@@ -417,7 +417,7 @@
   },
   {
     "id": "test_105",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_106",
@@ -429,7 +429,7 @@
   },
   {
     "id": "test_108",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_109",
@@ -453,11 +453,11 @@
   },
   {
     "id": "test_114",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_115",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_116",
@@ -473,7 +473,7 @@
   },
   {
     "id": "test_119",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_120",
@@ -481,7 +481,7 @@
   },
   {
     "id": "test_121",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_122",
@@ -529,7 +529,7 @@
   },
   {
     "id": "test_133",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_134",
@@ -549,7 +549,7 @@
   },
   {
     "id": "test_138",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_139",
@@ -581,7 +581,7 @@
   },
   {
     "id": "test_146",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_147",
@@ -621,7 +621,7 @@
   },
   {
     "id": "test_156",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_157",
@@ -633,11 +633,11 @@
   },
   {
     "id": "test_159",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_160",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_161",
@@ -665,7 +665,7 @@
   },
   {
     "id": "test_167",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_168",
@@ -673,7 +673,7 @@
   },
   {
     "id": "test_169",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_170",
@@ -725,7 +725,7 @@
   },
   {
     "id": "test_182",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_183",
@@ -753,11 +753,11 @@
   },
   {
     "id": "test_189",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_190",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_191",
@@ -853,7 +853,7 @@
   },
   {
     "id": "test_214",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_215",
@@ -889,7 +889,7 @@
   },
   {
     "id": "test_223",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_224",
@@ -925,11 +925,11 @@
   },
   {
     "id": "test_232",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_233",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_234",
@@ -949,7 +949,7 @@
   },
   {
     "id": "test_238",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_239",
@@ -965,7 +965,7 @@
   },
   {
     "id": "test_242",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_243",
@@ -1001,7 +1001,7 @@
   },
   {
     "id": "test_251",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_252",
@@ -1017,7 +1017,7 @@
   },
   {
     "id": "test_255",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_256",
@@ -1069,7 +1069,7 @@
   },
   {
     "id": "test_268",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_269",
@@ -1081,11 +1081,11 @@
   },
   {
     "id": "test_271",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_272",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_273",
@@ -1129,7 +1129,7 @@
   },
   {
     "id": "test_283",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_284",
@@ -1153,7 +1153,7 @@
   },
   {
     "id": "test_289",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_290",
@@ -1161,7 +1161,7 @@
   },
   {
     "id": "test_291",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_292",
@@ -1185,11 +1185,11 @@
   },
   {
     "id": "test_297",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_298",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_299",
@@ -1201,7 +1201,7 @@
   },
   {
     "id": "test_301",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_302",
@@ -1221,7 +1221,7 @@
   },
   {
     "id": "test_306",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_307",
@@ -1229,7 +1229,7 @@
   },
   {
     "id": "test_308",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_309",
@@ -1273,7 +1273,7 @@
   },
   {
     "id": "test_319",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_320",
@@ -1329,7 +1329,7 @@
   },
   {
     "id": "test_333",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_334",
@@ -1365,7 +1365,7 @@
   },
   {
     "id": "test_342",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_343",
@@ -1373,7 +1373,7 @@
   },
   {
     "id": "test_344",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_345",
@@ -1397,11 +1397,11 @@
   },
   {
     "id": "test_350",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_351",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_352",
@@ -1409,15 +1409,15 @@
   },
   {
     "id": "test_353",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_354",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_355",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_356",
@@ -1425,7 +1425,7 @@
   },
   {
     "id": "test_357",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_358",
@@ -1433,7 +1433,7 @@
   },
   {
     "id": "test_359",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_360",
@@ -1445,11 +1445,11 @@
   },
   {
     "id": "test_362",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_363",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_364",
@@ -1497,7 +1497,7 @@
   },
   {
     "id": "test_375",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_376",
@@ -1513,11 +1513,11 @@
   },
   {
     "id": "test_379",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_380",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_381",
@@ -1573,7 +1573,7 @@
   },
   {
     "id": "test_394",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_395",
@@ -1581,7 +1581,7 @@
   },
   {
     "id": "test_396",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_397",
@@ -1589,11 +1589,11 @@
   },
   {
     "id": "test_398",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_399",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_400",
@@ -1617,7 +1617,7 @@
   },
   {
     "id": "test_405",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_406",
@@ -1641,7 +1641,7 @@
   },
   {
     "id": "test_411",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_412",
@@ -1673,15 +1673,15 @@
   },
   {
     "id": "test_419",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_420",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_421",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_422",
@@ -1717,7 +1717,7 @@
   },
   {
     "id": "test_430",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_431",
@@ -1753,7 +1753,7 @@
   },
   {
     "id": "test_439",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_440",
@@ -1813,7 +1813,7 @@
   },
   {
     "id": "test_454",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_455",
@@ -1837,7 +1837,7 @@
   },
   {
     "id": "test_460",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_461",
@@ -1845,7 +1845,7 @@
   },
   {
     "id": "test_462",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_463",
@@ -1905,15 +1905,15 @@
   },
   {
     "id": "test_477",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_478",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_479",
-    "winner": "red"
+    "winner": "blue"
   },
   {
     "id": "test_480",
@@ -1977,7 +1977,7 @@
   },
   {
     "id": "test_495",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_496",
@@ -1993,7 +1993,7 @@
   },
   {
     "id": "test_499",
-    "winner": "blue"
+    "winner": "red"
   },
   {
     "id": "test_500",

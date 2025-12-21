@@ -1,0 +1,532 @@
+You know how they say there are two certainties
+in life, right? Death and taxes. Can't we get rid of
+one of those? See, 100 years ago,
+life expectancy was only 45, can you believe that? Then by the 1950s,
+it was up to 65, and today, it's almost 80. Tomorrow, who knows? Right? Healthcare has made
+huge progress. We've eradicated epidemics
+that used to kill millions, but life is fragile. People still get sick,
+or pass away for reasons that maybe should be, someday curable. What if we could
+improve diagnosis? Innovate to predict illness
+instead of just react to it? In this episode, we'll see how machine learning
+is combating one of the leading
+causes of blindness, and enabling a son
+with a neurological disease to communicate with his family. AI is changing
+the way we think about mind and body, life and death, and what we value most, our human experience. [fanfare music playing] [announcer] ...and our other
+ co-captain, Number 8!
+ Tim Shaw! [crowd cheering] [John Shaw] We've lived
+ with his football dream, All the way back
+ to sixth grade when his coach said, "This kid is gonna go
+a long way." From that point on, Tim was doing pushups
+in his bedroom at night, Tim was the first one
+at practice. Tim took it seriously. [crowd screaming and cheering] [whistle blows] [announcer]
+ Number 8, Tim Shaw! [crowd cheering] I don't know what
+ they're doing out there, and I don't know
+ who they comin' to! [Robert Downey Jr.]
+For as long as he can remember, Tim Shaw dreamed
+ of three letters... N-F-L. [whistle blows] He was a natural
+ from the beginning. As a kid,
+ he was fast and athletic. He grew into 235 pounds
+ of pure muscle, and at 23,
+ he was drafted to the pros. His dream was real. He was playing
+ professional football. [reporter] Hello,
+ I'm with Tim Shaw. You get to start
+this season right.
+What's it feel like? It's that amazing
+pre-game electricity, the butterflies are there,
+and I'm ready to hit somebody.
+ You might wanna look out. Hey, Titans fans,
+it's Tim Shaw here, linebacker
+and special teams animal. He loves what he does. He says,
+"They pay me to hit people!" [crowd cheering] I'm here to bring you
+some truth, a little bit of truth, and so we'll call it
+T-Shaw's truth, 'cause it's not
+all the way true,
+but it's my truth. [Tim Shaw speaking] [Tim from 2015 interview]
+ In 2012, my body started to do things
+ it hadn't done before. My muscles were twitching,
+ I was stumbling, or I was not making a play
+I would have always made. I just wasn't
+the same athlete, I wasn't the same
+football player
+that I'd always been. [Tim speaking] [Downey] The three letters
+ that had defined Tim's life
+ up to that point were not the three letters
+ that the doctor told him
+ that day. A-L-S. [Tim speaking] Okay... [Downey] A-L-S, which
+ stands for "amyotrophic
+ lateral sclerosis," is also known as
+ Lou Gehrig's Disease. It causes the death of neurons
+controlling voluntary muscles. [Sharon Shaw] He can't even
+ scratch his head... Better yet? ...none of those
+ physical things that were
+so easy for him before. He has to think about
+every step he takes. So Tim's food comes
+in this little container. We're gonna
+mix it with water. [Tim speaking] [Downey]
+ As the disease progresses, muscles weaken. Simple everyday actions,
+ like walking, talking,
+ and eating, take tremendous effort. Tim used to call me
+on the phone in the night, and he had voice recognition, and he would speak to the phone, and say, "Call Dad." His phone didn't recognize
+the word "Dad." So, he had said to me... [voice breaking] "Dad,
+I've changed your name. I'm calling...
+I now call you "Yo-yo." So he would say into his phone,
+"Call Yo-yo." [Sharon] Tim has stopped
+ a lot of his communication. He just doesn't talk
+as much as he used to, and I, I miss that. I miss it. -What do you think
+about my red beard?
+-No opinion. [snorts] That means
+he likes it, just doesn't wanna
+say on camera. Now, my favorite was when
+you had the handlebar moustache. [Downey] Language,
+ the ability to communicate
+ with one another. It's something that makes us
+ uniquely human, making communication
+ an impactful application
+ for AI. [Sharon] Yeah, that'll be fun. [Julie Cattiau]
+ My name is Julie. I'm a product manager
+ here at Google. For the past year or so,
+ I've been working on
+ Project Euphonia. Project Euphonia
+has two different goals. One is to improve
+speech recognition for people who have a variety
+ of medical conditions. The second goal
+is to give people
+their voice back, which means actually recreating
+the way they used to sound before they were diagnosed. If you think about
+ communication, it starts with
+understanding someone, and then being understood, and for a lot of people, their voice is like
+ their identity. [Downey]
+ In the US alone,
+ roughly one in ten people suffer acquired
+ speech impairments, which can be caused by
+ anything from ALS, to strokes, to Parkinson's,
+ to brain injuries. Solving it is a big challenge, which is why Julie partnered
+ with a big thinker to help. [Downey] Dimitri
+ is a world-class research
+ scientist and inventor. He's worked at IBM,
+ Princeton, and now Google, and holds over 150 patents. Accomplishments aside, communication
+ is very personal to him. Dimitri has a pretty
+strong Russian accent, and also he learned English
+when he was already deaf, so he never heard himself
+speak English. Oh, you do? Oh, okay. [Downey] Technology can't yet
+ help him hear his own voice. He uses AI-powered
+ Live Transcribe to help him communicate. [Cattiau] Okay,
+that's awesome. So we partnered up with Dimitri
+to train a recognizer that did a much better job
+at recognizing his voice. The model that you're using
+right now for recognition, what data did you train it on? [Downey] So, how does
+ speech recognition work? First, the sound of our voice
+ is converted into a waveform, which is really just
+ a picture of the sound. Waveforms are then matched
+ to transcriptions, or "labels" for each word. These maps exist for most words
+ in the English language. This is where
+ machine learning takes over. Using millions
+ of voice samples, a deep learning model
+ is trained to map input sounds
+ to output words. Then the algorithm uses rules,
+ such as grammar and syntax, to predict each word
+ in a sentence. This is how AI
+ can tell the difference between "there," "their,"
+ and "they're." [Cattiau] The speech
+ recognition model
+ that Google uses works very well for people who have a voice
+that sounds similar to the examples that were used
+to train this model. In 90% of cases,
+it will recognize
+what you want to say. [Downey]
+ Dimitri's not in that 90%. For someone like him,
+it doesn't work at all. So he created a model
+ based on a sample of one. [Downey] But making
+ a new unique model with unique data
+for every new and unique person is slow and inefficient. Tim calls his dad "Yo-yo." Others with ALS may call
+ their dads something else. Can we build one machine that recognizes
+ many different people, and how can we do it fast? [Cattiau] So this data
+ doesn't really exist. We have to actually collect it. So we started this partnership
+with ALS TDI in Boston. They helped us collect
+voice samples from people who have ALS. This is for you, T. Shaw. [all] One, two, three! [all cheering] I hereby accept your ALS
+ice bucket challenge. [yelping softly] [Downey] When the
+ ice bucket challenge
+ went viral, millions joined the fight,
+ and raised over $220 million
+ for ALS research. There really is a straight line
+from the ice bucket challenge to the Euphonia Project. ALS Therapy
+ Development Institute
+ is an organization that's dedicated to finding
+ treatments and cures for ALS. We are life-focused. How can we use
+technologies we have to help these people right away? Yeah, they're
+actually noisier. That's a good point. I met Tim a few years ago shortly after
+he had been diagnosed. Very difficult to go public, but it was made
+very clear to me that the time was right. He was trying to understand
+what to expect in his life, but he was also trying
+ to figure out, "All right,
+ what part can I play?" All the ice bucket challenges
+and the awareness have really inspired me also. If we can just step back, and say, "Where can I
+ shine a light?" or "Where can I give a hand?" When the ice bucket
+challenge happened, we had this huge influx
+of resources of cash, and that gave us the ability to reach out to people with ALS
+ who are in our programs to share their data with us. That's what got us
+the big enough data sets to really attract Google. [Downey] Fernando
+ didn't initially set out to make speech recognition
+ work better, but in the process of better
+ understanding the disease, he built a huge database
+ of ALS voices, which may help Tim
+ and many others. [John] It automatically
+uploaded it. [Tim] Oh. How many
+have you done, Tim? 2066? [Fernando Vieira] Tim,
+ he wants to find every way
+ that he can help. It's inspiring to see
+his level of enthusiasm, and his willingness to record
+lots and lots of voice samples. [Downey] To turn
+ all this data into real help, Fernando partnered
+ with one of the people who started
+ the Euphonia Project,
+ Michael Brenner... -Hey, Fernando.
+-Hey, how are you doing? [Downey] ...a Google
+ research scientist and Harvard-trained
+ mathematician who's using machine learning to solve scientific
+ Hail Marys, like this one. Tim Shaw has recorded
+almost 2,000 utterances, and so we decided
+to apply our technology to see if we could build
+a recognizer that
+understood him. [Tim speaking] The goal, right, for Tim,
+is to get it so that it works outside of the things
+that he recorded. The problem is
+that we have no idea how big of a set that
+this will work on. [Brenner] Dimitri had recorded
+ upwards of 15,000 sentences, which is just an incredible
+amount of data. We couldn't possibly
+ expect anyone else to record so many sentences, so we know that
+ we have to be able to do this with much less recordings
+from a person. So it's not clear it will work. [Tim speaking] -That didn't
+work at all.
+-Not at all. He said, "I go
+the opposite way," and it says,
+"I know that was." [Brenner]
+When it doesn't recognize, we jiggle around
+ the parameters of
+ the speech recognizer, then we give it
+ another sentence, and the idea is that
+you'll get it to understand. [Tim's recording]
+ Can we go to the beach? -Yes! Got it.
+-Got it. That's so cool.
+Okay, let's try another. [Downey] If Tim Shaw
+ gets his voice back, he may no longer feel
+ that he is defined, or constrained,
+ by three letters, but that's a big "if." While Michael
+ and team Euphonia work away, let's take a moment and imagine
+ what else is possible in the realm of the senses. Speech. Hearing. Sight. Can AI predict blindness? [truck horn beeps] Or even prevent it? [Downey] Santhi does not
+ have an easy life. It's made more difficult
+ because she has diabetes, which is affecting her vision. [Downey] If Santhi doesn't
+ get medical help soon,
+ she may go blind. [Dr. Jessica Mega]
+ Complications of diabetes include heart disease, kidney disease, but one of the really
+important complications is diabetic retinopathy. The reason it's
+so important is that it's one of the lead causes
+of blindness worldwide. This is particularly true
+ in India. [giving instructions] In the early stages,
+it's symptomless, but that's when it's treatable, so you want to screen them
+early on, before they actually
+ lose vision. In the early stages, if a doctor is
+ examining the eye, or you take a picture
+ of the back of the eye, you will see lots of those
+ bleeding spots in the retina. Today, the doctors are
+not enough to do the screening. We are very limited
+ophthalmologists, so there should be other ways where you can screen
+ the diabetic patients for diabetic complications. [Downey] In the US, there are about 74 eye doctors
+ for every million people. In India, there are only 11. So just keeping up with
+ the sheer number of patients, let alone giving them
+ the attention and care
+ they need, is overwhelming,
+ if not impossible. [Dr. R. Kim] We probably see
+ about 2,000 to 2,500 patients every single day. [Mega]
+ The interesting thing
+ with diabetic retinopathy is there are ways
+ to screen and get
+ ahead of the problem. The challenge is that
+not enough patients
+undergo screening. [Downey] Like Tim Shaw's
+ ALS speech recognizer, this problem is also
+ about data, or lack of it. To prevent more people
+from experiencing vision loss, Dr. Kim wanted to
+ get ahead of the problem. So there's a hemorrhage. All these are exudates. [Downey] Dr. Kim
+ called up a team at Google. Made up of doctors
+ and engineers, they're exploring ways
+ to use machine learning to solve some of the world's
+ leading healthcare problems. So we started with
+could we train an AI model that can somehow help
+read these images, that can decrease the number
+ of doctors required to do this task. So this is
+the normal view. When you start
+looking more deeply, then this can be
+a microaneurysm, right? -This one here?
+-[man] Could be. [Downey] The team
+ uses the same kind
+ of machine learning that allows us
+ to organize our photos or tag friends
+ on social media, image recognition. First, models are trained using tagged images of things
+ like cats or dogs. After looking at
+ thousands of examples, the algorithm learns
+ to identify new images without any human help. For the retinopathy project, over 100,000 eye scans were graded
+ by eye doctors who rated each eye scan
+ on a scale from one to five, from healthy to diseased. These images were then used to train a machine
+ learning algorithm. Over time,
+ the AI learned to predict which eyes showed signs
+ of disease. [Dr. Lily Peng]
+This is the assistant's view where the model's predictions are actually projected
+ on the original image, and it's picking up
+the pathologies very nicely. [Downey] To get help
+ implementing the technology, Lily's team reached out
+ to Verily, the life sciences unit
+ at Alphabet. [Mega] So, how was India? [Peng] Oh, amazing! [Mega] Verily
+ came out of Google X, and we sit at the intersection
+of technology, life science,
+and healthcare. What we try to do is
+ think about big problems that are affecting
+ many patients, and how can we bring
+ the best tools and best technologies to get ahead of the problems. The technical pieces
+are so important,
+and so is the methodology. How do you capture
+the right image, and how does the algorithm work, and how do you deploy
+these tools not only here, but in rural conditions? If we can speed up
+this diagnosis process and augment the clinical care, then we can prevent blindness. [Downey] There aren't many
+ other bigger problems that
+ affect more patients. Diabetes affects
+ 400 million worldwide, 70 million in India alone, which is why Jessica
+ and Lily's teams began testing AI-enabled
+ eye scanners there, in its most rural areas, like Dr. Kim's
+ Aravind Eye Clinics. -Is the camera on?
+-Now it's on. Yeah. So once the camera is up, we need to check
+network connectivity. [Sunny Virmani]
+ The patient comes in. They get pictures
+of the back of the eye. One for the left eye,
+and right eye. The images are uploaded
+ to this algorithm, and once the algorithm
+ performs its analysis, it sends the results back
+ to the system, along with
+a referral recommendation. It's good.
+It's up and running. Because the algorithm
+works in real time, you can get
+a real-time answer to a doctor, and that real-time answer
+ comes back to the patient. [Kim] Once you have
+ the algorithm, it's like taking
+ your weight measurement. Within a few seconds, the system tells you whether
+you have retinopathy or not. [Downey] In the past, Santhi's condition could've
+ taken months to diagnose, if diagnosed at all. [Downey] By the time
+ an eye doctor would've
+ been able to see her, Santhi's diabetes might have
+ caused her to go blind. Now, with the help
+ of new technology, it's immediate, and she can take
+ the hour-long bus ride to Dr. Kim's clinic in Madurai for same-day treatment. [Downey]
+ Now thousands of patients who may have waited weeks
+ or months to be seen can get the help they need
+ before it's too late. Thank you, sir. [Downey] Retinopathy is when high blood sugar
+ damages the retina. Blood leaks,
+ and the laser treatment basically "welds"
+ the blood vessels to stop the leakage. Routine eye exams
+ can spot the problem early. In rural or remote areas,
+ like here, AI can step in and be
+ that early detection system. [Pedro Domingos] I think
+one of the most important
+applications of AI. is in places
+ where doctors are scarce. In a way, what AI does
+is make intelligence cheap, and now imagine what
+you can do when you make
+intelligence cheap. People can go
+to doctors they
+couldn't before. It may not be
+ the impact that catches
+ the most headlines, but in many ways it'll be
+ the most important impact. [family chattering happily] [Mega] AI now is
+this next generation of tools that we can apply to clinically
+ meaningful problems, so AI really starts
+to democratize healthcare. [Mega] The work
+with diabetic retinopathy is opening our eyes
+to so much potential. Even within these images, we're starting to see
+ some interesting signals that might tell us about
+ someone's risk factors
+ for heart disease. And from there,
+ you start to think about all of the images that
+ we collect in medicine. Can you use AI or an algorithm to help patients and doctors get ahead of a given diagnosis? Take cancer as an example
+of how AI can help save lives. We could take a sample
+ of somebody's blood and look for the minuscule
+ amounts of cancer DNA or tumor DNA in that blood.
+This is a great application
+for machine learning. [Downey]
+ And why stop there? Could AI accomplish what human researchers
+ have not yet been able to? Figuring out how cells
+work well enough that you can understand
+why a tumor grows
+and how to stop it without hurting
+the surrounding cells. [Downey] And if cancer
+ could be cured, maybe mental health disorders, like depression, or anxiety. There are facial
+and vocal biomarkers of these
+mental health disorders. People check their phones
+ 15 times an hour. So that's an opportunity to almost do, like,
+ a well-being checkpoint. You can flag that
+to the individual, to a loved one, or in some cases
+ even to a doctor. [Bran Ferren]
+ If you look at the overall
+ field of medicine, how do you do a great job
+ of diagnosing illness? Having artificial intelligence, the world's greatest
+diagnostician, helps. [Downey] At Google, Julie and the Euphonia team
+ have been working for months trying to find a way
+ for former NFL star Tim Shaw to get his voice back. [Dimitri Kanevsky speaking] Yes! So Zach's team,
+the DeepMind team, has built a model
+that can imitate your voice. For Tim, we were lucky, because, you know, Tim has
+a career of NFL player, so he did multiple
+radio interviews
+and TV interviews, so he sent us
+this footage. Hey, this is Tim Shaw,
+ special teams animal. Christmas is coming,
+ so we need to find out what the Titans players
+ are doing. If you gotta hesitate,
+ that's probably a "no." [Cattiau] Tim will be able
+ to type what he wants, and the prototype will say it
+in Tim's voice. I've always loved attention. Don't know if you
+ know that about me. [laughs] She's gonna
+ shave it for you. [Downey] Interpreting speech
+ is one thing, but re-creating the way
+ a real person sounds is an order of magnitude harder. Playing Tecmo Bowl,
+ eating Christmas cookies,
+ and turkey. [Downey] Voice imitation
+ is also known as
+ voice synthesis, which is basically
+speech recognition in reverse. First, machine learning
+ converts text back
+ into waveforms. These waveforms are then
+ used to create sound. This is how Alexa
+ and Google Home
+ are able to talk to us. Now the teams from DeepMind
+ and Google AI are working to create a model to imitate the unique sound
+ of Tim's voice. Looks like it's computing. But it worked this morning? We have to set expectations
+quite low. [Cattiau] I don't know how
+our model is going to perform. I hope that Tim will understand and actually see the technology
+ for what it is, which is a work in progress
+and a research project. [Downey] After six months
+ of waiting, Tim Shaw is
+ about to find out. The team working on
+ his speech recognition model is coming to his house
+ for a practice run. [doorbell rings] [dog barks] [Sharon] Good girl,
+come say hello. -Hi!
+-Oh, hi! Welcome. -Hi!
+-Come in. Thanks for having us. [Sharon] He's met
+some of you before,
+right? How are you
+doing, Tim? -Hi, Tim.
+-Good to see you. -Hello.
+-Hello. Hi. Hi, I'm Julie.
+We saw each other
+on the camera. It's warmer here
+than it is in Boston. [Sharon] As it should be. [all laughing] Okay. Lead the way, Tim. [Cattiau] I'm excited
+ to share with Tim
+ and his parents what we've been working on. I'm a little bit nervous.
+I don't know if the app is going to behave
+the way we hope it will behave, but I'm also very excited,
+to learn new things and to hear Tim's feedback. So I brought
+two versions with me. I was supposed to pick,
+but I decided
+to just bring both just in case one is better
+than the other, and, just so you know, this one here was trained only using recordings
+of your voice, and this one here was trained
+using recordings of your voice, and also from other participants
+from ALS TDI who went through
+the same exercise of...
+[laughing] So, okay. I was hoping we could
+give them a try. Are we ready? Who are you talking about? [app chimes] It got it. [John] It got it. [gasps] [Tim] Is he coming? [app chimes] Yes. Are you working today? [app chimes] [chuckling] It's wonderful. [Cattiau] Cool. Thank you
+for trying this. -Wow!
+-It's fabulous. [John] What I love,
+it made mistakes, -and then it corrected itself.
+-Yeah. I was watching it like,
+"That's not it," and then it went...
+[mimics app]
+Then it does it right. These were phrases, part of the 70%
+that we actually used to train the model, but we also set aside
+30% of the phrases, so this might not do as well, but I was hoping that
+we could try some of these too. [John] So what
+we've already done is him using phrases
+that were used
+to train the app. That's right. Now we're trying to see
+if it can recognize phrases -that weren't part of that.
+-[Cattiau] Yes, that's right. So let's give it a try? Do you want me to? Do you have the time to play? [app chimes] What happens afterwards? [app chimes] Huh. So, on the last one, this one got it,
+and this one didn't. -We'll pause it. So...
+-I love the first one,
+where it says, -"Can you help me
+take a shower?"
+-[laughing] -[Cattiau] That's not at all
+what he said.
+-[John] I know, you've gotta be really careful
+what you ask for. [all laughing] [John] So if, when it's
+interpreting his voice, and it makes some errors, is there a way we can
+correct it? Yeah. We want to add
+the option for you guys to fix
+the recordings, but as of today,
+because this is
+the very first time we actually tried this, we don't have it yet. [Cattiau] This is still
+ a work in progress. We have
+ a speech recognition model that works for Tim Shaw, which is, you know, one person, and we're really hoping
+that, you know, this technology can work
+for many people. There's something else
+I want you to try, if that's okay? We're working with
+another team at Google
+called DeepMind. They're specialized in
+voice imitation and synthesis. [Downey] In 2019, Tim wrote a letter
+ to his younger self. They are words written by
+ a 34-year-old man with ALS who has trouble communicating sent back in time to a 22-year-old
+ on the cusp of NFL greatness. [Cattiau] So let me
+give this a try. I just like using this letter
+because it's just so beautiful, so let me see
+if this is gonna work. [Tim's younger voice]
+ So, I've decided to
+ write you this letter 'cause I have so much
+ to tell you. I want to explain to you why it's so difficult
+ for me to speak, the diagnosis, all of it, and what my life is like now, 'cause one day,
+ you will be in my shoes, living with the same struggles. It's his voice,
+that I'd forgotten. We do. [app chimes] [app chimes] We're so happy
+to be working with you. It's really an honor. [John] The thought
+that one day, that can be linked with this, and when you speak
+as you are now, it will sound
+like that, is... It's okay. We'll wait. [Cattiau] There is
+ a lot of unknown and still a lot of research
+ to be conducted. We're really trying to have
+a proof of concept first, and then expand to not only
+people who have ALS, but people
+ who had a stroke, or a traumatic
+brain injury,
+multiple sclerosis, any types of
+neurologic conditions. Maybe other languages,
+too, you know? I would really like this
+to work for French, for example. [Mega] Wouldn't it be
+ a wonderful opportunity to bring technology
+to problems that we're solving in life science and healthcare, and in fact,
+it's a missed opportunity if we don't try to bring
+the best technologies to help people. This is really
+just the beginning. [Downey]
+ Just the beginning indeed. Imagine the possibilities. I think in the imaginable
+future for AI and healthcare is that there is
+no healthcare anymore, because nobody needs it. You could have an AI
+ that is directly talking
+ to your immune system, and is actually preemptively
+ creating the antibodies for the epidemics
+ that are coming your way, and will not be stopped. This will not happen
+tomorrow, but it's
+the long-term goal that we can point towards. [Downey] Tim had never
+ heard his own words read out loud before today. Neither had his parents. [Tim] Every single day
+ is a struggle for me. I can barely move my arms. [John] Have fun. I can't walk on my own, so I recently started
+ using a wheelchair. I have trouble
+ chewing and swallowing. I'd kill for a good pork chop. Yes, my body is failing,
+ but my mind is not giving up. Find what's most important
+ in your life, and live for that. Don't let three letters, NFL, define you... [crowd cheering] ...the same way I refuse
+to let three letters define me. [John] One of the things
+ Tim has taught us, and I think it's a lesson
+ for everyone... Medically speaking,
+Tim's life has an end to it. In fact, five years ago
+we were told he only had
+two to five years left. We're already past that. He has learned very quickly that today
+ is the day that we have, and we can ruin today by thinking about yesterday and how wonderful it used to be, and, "Oh, woe is me,"
+and "I wish it was like that." We can also ruin today by looking into the future, and in Tim's case, how horrible
+ this is going to be. "This is going to happen," "I won't be able
+ to do this anymore." So if we go either
+ of those directions, it spoils us
+ from being present today. That's a lesson for all of us. Whether we have
+ an ALS diagnosis or not, try to see the good
+and the blessing of every day. You're here with us today. It's going to be a good day.

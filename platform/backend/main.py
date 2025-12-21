@@ -215,31 +215,22 @@ def save_solution(filename: str, submission: SolutionSubmission):
     question_name = filename.replace(".md", "")
     solution_dir = os.path.join(SOLVE_DIR, question_name)
     os.makedirs(solution_dir, exist_ok=True)
-    
+
     saved_files = []
-    
+
     for answer in submission.answers:
-        # Determine extension
-        ext = "txt"
-        if answer.language == "python":
-            ext = "py"
-        elif answer.language == "javascript":
-            ext = "js"
-        elif answer.language == "c":
-            ext = "c"
-        elif answer.language == "cpp":
-            ext = "cpp"
-        elif answer.language == "markdown":
-            ext = "md"
-        
-        # Save as Q1.py, Q2.js, etc.
-        solution_file = os.path.join(solution_dir, f"{answer.id}.{ext}")
-        
+        # Create Q{N}/ subdirectory for each answer
+        answer_dir = os.path.join(solution_dir, answer.id)
+        os.makedirs(answer_dir, exist_ok=True)
+
+        # Always save as answer.md in the Q{N}/ folder
+        solution_file = os.path.join(answer_dir, "answer.md")
+
         with open(solution_file, "w", encoding="utf-8") as f:
             f.write(answer.code)
-        
+
         saved_files.append(solution_file)
-        
+
     return {"message": "Solutions saved", "paths": saved_files}
 
 @app.get("/api/solve/{filename}")
@@ -247,46 +238,34 @@ def get_user_solution(filename: str):
     # Determine solution directory
     question_name = filename.replace(".md", "")
     solution_dir = os.path.join(SOLVE_DIR, question_name)
-    
+
     if not os.path.exists(solution_dir):
         return {"answers": []}
-    
+
     answers = []
-    # List all files
+    # List Q{N}/ subdirectories
     try:
-        files = os.listdir(solution_dir)
-        for f in files:
-            # Parse id and extension
-            name, ext = os.path.splitext(f)
-            # ext has dot, e.g. .py
-            
-            # Determine language from extension
-            language = "python" # default
-            if ext == ".py":
-                language = "python"
-            elif ext == ".js":
-                language = "javascript"
-            elif ext == ".c":
-                language = "c"
-            elif ext == ".cpp":
-                language = "cpp"
-            elif ext == ".md":
-                language = "markdown"
-            elif ext == ".txt":
-                language = "python" # Fallback or plain text?
-            
-            with open(os.path.join(solution_dir, f), "r", encoding="utf-8") as file:
-                code = file.read()
-                
-            answers.append({
-                "id": name,
-                "code": code,
-                "language": language
-            })
+        items = os.listdir(solution_dir)
+        for item in items:
+            full_path = os.path.join(solution_dir, item)
+            # Only process Q{N} directories
+            if os.path.isdir(full_path) and re.match(r'^Q\d+$', item):
+                answer_file = os.path.join(full_path, "answer.md")
+                if os.path.exists(answer_file):
+                    with open(answer_file, "r", encoding="utf-8") as file:
+                        code = file.read()
+
+                    answers.append({
+                        "id": item,  # Q1, Q2, etc.
+                        "code": code,
+                        "language": "markdown"
+                    })
     except Exception as e:
         print(f"Error reading solutions: {e}")
         return {"answers": []}
-        
+
+    # Sort by Q number
+    answers.sort(key=lambda x: int(x["id"][1:]))
     return {"answers": answers}
 
 def parse_solution_by_questions(content):

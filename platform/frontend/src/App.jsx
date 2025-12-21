@@ -271,6 +271,21 @@ function App() {
                           </a>
                         </div>
                       );
+                    } else if (sourceInfo.type === 'directory' && sourceInfo.files) {
+                      return (
+                        <div className="source-directory-list">
+                          <div className="directory-label">📁 {sourceInfo.label}</div>
+                          <ul>
+                            {sourceInfo.files.map((file, idx) => (
+                              <li key={idx}>
+                                <a href={`/${file}`} target="_blank" rel="noopener noreferrer">
+                                  📄 {file.split('/').pop()}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      );
                     } else {
                       return (
                         <div className="source-link-container">
