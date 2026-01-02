@@ -52,7 +52,7 @@ def parse_markdown(content):
             q_id = match.group(1)
             current_question = {
                 "id": q_id,
-                "title": line.strip(),
+                "title": line.replace("###", "").strip(),
                 "content": "",
                 "source": None
             }
