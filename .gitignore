@@ -12,6 +12,8 @@ __pycache__/
 .cache/
 
 # Distribution / packaging
+extracted_images/
+
 .Python
 build/
 develop-eggs/
@@ -220,3 +222,5 @@ aux
 AUX
 prn
 PRN
+source/q3/videos/*.mp4
+*.mp4

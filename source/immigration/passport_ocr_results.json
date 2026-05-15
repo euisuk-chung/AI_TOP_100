@@ -1,0 +1,10 @@
+{
+  "applicant_001": {
+    "type": "P",
+    "name": "JOHN SMITH",
+    "passport_no": "Z70864726",
+    "nationality": "Republic of Valeria",
+    "dob": "1991-05-28",
+    "expiry_date": "2031-04-25"
+  }
+}

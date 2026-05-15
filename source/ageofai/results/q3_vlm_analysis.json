@@ -1,0 +1,327 @@
+{
+  "적정선은_어디인가": {
+    "Q3-1": {
+      "frame_analyses": [],
+      "summary": "음료 없음"
+    }
+  },
+  "사랑_예술_그리고_이야기": {
+    "Q3-4": {
+      "frame_analyses": [
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0000_0.00s.jpg",
+          "timestamp": "0.00s",
+          "response": "이 프레임은 완전히 검은색으로, 인물이나 직업 관련 단서가 전혀 보이지 않습니다. 따라서 \"Bobo\" 역할의 배우(John Hennigan) 과거 직업에 대한 단서를 확인할 수 없습니다."
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0063_75.03s.jpg",
+          "timestamp": "75.03s",
+          "response": ""
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0126_198.78s.jpg",
+          "timestamp": "198.78s",
+          "response": "1. 프로레슬러 (WWE 관련 로고, 레슬링 동작, 근육질 체형)  \n(배우 John Hennigan은 과거 프로레슬러로 활동했으며, 이미지에서 \"200 YUKI\" 로고와 배경의 현대적 조명은 WWE 관련 흔적을 암시하지 않으나, 배우의 실제 경력에 따라 단서로 판단됨.)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0189_334.29s.jpg",
+          "timestamp": "334.29s",
+          "response": "1. 프로레슬러 (WWE 관련 로고, 레슬링 동작, 근육질 체형)  \n배경의 붉은색과 흰색 구조물이 WWE 로고와 연관될 수 있으며, John Hennigan은 과거 WWE에서 활동한 프로레슬러로 알려져 있습니다."
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0252_488.65s.jpg",
+          "timestamp": "488.65s",
+          "response": "1. 프로레슬러 (WWE 관련 로고, 레슬링 동작, 근육질 체형)  \n(John Hennigan은 과거 프로레슬러로 활동했으며, 이미지 내 배경의 작업실 분위기와 무관하게 직업적 단서로 확인됨.)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0315_635.30s.jpg",
+          "timestamp": "635.30s",
+          "response": "이 영상 프레임에서 등장하는 인물은 **\"Bobo\" 역할을 맡은 배우 John Hennigan**입니다. John Hennigan은 전직 프로레슬러로, WWE에서 활동한 경력이 있습니다. 따라서 그의 과거 직업에 대한 단서는 **프로레슬러(옵션 1)**에 해당합니다.\n\n- **프로레슬러(옵션 1)**: WWE 관련 로고, 레슬링 동작, 근육질 체형 등이 이미지 내에서 간접적으로 암시될 수 있습니다. 다만, 이미지는 얼굴 클로즈업으로 배경이 흐릿하지만, John Hennigan의 실제 배경(프로레슬러 경력)을 고려할 때, 이는 그의 과거 직업을 직접적으로 지칭하는 단서로 작용합니다.\n- 다른 옵션(뮤지션, 레이서, AI 전문가, 댄서)은 John Hennigan의 공개된 경력과 일치하지 않습니다.\n\n따라서, **이미지에서 확인 가능한 단서는 프로레슬러(옵션 1)입니다.**\n\n**정답: 1**"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0378_745.87s.jpg",
+          "timestamp": "745.87s",
+          "response": "1. 프로레슬러 (WWE 관련 로고, 레슬링 동작, 근육질 체형)  \n이미지에는 WWE 로고나 레슬링 관련 흔적이 없으나, 배우 John Hennigan은 과거 프로레슬러로 알려져 있습니다. 다만, 프레임 내 직접적인 단서는 없으나, 문제의 맥락상 \"Bobo\" 역할을 맡은 배우의 과거 직업을 묻는 경우, **1. 프로레슬러**가 정답입니다."
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0441_852.81s.jpg",
+          "timestamp": "852.81s",
+          "response": "1. 프로레슬러 (WWE 관련 로고, 레슬링 동작, 근육질 체형)  \n(John Hennigan은 전 WWE 프로레슬러로, 이 영상에서 \"Bobo\" 역할을 맡은 배우의 과거 직업과 일치합니다.)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0504_987.70s.jpg",
+          "timestamp": "987.70s",
+          "response": "1. 프로레슬러 (WWE 관련 로고, 레슬링 동작, 근육질 체형)  \n(John Hennigan은 과거 프로레슬러로 활동했으며, 이 이미지의 스타일은 그의 과거 직업과 무관하지만, 실제 배우의 과거 직업을 확인하는 데 있어 \"프로레슬러\"가 정답입니다.)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0567_1138.01s.jpg",
+          "timestamp": "1138.01s",
+          "response": "1. 프로레슬러 (WWE 관련 로고, 레슬링 동작, 근육질 체형)  \n- 이미지에서 인물의 근육질 체형과 레슬링 동작(바닥에 누워 있는 자세)이 확인되며, John Hennigan은 과거 WWE 프로레슬러로 활동했음."
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0630_1285.45s.jpg",
+          "timestamp": "1285.45s",
+          "response": "1. 프로레슬러 (WWE 관련 로고, 레슬링 동작, 근육질 체형)  \n\"Bobo\"는 프로레슬러의 흔한 별명(예: Bobo Brazil)으로, 배우 John Hennigan의 과거 직업을 암시합니다."
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0693_1414.54s.jpg",
+          "timestamp": "1414.54s",
+          "response": "1. 프로레슬러 (WWE 관련 로고, 레슬링 동작, 근육질 체형)  \n이미지에는 직접적인 레슬링 관련 단서 없으나, \"Bobo\" 역할을 맡은 배우 John Hennigan은 실제 과거 프로레슬러(WWE에서 Bobo Brazil로 활동)였기 때문에 해당 직업을 지칭합니다."
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0756_1479.06s.jpg",
+          "timestamp": "1479.06s",
+          "response": "3. 레이서 (자동차, 헬멧)  \n이미지에 미래형 스포츠카가 보이며, 배우가 차량을 밀고 있는 장면에서 자동차와 관련된 직업 단서가 확인됨. John Hennigan은 과거 레이서로 활동한 경력이 있음."
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0819_1585.38s.jpg",
+          "timestamp": "1585.38s",
+          "response": "이 프레임에는 배우나 인물이 전혀 보이지 않습니다. 따라서 \"Bobo\" 역할을 맡은 John Hennigan의 과거 직업에 대한 단서도 확인할 수 없습니다. 모든 선택지(프로레슬러, 뮤지션, 레이서, AI 전문가, 댄서)의 흔적도 존재하지 않습니다."
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0882_1696.40s.jpg",
+          "timestamp": "1696.40s",
+          "response": ""
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0945_1801.38s.jpg",
+          "timestamp": "1801.38s",
+          "response": "이 프레임에서 \"Bobo\" 역할을 맡은 배우(John Hennigan)의 과거 직업 단서는 **레이서**입니다.  \n- 자동차 내부의 MOMO 스티어링 휠, Sparco 레이싱 유니폼, 레이싱 헬멧 등이 레이서 직업의 흔적입니다.  \n- 옵션 3(레이서)이 정답입니다."
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_1008_1897.23s.jpg",
+          "timestamp": "1897.23s",
+          "response": ""
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_1071_2015.10s.jpg",
+          "timestamp": "2015.10s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_1134_2121.45s.jpg",
+          "timestamp": "2121.45s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_1197_2218.59s.jpg",
+          "timestamp": "2218.59s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        }
+      ],
+      "summary": "요약 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+    },
+    "Q3-6": {
+      "frame_analyses": [
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0000_0.00s.jpg",
+          "timestamp": "0.00s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0063_75.03s.jpg",
+          "timestamp": "75.03s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0126_198.78s.jpg",
+          "timestamp": "198.78s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0189_334.29s.jpg",
+          "timestamp": "334.29s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0252_488.65s.jpg",
+          "timestamp": "488.65s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0315_635.30s.jpg",
+          "timestamp": "635.30s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0378_745.87s.jpg",
+          "timestamp": "745.87s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0441_852.81s.jpg",
+          "timestamp": "852.81s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0504_987.70s.jpg",
+          "timestamp": "987.70s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0567_1138.01s.jpg",
+          "timestamp": "1138.01s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0630_1285.45s.jpg",
+          "timestamp": "1285.45s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0693_1414.54s.jpg",
+          "timestamp": "1414.54s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0756_1479.06s.jpg",
+          "timestamp": "1479.06s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0819_1585.38s.jpg",
+          "timestamp": "1585.38s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0882_1696.40s.jpg",
+          "timestamp": "1696.40s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_0945_1801.38s.jpg",
+          "timestamp": "1801.38s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_1008_1897.23s.jpg",
+          "timestamp": "1897.23s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_1071_2015.10s.jpg",
+          "timestamp": "2015.10s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_1134_2121.45s.jpg",
+          "timestamp": "2121.45s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/사랑_예술_그리고_이야기/frame_1197_2218.59s.jpg",
+          "timestamp": "2218.59s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        }
+      ],
+      "summary": "요약 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+    }
+  },
+  "AI를_통한_치유": {
+    "Q3-7": {
+      "frame_analyses": [
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0000_0.00s.jpg",
+          "timestamp": "0.00s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0049_119.12s.jpg",
+          "timestamp": "119.12s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0098_243.20s.jpg",
+          "timestamp": "243.20s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0147_411.95s.jpg",
+          "timestamp": "411.95s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0196_535.58s.jpg",
+          "timestamp": "535.58s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0245_670.17s.jpg",
+          "timestamp": "670.17s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0294_789.16s.jpg",
+          "timestamp": "789.16s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0343_914.87s.jpg",
+          "timestamp": "914.87s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0392_998.29s.jpg",
+          "timestamp": "998.29s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0441_1126.67s.jpg",
+          "timestamp": "1126.67s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0490_1245.79s.jpg",
+          "timestamp": "1245.79s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0539_1352.23s.jpg",
+          "timestamp": "1352.23s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0588_1459.21s.jpg",
+          "timestamp": "1459.21s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0637_1543.58s.jpg",
+          "timestamp": "1543.58s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0686_1646.31s.jpg",
+          "timestamp": "1646.31s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0735_1751.75s.jpg",
+          "timestamp": "1751.75s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0784_1862.49s.jpg",
+          "timestamp": "1862.49s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0833_1985.32s.jpg",
+          "timestamp": "1985.32s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0882_2100.10s.jpg",
+          "timestamp": "2100.10s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        },
+        {
+          "frame": "/home/euisuk.chung/repo/AI_TOP_100/source/q3/frames/AI를_통한_치유/frame_0931_2230.94s.jpg",
+          "timestamp": "2230.94s",
+          "response": "분석 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+        }
+      ],
+      "summary": "요약 오류: model 'qwen3-vl:8b' not found (status code: 404)"
+    }
+  }
+}

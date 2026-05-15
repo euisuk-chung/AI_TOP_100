@@ -302,6 +302,50 @@
   display: block;
   overflow-x: auto;
   max-width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 8px;
+}
+
+.question-text table th,
+.question-text table td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+  background-color: #ffffff;
+}
+
+.question-text table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  color: #333;
+}
+
+.question-text table tr:nth-child(even) td {
+  background-color: #fafafa;
+}
+
+.markdown-preview table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.markdown-preview table th,
+.markdown-preview table td {
+  border: 1px solid #555;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.markdown-preview table th {
+  background-color: #333;
+  font-weight: bold;
+}
+
+.markdown-preview table tr:nth-child(even) {
+  background-color: #2a2a2a;
 }
 
 /* Editor Section */
@@ -653,6 +697,51 @@ a[href^="source/"]::before {
 .source-link:hover,
 .source-link-btn:hover {
   text-decoration: underline;
+}
+
+/* Directory List Styling */
+.source-directory-list {
+  padding: 15px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+}
+
+.source-directory-list .directory-label {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #64b5f6;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #444;
+}
+
+.source-directory-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.source-directory-list li {
+  padding: 8px 12px;
+  margin: 4px 0;
+  background-color: #333;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.source-directory-list li:hover {
+  background-color: #444;
+}
+
+.source-directory-list a {
+  color: #81c784;
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 0.95em;
+}
+
+.source-directory-list a:hover {
+  text-decoration: underline;
   color: #90caf9;
 }
 
@@ -662,16 +751,20 @@ a[href^="source/"]::before {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
 }
 
 .gallery-item {
   width: 100%;
   text-align: center;
+  background-color: #ffffff;
 }
 
 .gallery-caption {
   margin-top: 5px;
-  color: #888;
+  color: #555;
   font-size: 0.9em;
 }
 
@@ -716,4 +809,32 @@ a[href^="source/"]::before {
   justify-content: center;
   overflow: hidden;
   /* Changed from auto to hidden to prevent scrollbars if not desired, or auto if panning needed */
+}
+/* Markdown Headers */
+.question-text h1,
+.markdown-preview h1 {
+  font-size: 1.5em;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.3em;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.question-text h2,
+.markdown-preview h2 {
+  font-size: 1.3em;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.3em;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.question-text h3,
+.markdown-preview h3 {
+  font-size: 1.1em;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  color: #fff;
 }

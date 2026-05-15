@@ -7,15 +7,15 @@
 과거의 예측을 통해 2025년 오늘날의 AI 발전을 되짚어 보는 재미는 덤으로 가져가세요.
 
 
-```
-[The Age of AI] 시리즈 영상 5편
+**[The Age of AI] 시리즈 영상 5편**
 
 - [적정선은 어디인가?](https://www.youtube.com/watch?v=UwsrzCVZAb8)
 - [AI를 통한 치유](https://www.youtube.com/watch?v=V5aZjsWM2wo)
 - [AI를 이용해 더 나은 인간 만들기](https://www.youtube.com/watch?v=lrv8ga02VNg)
 - [로봇이 내 일자리를 빼앗을까?](https://www.youtube.com/watch?v=f2aocKWrPG8)
 - [사랑, 예술 그리고 이야기를 이해하다.](https://www.youtube.com/watch?v=Kr1fmKVY3cA)
-```
+
+<br> 
 
 ### **참고 및 유의사항**
 
@@ -23,7 +23,8 @@
 
 ---
 
-### Q1. [적정선은 어디인가?](https://www.youtube.com/watch?v=UwsrzCVZAb8) 영상에서 킹콩, 아바타 영화의 안면 시뮬레이션 작업을 한 사람이 마신 음료의 종류는? -객관식, 단일선택
+### Q1. [적정선은 어디인가?](https://www.youtube.com/watch?v=UwsrzCVZAb8) 영상에서 킹콩, 아바타 영화의 안면 시뮬레이션 작업을 한 사람이 마신 음료의 종류는? 
+(객관식, 단일선택)
 
 > 1. 콜라
 
@@ -63,7 +64,8 @@
 
 ---
 
-### Q5. [로봇이 내 일자리를 빼앗을까?](https://www.youtube.com/watch?v=f2aocKWrPG8) 영상에 등장하는 지역을 모두 선택하세요. \*복수 선택
+### Q5. [로봇이 내 일자리를 빼앗을까?](https://www.youtube.com/watch?v=f2aocKWrPG8) 영상에 등장하는 지역을 모두 선택하세요. 
+(복수 선택)
 
 > 1. 캐나다 워털루 대학교
 
@@ -83,7 +85,9 @@
 
 ---
 
-### Q7. [AI를 통한 치유](https://www.youtube.com/watch?v=V5aZjsWM2wo) 영상에서 확인할 수 있는 사실을 모두 선택하세요. \*복수 선택
+### Q7. [AI를 통한 치유](https://www.youtube.com/watch?v=V5aZjsWM2wo) 영상에서 확인할 수 있는 사실을 모두 선택하세요.
+
+(복수 선택)
 
 > 1. NFL 시즌 시작 인터뷰에서 팀쇼의 등번호는 8번이다.
 

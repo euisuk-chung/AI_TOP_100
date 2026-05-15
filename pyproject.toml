@@ -1,0 +1,18 @@
+[project]
+name = "ai-top-100"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.125.0",
+    "ollama>=0.6.1",
+    "openai-whisper>=20250625",
+    "opencv-python>=4.12.0.88",
+    "pymupdf>=1.26.7",
+    "pypdf>=6.4.2",
+    "torch>=2.9.1",
+    "transformers>=4.57.3",
+    "uvicorn>=0.38.0",
+    "yt-dlp>=2025.12.8",
+]
