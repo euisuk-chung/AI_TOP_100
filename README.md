@@ -2,7 +2,9 @@
 
 이 프로젝트는 카카오임팩트와 브라이언임팩트가 주최한 'AI_TOP_100' 대회의 예선 및 본선 문제들을 수집하고, 이를 로컬 환경에서 직접 풀어볼 수 있도록 돕는 학습용 플랫폼입니다.
 
-> **문제 출처**: [카카오 브런치 - AI TOP 100](https://brunch.co.kr/@andkakao/)
+> **문제 출처**: [카카오 브런치 - AI TOP 100](https://brunch.co.kr/@andkakao/) 및 [challenge.aitop100.org](https://challenge.aitop100.org/)
+
+**현재 수록된 챌린지**: 22개 (시즌 1 본선 2 / 예선 5, 시즌 2 본선 2, 시즌 3 본선 3, 시즌 4 CAMPUS 예선 5, 시즌 5 CAMPUS 본선 5)
 
 <p align="center">
   <img src="assets/sample_detail.png" width="100%" alt="Problem Detail">
@@ -66,3 +68,18 @@
 -   **문제 풀이**: 각 문제(Q1, Q2 등)별로 나누어 코드를 작성할 수 있습니다.
 -   **다국어 지원**: Python, JavaScript, C, C++, Markdown 등 다양한 언어로 답변을 작성할 수 있습니다.
 -   **솔루션 저장**: 작성한 코드는 로컬의 `solve` 디렉토리에 자동으로 저장됩니다.
+
+## 파일 구조
+
+- `question/` — 문제 정의. 파일명 규칙: `S{시즌번호}_{예선|본선}_{인덱스}_{제목}.md`
+- `source/{code}/` — 각 챌린지 자료 폴더. `{code}` 는 challenge.aitop100.org의 problem code (예: `csatmyth`, `stakeout`, `menu`).
+- `solve/` — 사용자가 작성한 답안.
+- `model_solutions/` — 참조용 모범 풀이.
+- `REFERENCE.md` — 22개 챌린지 전체 카탈로그 (총점·문항 요약).
+- `.claude/skills/fetch-brunch/`, `.claude/skills/fetch-aitop/` — 추가 콘텐츠 수집용 skill. 새 챌린지가 공개되면 이 skill을 통해 본문을 가져올 수 있습니다.
+
+## 신규 챌린지 추가 워크플로
+
+1. `python .claude/skills/fetch-aitop/scripts/list_problems.py --format table` — 사이트에 공개된 전체 챌린지 목록 갱신.
+2. 신규 챌린지 발견 시: `question/S{n}_{round}_{idx}_{title}.md` 파일 작성, `source/{code}/README.md` 생성.
+3. 본문이 필요하면 `fetch-brunch` 또는 (로그인 쿠키와 함께) `fetch-aitop`의 `fetch_detail.py`로 가져옵니다.

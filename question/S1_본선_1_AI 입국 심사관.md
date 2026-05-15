@@ -1,6 +1,6 @@
 # AI_TOP_100 본선 문제 : AI 입국 심사관
 
-Source: [final_immigration](source/q6)
+Source: [final_immigration](source/immigration)
 
 ### **문제 설명**
 

@@ -488,7 +488,7 @@ def check_rules(data):
         return ('Approve', None)
 
 def main():
-    base_path = 'd:/repo/AI_TOP_100/source/q6/applicants'
+    base_path = 'd:/repo/AI_TOP_100/source/immigration/applicants'
     applicants = sorted([d for d in os.listdir(base_path) if d.startswith('applicant_')])
 
     results = []
@@ -505,7 +505,7 @@ def main():
         print(f"{app_id}: {answer}" + (f" (Rule {reason})" if reason else ""))
 
     # Save results
-    with open('d:/repo/AI_TOP_100/source/q6/results.json', 'w') as f:
+    with open('d:/repo/AI_TOP_100/source/immigration/results.json', 'w') as f:
         json.dump(results, f, indent=2)
 
     print(f"\nTotal: {len(results)} applicants processed")
